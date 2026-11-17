@@ -86,13 +86,15 @@ def validar(usuario: str) -> dict:
             m.select_one(".tgme_widget_message_text").get_text(" ", strip=True)
             for m in mensajes if m.select_one(".tgme_widget_message_text")
         ]
+        titulo_txt = titulo.get_text(" ", strip=True) if titulo else ""
+        audiencia_txt = extra.get_text(" ", strip=True) if extra else ""
         fila.update({
-            "titulo": titulo.get_text(" ", strip=True) if titulo else "",
-            "audiencia": extra.get_text(" ", strip=True) if extra else "",
+            "titulo": titulo_txt,
+            "audiencia": audiencia_txt,
             "mensajes_publicos": len(mensajes),
             "muestra": (textos[0][:200] if textos else ""),
-            "es_automotriz": bool(AUTO.search(" ".join(textos) + " " + fila["titulo"])),
-            "es_relevante": bool(RELEVANTE.search(fila["titulo"] + " " + " ".join(textos))),
+            "es_automotriz": bool(AUTO.search(" ".join(textos) + " " + titulo_txt)),
+            "es_relevante": bool(RELEVANTE.search(titulo_txt + " " + " ".join(textos))),
             "publico": len(mensajes) > 0,
         })
     except Exception as exc:
