@@ -276,6 +276,8 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 59 613 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 56 770 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
 
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 53 268 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
@@ -490,6 +492,30 @@ Fuentes académicas y repositorios revisados para definir los requerimientos del
 **Conclusión:** las fuentes oficiales y gremiales sirven de **contexto y validación**; los anuncios y redes son la **señal de precio** pero no sustituyen estadísticas oficiales. El análisis debe etiquetar cada métrica con su procedencia y nivel de confianza, y no mezclar tasas oficiales e informales ni precios anunciados con precios de transacción.
 
 **EN.** Official/governmental and industry sources are used for context and validation; marketplaces and social platforms provide advertised-price signals only. Every metric must carry provenance and confidence level, keeping official vs informal rates and asking vs transaction prices separate.
+
+## 19. Marco de análisis de mercado y su adaptación / Market-analysis framework and adaptation (18/11/2026)
+
+### Marco general (8 pasos, derivado de los trabajos revisados)
+
+1. **Pregunta y decisión**: qué se decide, para quién y en qué horizonte (PUCE: funcionamiento del mercado de usados; Chile: variables que influyen en tener automóvil).
+2. **Delimitación**: geografía, producto, canal y unidad de análisis.
+3. **Marco teórico y normativo**: asimetría de información (Akerlof), selección adversa, riesgo moral, regulación vigente.
+4. **Diseño de datos**: fuentes primarias (encuestas/entrevistas) y secundarias (registros, anuncios), esquema común, muestreo y sesgos.
+5. **Recolección y curación**: captura, deduplicación, validación y trazabilidad (ETL + BI).
+6. **Descriptivo y segmentación**: distribución de precios, participación por marca/segmento, series temporales.
+7. **Analítico**: comparables, depreciación, costos ocultos, margen de reventa, modelos explicables.
+8. **Entrega y monitoreo**: dashboard, recomendaciones, limitaciones y actualización periódica.
+
+### Adaptación a Cuba / La Habana
+
+- **Delimitación**: La Habana; autos de 4+ ruedas; canales formal e informal; precios anunciados en CUP/USD/MLC/EUR **sin mezclar**.
+- **Fuentes**: Revolico (BD propia, 6.334 anuncios / 317 autos), concesionarios (Autocubana, Dongfeng, BDC One…), Gaceta/Decreto 163/2026, BCC (oficial) y elTOQUE (informal), salarios de la Resolución 14, y señales de Telegram/WhatsApp/Facebook sin datos personales.
+- **Variables**: precio+moneda, año/antigüedad, km, combustible, transmisión, marca/modelo, provincia/municipio, tipo de vendedor, imágenes, estado y palabras de defecto en el texto (para estimar costos ocultos).
+- **Métodos adaptados**: descriptivo por marca-modelo-año; clases de calidad (≤5 años alta, >5 años con defectos, según PUCE); bandera de asimetría por ocultamiento; comparables por modelo ±2 años y municipio; rentabilidad = reventa esperada − compra − reacondicionamiento − impuestos (Decreto 163/2026); asequibilidad = precio / salario; series con snapshots; recomendador interactivo con explicación.
+- **Entregables**: tabla `autos` + `revision`, dashboard, informe y producto interactivo.
+- **Límites**: precios pedidos no transaccionados, sesgo de supervivencia de anuncios, sin datos personales, vigencia normativa a verificar.
+
+**EN.** An eight-step generic framework was adapted to Havana: scope, regulatory/theoretical frame, data design, curation, descriptive analysis, comparables and profitability, affordability, and an explainable interactive recommender, with explicit provenance and limitations.
 
 ---
 
