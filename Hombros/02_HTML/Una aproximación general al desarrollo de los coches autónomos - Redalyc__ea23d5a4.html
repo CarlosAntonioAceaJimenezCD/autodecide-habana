@@ -1,0 +1,446 @@
+<!DOCTYPE html><html xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+
+<meta content="width=device-width, initial-scale=1 user-scalable=no" name="viewport">
+<title>Una aproximaci�n general al desarrollo de los coches aut�nomos</title>
+<meta lang="pt" name="keywords" content="carros aut�nomos, intelig�ncia artificial, mobilidade, cultura, vantagens, desvantagens">
+<meta name="Content-Language" content="pt">
+<meta name="author" content="Antonio Luis Terrones Rodr�guez">
+<meta name="description" lang="es" content="El prop�sito de este trabajo consiste en llevar a cabo una aproximaci�n introductoria al �mbito de los coches aut�nomos. En primer lugar, se hace un breve re...">
+<meta name="description" lang="pt" content="O objetivo deste trabalho � realizar uma abordagem introdut�ria ao campo de carros aut�nomos. Primeiro, � feita uma breve revis�o hist�rica para observar sua...">
+<meta name="description" lang="en" content="The purpose of this article is to carry out an introductory approach to the field of autonomous cars. Firstly, a brief historical review is set forth to deta...">
+<meta content="index,follow" name="robots">
+<meta name="citation_title" content="Una aproximaci�n general al desarrollo de los coches aut�nomos">
+<meta name="citation_author" content="Antonio Luis Terrones Rodr�guez">
+<meta name="citation_publication_date" content="2021">
+<meta name="citation_journal_title" content="Revista Iberoamericana de Ciencia, Tecnolog�a y Sociedad - CTS">
+<meta name="citation_volume" content="16">
+<meta name="citation_issue" content="47">
+<meta name="citation_firstpage" content="153">
+<meta name="citation_lastpage" content="194">
+<meta name="citation_pdf_url" content="https://www.redalyc.org/journal/924/92469371015/92469371015.pdf">
+<meta name="citation_reference" content="citation_journal_title=Nature; citation_title=The Moral Machine experiment; citation_author=Awad E.; citation_author=Dsouza S.; citation_author=Kim R.; citation_author=Schulz J.; citation_author=Henrich J.; citation_author=Shariff A.; citation_author=Bonnefon J.-F.; citation_author=Rahwan I.; citation_publication_date=2018">
+<meta name="citation_reference" content="citation_title=Disruptive Mobility: A Scenario for 2040.; citation_author=Barclays; citation_publication_date=2015">
+<meta name="citation_reference" content="citation_title=Driverless vehicles: A new engine for economic transformation?; citation_author=Barclays; citation_publication_date=2016">
+<meta name="citation_reference" content="citation_title=Modernidad l�quida. Madrid:; citation_author=Bauman Z.; citation_publication_date=2017">
+<meta name="citation_reference" content="citation_title=Uber Self-Driving Car Crash: What Really Happened; citation_author=Berbouch M.; citation_publication_date=2018">
+<meta name="citation_reference" content="citation_title=The Atlantic; citation_author=Bogost I.; citation_publication_date=2014">
+<meta name="citation_reference" content="citation_title=Comprehensive Experimental Analyses of Automotive Attack Surfaces; citation_author=Checkoway S.; citation_author=McCoy D.; citation_author=Kantor B.; citation_author=Anderson D.; citation_author=Shacham H.; citation_author=Savage S.; citation_publication_date=2011">
+<meta name="citation_reference" content="citation_journal_title=Philosophy &amp; Technology; citation_title=From Killer Machines to Doctrines and Swarms, or Why Ethics of Military Robotics Is not (Necessarily) About Robot; citation_author=Coeckelbergh M.; citation_publication_date=2011">
+<meta name="citation_reference" content="citation_title=Artificial Experts; citation_author=Collins H. M.; citation_publication_date=1990">
+<meta name="citation_reference" content="citation_title=Vehicle Event Recording base don Intelligent Crash Assessment; citation_author=Comisi�n Europea; citation_publication_date=2009">
+<meta name="citation_reference" content="citation_journal_title=IEEE Spectrum; citation_title=Making Bertha: Radar is the key to Mercedes-Benz&rsquo;s robotic car; citation_author=DickmannI J.; citation_author=Appenrodt N.; citation_author=Brenk C.; citation_publication_date=2014">
+<meta name="citation_reference" content="citation_journal_title=Revista de Filosof�a; citation_title=Tecnolog�a y responsabilidad.; citation_author=Di�guez A.; citation_publication_date=1993">
+<meta name="citation_reference" content="citation_title=Tiempo de vida y tiempo de trabajo; citation_author=Dur�n Heras M. A.; citation_publication_date=2010">
+<meta name="citation_reference" content="citation_title=El trabajo no remunerado en la econom�a global; citation_author=Dur�n Heras M. A.; citation_publication_date=2012">
+<meta name="citation_reference" content="citation_title=Youtube; citation_author=Ethical Hacking New Tutorials; citation_publication_date=2016">
+<meta name="citation_reference" content="citation_title=A Brief Survey on Autonomous Vehicle Possible Attacks, Exploits and Vulnerabilities; citation_author=Kumar Amara D.; citation_author=Renu Chebrolu N.; citation_author=Vinayakumar R.; citation_author=Soman K.; citation_publication_date=2018">
+<meta name="citation_reference" content="citation_title=Driverless Dreams: Technological Narratives and the Shape of the Automated Car; citation_author=Lee Sayton E.; citation_publication_date=2011">
+<meta name="citation_reference" content="citation_title=El Pa�s; citation_author=Lim�n R.; citation_publication_date=2018">
+<meta name="citation_reference" content="citation_title=Moral Machine; citation_author=Massachusetts Institute Of Technology; citation_publication_date=2016">
+<meta name="citation_reference" content="citation_journal_title=Nature.; citation_title=Self-driving car dilemas reveal that moral choices are not universal.; citation_author=Maxmena A.; citation_publication_date=2018">
+<meta name="citation_reference" content="citation_title=Self-driving car technology: When Will the robots hit the road? Our Insights">
+<meta name="citation_reference" content="citation_journal_title=Consideraciones jur�dicas acerca del coche aut�nomo. Actualidad Jur�dica Ur�a Men�ndez; citation_title=Consideraciones jur�dicas acerca del coche aut�nomo">
+<meta name="citation_reference" content="citation_journal_title=Smithsonian; citation_title=The National Automated Highway System That Almost Was">
+<meta name="citation_reference" content="citation_title=Objetivos de Desarrollo Sostenible">
+<meta name="citation_reference" content="citation_journal_title=Journal of Advanced Transportation; citation_title=Malware Detection in Self-Driving Vehicles Using Machine Learning Algorithms.">
+<meta name="citation_reference" content="citation_journal_title=IEEE Transactions on Intelligente Transportation Systems; citation_title=Cyber Threats Facing Autonomous and Connected Vehicles: Future Challengues">
+<meta name="citation_reference" content="citation_journal_title=Digital Trends; citation_title=Waymo explica el rol esencial de la inteligencia artificial en la tecnolog�a aut�noma">
+<meta name="citation_reference" content="citation_title=Inteligencia artificial. 101 cosas que debes saber hoy sobre nuestro futuro">
+<meta name="citation_reference" content="citation_title=La implantaci�n del autom�vil inteligente: �un riesgo calculado para la seguridad global?">
+<meta name="citation_reference" content="citation_title=Levels of Driving">
+<meta name="citation_reference" content="citation_title=Eldiario.es">
+<meta name="citation_reference" content="citation_title=Proceedings of the Intelligent Vehicles. 94 Symposium">
+<meta name="citation_reference" content="citation_title=Robots Don&rsquo;t Drink and Drive">
+<meta name="citation_reference" content="citation_journal_title=Automotive History Review; citation_title=Driving the Dream: The History and Motivations Behind 60 Years of Automated Highway Systems">
+<link href="../../../css/htmlLigero.css" type="text/css" rel="stylesheet">
+<style type="text/css">
+		    				@font-face {
+							    font-family: OpenSans-Regular; 
+							    src: url('../../../css/fonts/OpenSans-Regular.eot');
+							    src: url('../../../css/fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+							         url('../../../css/fonts/OpenSans-Regular.woff') format('woff'),
+							         url('../../../css/fonts/OpenSans-Regular.ttf') format('truetype'),
+							         local('Helvetica');
+							}
+							
+							@font-face {
+							    font-family: titillium-web-bold; 
+							     src: url('../../../css/fonts/titillium-web-bold.eot');
+							    src: url('../../../css/fonts/titillium-web-bold.eot?#iefix') format('embedded-opentype'),
+							         url('../../../css/fonts/titillium-web-bold.woff') format('woff'),
+							         url('../../../css/fonts/titillium-web-bold.ttf') format('truetype');
+							         local('Helvetica');
+							}
+		    			</style>
+<meta name="citation_title" content="Una aproximaci�n general al desarrollo de los coches aut�nomos">
+<meta name="citation_language" content="pt">
+<script type="text/x-mathjax-config">
+					MathJax.Hub.Config({
+			  			MathML: {
+							extensions: ["content-mathml.js"]
+						},
+						MathMenu:{
+							showLocale: false,
+							showMathPlayer: false,
+							showRenderer: false
+						},						
+						menuSettings: {
+						    zoom: "Hover",
+						    zscale: "200%",
+						},
+						MathZoom: {
+							delay: 5000
+						}
+					});
+					MathJax.Hub.Queue(["setRenderer",MathJax.Hub,"SVG"]);
+					MathJax.Hub.Queue(["Rerender",MathJax.Hub]);
+					
+				</script><script src="../../../math/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><script type="text/javascript">
+	                var _gaq = _gaq || [];
+	                _gaq.push(['_setAccount', 'UA-3153272-1']);
+	                _gaq.push(['_trackPageview']);
+	                         (function() {
+	                                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	                                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	                })();
+                </script>
+</head>
+<body>
+<div id="visor-cabecera">
+<div class="herramientas">
+<div style="background-image: url('https://www.redalyc.org/redalyc/media/inc/img/institucion/ConsejoNacionaldeInvestigacionesCientificasyTecnicas_44.jpg');" id="logo-r" class="herramienta h-t"></div>
+<div style="background-image: url('https://www.redalyc.org/redalyc/media/inc/img/revista/movil/revista/rva924.png');" class="redalyc-s"></div>
+</div>
+</div>
+<div id="articulo">
+<div id="front">
+<div id="articulo-categoria">
+<p>Art�culos</p>
+</div>
+<div id="articulo-meta">
+<p class="articulo-titulo">Una aproximaci�n general al desarrollo de los coches aut�nomos</p>
+<p class="articulo-titulo-traduccion">Uma abordagem geral para o desenvolvimento de carros aut�nomos</p>
+<p class="articulo-titulo-traduccion">A General Approach to the Development of Autonomous Cars</p>
+</div>
+<div id="articulo-acerca">
+<div id="ficha-general">
+<div id="autores-articulo">
+<div class="autor western">
+<div class="nombre-completo">
+<span class="nombre">Antonio Luis</span> <span class="apellidos">Terrones Rodr�guez</span> <span class="collab"></span>
+</div>
+</div>
+</div>
+<div class="ficha">
+<p class="art-title">Una aproximaci�n general al desarrollo de los coches aut�nomos</p>
+<p class="numero">
+<span class="journal">Revista Iberoamericana de Ciencia, Tecnolog�a y Sociedad - CTS</span><span class="issue"><span class="volume">, vol.  16</span>, n�m.  47</span>, pp. 153-194<span class="year">, 2021</span>
+</p>
+<p class="publisher">Consejo Nacional de Investigaciones Cient�ficas y T�cnicas</p>
+</div>
+<div class="creative">
+<div></div>
+<div></div>
+</div>
+<div id="articulo-product"></div>
+<div class="fechas-h"></div>
+<div class="url-r"></div>
+<div class="financiamientos-r"></div>
+</div>
+<p class="articulo-resumen">
+<span class="resumen negrita">Resumen:
+							                           </span><span class="capital">El prop�sito de este trabajo consiste en llevar a cabo una aproximaci�n introductoria al �mbito de los coches aut�nomos. En primer lugar, se hace un breve repaso hist�rico para observar su evoluci�n y posteriormente se destaca la importancia que posee la investigaci�n en inteligencia rtificial para el desarrollo de esta tecnolog�a aut�noma. Los coches aut�nomos suscitan un cambio cultural en la movilidad que viene acompa�ado de ventajas, oportunidades, riesgos y amenazas que deben ser sometidas a un juicio valorativo. Por ello resulta fundamental llevar a cabo una aproximaci�n general al desarrollo de los coches aut�nomos como una novedad tecnol�gica que condicionar� la vida del futuro en materia de movilidad y gesti�n del tiempo.</span>
+</p>
+<p class="articulo-palabras">
+<span class="resumen negrita">Palabras clave: </span>coches aut�nomos, inteligencia artificial, movilidad, cultura, ventajas, desventajas.
+		                         </p>
+<p class="articulo-resumen-traduccion">
+<span class="resumen negrita">Resumo:
+						                           </span><span class="capital">O objetivo deste trabalho � realizar uma abordagem introdut�ria ao campo de carros aut�nomos. Primeiro, � feita uma breve revis�o hist�rica para observar sua evolu��o e, posteriormente, � destacada a import�ncia da pesquisa em intelig�ncia artificial para o desenvolvimento dessa tecnologia aut�noma. Os carros aut�nomos criam uma mudan�a cultural na mobilidade que � acompanhada de vantagens, oportunidades, riscos e amea�as que devem estar sujeitas a um julgamento de valor. Por esse motivo, � necess�rio realizar uma abordagem geral ao desenvolvimento de carros aut�nomos como uma novidade tecnol�gica que condicionar� a vida do futuro em termos de mobilidade e gerenciamento de tempo.</span>
+</p>
+<p class="articulo-palabras-traduccion">
+<span class="resumen negrita">Palavras-chave: </span>carros aut�nomos, intelig�ncia artificial, mobilidade, cultura, vantagens, desvantagens.
+                                </p>
+<p class="articulo-resumen-traduccion">
+<span class="resumen negrita">Abstract:
+						                           </span><span class="capital">The purpose of this article is to carry out an introductory approach to the field of autonomous cars. Firstly, a brief historical review is set forth to detail its progress. Secondly, the importance of artificial intelligence research for the development of this autonomous technology is highlighted. Autonomous cars spark a cultural change in mobility that comes with advantages, opportunities, risks and threats that must be subjected to analysis. For this reason, it is necessary to carry out a general approach to the development of autonomous cars as a technological innovation that will influence life in the future in terms of mobility and time management.</span>
+</p>
+<p class="articulo-palabras-traduccion">
+<span class="resumen negrita">Keywords: </span>autonomous cars, artificial intelligence, mobility, culture, advantages, disadvantages.
+                                </p>
+</div>
+</div>
+<div id="articulo-body">
+<p class="negrita seccion">Introducci�n</p>
+<p class="sangria">En 1925 Francis Houdina decide innovar en el �mbito de los coches e introduce un mecanismo de radiocontrol. Ha pasado casi un siglo desde aquel experimento y las investigaciones en los coches aut�nomos van in crescendo. Las principales marcas del sector automovil�stico se disputan un nicho de mercado a trav�s de los �ltimos adelantos tecnol�gicos, entre los que se encuentra la autonom�a.</p>
+<p class="sangria">La investigaci�n sobre la autonom�a de los coches est� compuesta por un entramado de tecnolog�as de alta complejidad, entre las que se encuentra el reconocimiento �ptico, la inteligencia artificial (IA), geolocalizadores, diversos tipos de sensores, etc. Toda esta variedad de tecnolog�as pretende introducir en las v�as coches sin conductor con la m�s alta garant�a de seguridad y confort. Los expertos en el campo en cuesti�n se�alan importantes ventajas y beneficios que devienen de estos coches aut�nomos; no obstante, advierten que implicar�n un cambio en la cultura de la movilidad que debe afrontarse de manera responsable y prudente.</p>
+<p class="sangria">Este cambio cultural conlleva importantes desaf�os debido a la introducci�n de una tecnolog�a caracterizada por la autonom�a en un universo donde �sta es mayoritariamente humana. Detr�s del concepto de autonom�a se suscitan interesantes debates en el entorno de la filosof�a moral; sin embargo, ese no es el prop�sito exclusivo de este trabajo, pues nos ocupar�a m�s espacio. En este sentido, antes de llevar a cabo cualquier an�lisis valorativo concretamente desde una disciplina, es necesario lograr un acercamiento introductorio a esta novedosa tecnolog�a para comprender sus aspectos m�s b�sicos desde diferentes perspectivas.</p>
+<p class="sangria">El recorrido hist�rico permite comprender los rasgos esenciales en su desarrollo, destacando algunos asuntos de importancia. Del mismo modo, es necesario entender que el avance en este campo no podr�a haberse dado lugar sin ir de la mano de la IA. Las tecnolog�as implicadas en el desarrollo de los coches aut�nomos pueden conllevar una diversidad de beneficios y de perjuicios, de promesas y de riesgos, que conviene abordar cuidadosamente y en profundidad. Por ello, resulta fundamental impulsar un acercamiento a esta tecnolog�a para pensarla en el contexto de las exigencias dictadas por la Agenda 2030 (<a href="#redalyc_92469371015_ref24">Organizaci�n de Naciones Unidas, 2015</a>),como una herramienta de las instituciones de diversa naturaleza para perseguir un bienestar humano y un compromiso c�vico.</p>
+<p class="negrita seccion">1. Desarrollo hist�rico del autom�vil sin conductor</p>
+<p class="sangria">El sector de los coches sin conductor ha experimentado asombrosos cambios en funci�n de los avances tecnol�gicos que han ido sucedi�ndose con el paso del tiempo. As� pues, un conocimiento introductorio de dichos avances a lo largo de la historia puede brindar unas interesantes coordenadas desde las que acceder a una mejor orientaci�n en este campo que presenta tantas novedades y tantos desaf�os en la actualidad y en las pr�ximas d�cadas.</p>
+<p class="sangria">En agosto de 1925, un extra�o espect�culo dej� at�nitos a un conjunto de espectadores en Broadway, Nueva York. Un autom�vil vac�o iba de un lado para otro por la calle; lo segu�a de cerca otro autom�vil repleto de aparatos de radio y varios hombres que desempe�aban cada uno una funci�n tras un conjunto de controles. Del primer autom�vil sale una antena desde la parte de atr�s, donde deber�a estar el asiento trasero, pues en su lugar hay un enjambre de cables, bater�as y tubos. Este es el hist�rico caso del autom�vil de Francis Houdina, la primera experiencia de radiocontrol impulsada por la Houdina Radio Control Company (<a href="#redalyc_92469371015_ref17">Lee Stayton, 2011</a>).</p>
+<p class="sangria">Aunque las investigaciones m�s recientes e importantes en el campo de los autom�viles automatizados se remontan un par de d�cadas atr�s, impulsadas principalmente por Tesla, Google y Uber, cualquiera podr�a pensar que los autom�viles sin conductor son relativamente una novedad. Esta idea se sostiene principalmente en los avances que se han dado en los �ltimos a�os gracias al desarrollo de la IA. No obstante, la historia demuestra que ya en 1925 se hab�a introducido el primer prototipo de autom�vil aut�nomo en las calles de Broadway. Pensar que este acontecimiento hist�rico fue el inicio de un desarrollo constante y progresivo hasta el autom�vil aut�nomo actual es un error colosal. El desarrollo de este campo ha sido el producto de la convergencia de varias fuentes de conocimiento que se han derivado de diversos paradigmas dados en el curso hist�rico. El esp�ritu que se encuentra tras los coches aut�nomos es el mismo que ha servido de impulso para otros inventos, pues pertenece a una cultura de la electrificaci�n. La s�ntesis m�quina-herramienta y la interconexi�n en red, entre otros elementos, son producto de las denominadas &ldquo;acciones modo-maquina&rdquo; (<a href="#redalyc_92469371015_ref9">Collins, 1990, p. 42</a>).</p>
+<p class="sangria">Cuando la Houdina Radio Control Company comienza a explorar el campo de los autom�viles aut�nomos, la radio era una tecnolog�a que estaba en boga. Un a�o m�s tarde, en 1926, la compa��a Aachen Motors exhibi� un autom�vil a control remoto bajo el nombre de Phantom Auto (<a href="#redalyc_92469371015_ref17">Lee Stayton, 2011, p. 13)</a>. Aunque en la historia de los autom�viles aut�nomos estos acontecimientos representan el comienzo de un esp�ritu revolucionario para la movilidad, en su �poca significaron �nicamente una forma de entretenimiento para las personas en lugar de un avance verdaderamente tecnol�gico. Esto se debi� en gran parte a que el veh�culo todav�a presentaba una gran dependencia de control humano. Un claro ejemplo de esta utilidad de la tecnolog�a orientada hacia el ocio y el entretenimiento fue la Feria Mundial de Nueva York de 1939, donde acudieron 44 millones de visitantes para disfrutar de las muestras que all� se exhib�an sobre los �ltimos adelantos cient�ficos y tecnol�gicos. El gran triunfador de esta ideolog�a tecno-ut�pica fue Futurama, una exposici�n dise�ada por Norman Bel Geddes para representar el mundo del futuro por medio de la escenificaci�n de autopistas automatizadas, gigantescos barrios y otras obras de ingenier�a sorprendentes para esa �poca (<a href="#redalyc_92469371015_ref35">Wetmore, 2003, pp. 3-4</a>).</p>
+<p class="sangria">Durante la d�cada de 1960, el inter�s por los veh�culos sin conductor sigui� presente en el imaginario colectivo de muchos ingenieros automotrices estadounidenses como Andrew Kucher, vicepresidente del departamento de ingenier�a e investigaci�n de Ford. Kucher fue mencionado en un art�culo publicado en el Chicago Daily Tribune con el t�tulo: &ldquo;In 50 Years: Cars Flying Like Missiles: Can you imagine flying autom�viles General Motors y Radio Corporation of Am�rica exploraron la posibilidad de construir veh�culos aut�nomos mediante experimentos caracterizados por el desarrollo de un sistema de direcci�n y control a distancia (<a href="#redalyc_92469371015_ref35">Wetmore, 2003, p. 6</a>). Como fruto de las investigaciones realizadas por General Motors pueden encontrarse dos veh�culos conceptuales, Firebird y Firebird II, aunque no ten�an capacidades automatizadas en absoluto. El esp�ritu de Futurama sigui� presente durante la Feria Mundial de Nueva York de 1964, donde General Motors present� un sistema de carreteras automatizado muy parecido al que una d�cada antes hab�a presentado Vladimir Zworykin, de Radio Corporation of America <a href="#redalyc_92469371015_ref35">(Wetmore, 2003, p. 9</a>).</p>
+<p class="sangria">Es importante mencionar que no todas las investigaciones de veh�culos aut�nomos estuvieron dirigidas a los autom�viles y que tampoco se dieron necesariamente en los Estados Unidos. Los esfuerzos se centraron principalmente en otras tecnolog�as, como los peajes electr�nicos e informaci�n para el conductor facilitada a trav�s de sistemas ubicados fuera del veh�culo. A diferencia de la radio, se abrieron paso los sistemas el�ctricos que implicaban cambios en las infraestructuras. La investigaci�n de autom�viles sin conductor comenz� con unos enfoques novedosos orientados a la visi�n computarizada. Estas t�cnicas de visi�n computarizada se iniciaron en 1969, aunque no fue hasta 1980 cuando despeg� en Alemania, donde el ingeniero Ernst Dickmann trabaj� en la creaci�n de veh�culos aut�nomos a trav�s de la visi�n sac�dica, que consiste en una serie de movimientos r�pidos de los ojos u otras partes de animales o dispositivos, adem�s de c�lculos probabil�sticos y computaci�n paralela, lo que permite resolver muchos problemas de forma simult�nea (Dickmann et al., 1994). El proyecto alem�n fue emulado en los Estados Unidos con un autom�vil desarrollado por la Universidad Carnegie Mellon, basado en el soporte f�sico proporcionado por un Chevrolet que fue probado con �xito en carreteras sin tr�fico, alcanzando hasta 60 millas por hora (<a href="#redalyc_92469371015_ref6">Bogost, 2014</a>). Posteriormente, EUREKA, una organizaci�n intergubernamental para la financiaci�n y coordinaci�n europea en investigaci�n y desarrollo, impuls� el proyecto PROMETEO, que recibi� 749 millones de euros y se convirti� as� en el mayor proyecto de I+D nunca antes conocido en el �mbito de los coches sin conductor. PROMETEO cont� con la participaci�n de numerosas instituciones universitarias y fabricantes de autom�viles. Este proyecto se desarroll� entre 1987 y 1995 e involucr� el veh�culo VaMP14, creado por el laboratorio de investigaci�n de Dickmann junto con su Daimler-Benz, VITA-II. Este modelo utilizaba video anal�gico digital con se�ales digitalizadas para detectar carriles y otros veh�culos, adem�s de sensores adicionales de presi�n para detectar el frenado, la temperatura, el �ngulo de giro y la aceleraci�n, entre otros (<a href="#redalyc_92469371015_ref33">Ulmer, 1994, p. 2</a>). Este proyecto europeo acab� con 1000 kil�metros de operaci�n recorridos por parte de autom�viles aut�nomos en condiciones normales de tr�fico en las autopistas de Par�s, as� como tambi�n un viaje entre M�nich y Copenhague (<a href="#redalyc_92469371015_ref11">Dickmann et al., 2014)</a>.</p>
+<p class="sangria">Los Estados Unidos emprendieron tambi�n el camino de la investigaci�n basada en la visi�n, aprobada por el Congreso de la Eficiencia del Transporte Intermodal de Superficie. La ley creada en 1991 permiti� que 650 millones de d�lares se invirtieran para fondos de investigaci�n en veh�culos sin conductor durante los siguientes seis a�os <a href="#redalyc_92469371015_ref23">(Novak, 2013</a>). Esta ley foment� la iniciativa para crear un autom�vil automatizado basado en computaci�n y con orientaci�n a la seguridad y el impacto medioambiental.Todas estas investigaciones sirvieron para que en 2004 y 2005 se impulsara el gran desaf�o de la Agencia de Proyectos de Investigaci�n Avanzados de Defensa (DARPA), que despertar�a un gran inter�s y reunir�a a importantes expertos para ampliar las capacidades de los autom�viles aut�nomos.</p>
+<p class="sangria">En la actualidad, Google basa sus investigaciones en el esc�ner LIDAR, una red de c�maras y un complejo sistema de mapeo y GPS de gran precisi�n. En cambio, Mercedes se centra m�s en un complejo de c�maras y radares, y no en LIDAR. Por su lado, Tesla est� trabajando en un sistema de enfoque interactivo para la autonom�a del coche, enfoc�ndose principalmente en actualizaciones de software que agregan nuevas funciones de automatizaci�n. La compa��a Volvo prob� sus autom�viles hace unos a�os en las carreteras de Suecia y tiene especial inter�s en la investigaci�n de sistemas avanzados de asistencia al conductor y en los sistemas de control de veh�culos avanzados. La siguiente imagen se�ala las categor�as de grupos de investigaci�n que trabajan en el desarrollo de estas tecnolog�as aut�nomas.</p>
+<p class="sangria">
+<div class="imagen cuadro" id="gf1">
+<img width="500px" src="../92469371015_gf2.png" class="image" alt=""><br>
+<span class="caption"></span>
+</div>
+</p>
+<p class="sangria">La abundante literatura mencionada en este trabajo motiva el resumen mostrado en la anterior imagen, que presenta una ilustraci�n de las categor�as de investigadores que actualmente est�n desarrollando los coches aut�nomos. Estas categor�as incluyen Veh�culo 2 Veh�culo (V2V), Veh�culo a Infraestructura (V2I), y Veh�culo a X (V2X), donde X est� habilitado para un dispositivo con Internet. Se ilustran adem�s dispositivos con sensores, como sistemas de posici�n global (GPS, por sus siglas en ingl�s) y el monitoreo de presi�n de neum�ticos (TPMS, por sus siglas en ingl�s).</p>
+<p class="negrita seccion">2. Inteligencia artificial y autonom�a</p>
+<p class="sangria">Despu�s de uno de los accidentes en los que estuvo involucrado el prototipo de Waymo en la ciudad de Chandler, Arizona, la empresa aprovech� la conferencia Google I/O para explicar con detalles la tecnolog�a que se encuentra tras los autom�viles sin conductor y el papel de la IA en la funci�n de la conducci�n. Como se�ala un informe (<a href="#redalyc_92469371015_ref27">Pe�a, 2018</a>), el trabajo que han desarrollado los investigadores en este campo no podr�a haber sido posible sin la experticia en la IA, una herramienta que consideran fundamental, junto con el aprendizaje autom�tico, y que est� permitiendo promover el car�cter aut�nomo de los coches en los �ltimos a�os.</p>
+<p class="sangria">Los avances de la IA han sido decisivos en muchos �mbitos como el reconocimiento �ptico o de voz. Los expertos en IA de Google colaboraron con Waymo para fortalecer la autonom�a de sus coches. Los ingenieros de Waymo trabajaron codo con codo con el equipo Google Brain, gracias a los �ltimos avances en deep learning de las m�quinas y redes, concretamente en el sistema de detenci�n de peatones. La tasa de error en este sistema de detenci�n consigui� reducirse hasta cien veces gracias a la incorporaci�n de la IA, contribuyendo de ese modo a que estos sistemas sean m�s eficaces y seguros para las v�as.</p>
+<p class="sangria">Gracias a la IA, los avances experimentados han permitido franquear la frontera que existe entre la realidad y la ciencia ficci�n en materia de veh�culos aut�nomos. Hoy Waymo es la �nica compa��a en el mundo que tiene una flota de autom�viles verdaderamente aut�nomos recorriendo las v�as p�blicas. La IA juega un papel crucial en el engranaje de todas las partes que configuran el sistema de conducci�n aut�noma. Aunque la percepci�n y el reconocimiento �ptico son las �reas que han experimentado una mayor madurez en el aprendizaje profundo de las m�quinas, tambi�n es utilizada la IA para fortalecer otras esferas que van desde la predicci�n hasta la planificaci�n, el mapeo y la simulaci�n. A trav�s del machine learning pueden emprenderse navegaciones por situaciones con diversos escenarios y variadas exigencias y complejidades. Hasta la fecha, Waymo ha recorrido m�s de seis millones de millas en v�as p�blicas y se han recopilado cientos de millones de datos a trav�s de la observaci�n de interacciones entre otros autom�viles, peatones, ciclistas, etc. La infraestructura algor�tmica de Waymo se basa en el ecosistema TensorFlow y los centros de datos que les facilita Google, incluida la unidad de procesamiento tensorial o TPU (del ingl�s tensor processing unit), un circuito integrado y desarrollado tambi�n por Google que se encuentra orientado para el aprendizaje autom�tico. El TPU le brinda a Wingo un entrenamiento m�s eficiente de sus redes, lo que permite fortalecer las pruebas que se llevan a cabo y se mejoran de ese modo sus modelos y la implementaci�n a una mayor velocidad.</p>
+<p class="sangria">El reto de los autom�viles aut�nomos es llevar la tecnolog�a de conducci�n aut�noma a todas partes y ante cualquier adversidad, ya sea una intensa lluvia o nevada. En ese sentido, la IA es un esencial soporte tecnol�gico para que la autonom�a pueda fortalecerse y se alcancen nuevos logros. La IA permitir� a este nuevo sector impulsar sus investigaciones y facilitar el alcance a la meta de un transporte m�s seguro, f�cil y accesible para toda la ciudadan�a.</p>
+<p class="negrita seccion">3. Los coches aut�nomos se abren camino</p>
+<p class="sangria">La investigaci�n en el sector de los autom�viles sin conductor aumenta a un ritmo considerable como consecuencia de otros avances tecnol�gicos. El complejo que configura el �mbito de estos artefactos se encuentra impulsado desde varias aristas, lo que hace que su dise�o y fabricaci�n se demore tanto tiempo. Ese tiempo de espera es un punto a favor para las sociedades, las instituciones y los organismos que experimentar�n su impacto, pues pueden hacer uso de �l para valorar la incorporaci�n de esta tecnolog�a en las formas culturales de movilidad. Existe una serie de detonantes que sirven como impulso para este campo de investigaciones. La consultora McKinsey &amp; Company ha identificado diez elementos que representan las condiciones de posibilidad para la creaci�n de estos autom�viles.</p>
+<p class="sangria">
+<div class="imagen cuadro" id="gf2">
+<img width="500px" src="../92469371015_gf3.png" class="image" alt=""><br>
+<span class="caption"></span>
+</div>
+</p>
+<p class="sangria">En este momento, la creaci�n de autom�viles aut�nomos se concentra en el desarrollo de tecnolog�as de asistencia en la conducci�n. La Sociedad de Ingenieros de Automoci�n (SAE Internacional) identifica seis niveles de autonom�a en los veh�culos en general:</p>
+<p class="sangria">
+<lh></lh>
+<ul class="vinietas">
+<li>
+<p>&bull;Sin automatizaci�n: el conductor humano tiene todo el control y realiza todas las tareas. &bull; Asistencia al conductor: algunas funciones simples y m�nimas, como la direcci�n, pueden ser realizadas por el veh�culo, aunque todas las funciones restantes recaen bajo estricto control humano.</p>
+<p>&bull; Automatizaci�n parcial: el sistema de asistencia del veh�culo comienza a ayudar en algunos elementos de la conducci�n como la aceleraci�n; se utiliza informaci�n que se obtiene del entorno de conducci�n (sensor de lluvia). En este nivel es necesario todav�a un conductor preparado que se haga responsable de las tareas m�s primarias.</p>
+<p>&bull; Automatizaci�n condicionada: el autom�vil comienza conducir en la mayor�a de situaciones, como el cambio de carril, aunque el conductor todav�a puede intervenir en el manejo de estas situaciones.</p>
+<p>&bull; Alta automatizaci�n: el autom�vil tiene la habilidad de asumir la conducci�n frente a cualquier situaci�n sin la necesidad de intervenci�n humana. No obstante, en situaciones clim�ticas severas se puede desactivar el piloto autom�tico. El desarrollo de los coches de Google se encuentra en este nivel.</p>
+<p>&bull; Automatizaci�n completa: este nivel se caracteriza principalmente por la completa autonom�a frente a todas las situaciones por muy complejas que sean sin necesidad de intervenci�n humana (SAE International, 2019).</p>
+</li>
+</ul>
+</p>
+<p class="sangria">Es importante destacar que existe una especie de &ldquo;carrera de la automatizaci�n&rdquo; entre las empresas de este sector en pugna por alcanzar los niveles 4 y 5. Esto se debe principalmente a que aquellas empresas que alcancen esos niveles podr�n hacerse con la exclusividad comercial. Entre las empresas m�s destacadas de este sector se encuentran Google, Tesla, Uber, Apple, BMW, Toyota, Audi, Mercedes Benz, Volvo y Volkswagen, entre otras.</p>
+<p class="negrita seccion">4. Cambio cultural de la movilidad</p>
+<p class="sangria">M�s all� de los desaf�os tecnol�gicos que enfrentan los autom�viles aut�nomos, el cambio cultural de la movilidad que se proyecta en la sociedad es uno de los retos m�s dif�ciles afrontar. No es de extra�ar que, debido a los accidentes que han ocurrido en 2018 en los Estados Unidos, la ciudadan�a muestre desconfianza ante esta tecnolog�a. Incluso hay quienes se han opuesto a que este tipo de transportes aut�nomos lleven a cabo sus pruebas en �reas urbanas donde hay muchos transe�ntes (<a href="#redalyc_92469371015_ref5">Berboucha, 2018)</a>.</p>
+<p class="sangria">Los coches aut�nomos posibilitar�n un cambio en la cultura de la movilidad de la ciudadan�a, pues plantear�n nuevas formas y posibilidades desde las que entenderla. Personas que en la actualidad han abandonado el uso del coche, como los ancianos o los invidentes, podr�n hacer uso nuevamente de los veh�culos sin conductor, asumiendo que se les brinda una nueva posibilidad para ampliar su horizonte m�vil. Adem�s, dos estudios, uno de la Organizaci�n para la Cooperaci�n y el Desarrollo Econ�micos (OCDE) y otro de Barclays, ambos de 2015, revelan una reducci�n significativa de las flotas de coches, debido a que los coches sin conductor estar�an en condiciones de sustituir los desplazamientos llevados a cabo tanto por veh�culos particulares como por taxis u otros medios de transporte p�blico. Los denominados SAV (un autom�vil con un servicio m�ltiple que depende de la demanda de cada momento, similar a los taxis, pero sin conductor) y los PSAV (un veh�culo similar a los SAV, pero de uso compartido simult�neo) promover�n otra movilidad diferente</p>
+<p class="sangria">a la conocida hasta ahora. Se liberar�n adem�s espacios viales gracias a la menor necesidad de plazas de estacionamiento, lo que favorecer�a la descongesti�n de la circulaci�n y tambi�n el aprovechamiento de esos espacios para otros fines.</p>
+<p class="sangria">Otro aspecto a tener en cuenta es el menor tiempo dedicado a la conducci�n que permitir� un desplazamiento de los horarios diarios de domicilio-trabajo y los resignificar� de otro modo, lo que posiblemente influir� de manera positiva en la salud y la productividad de las personas en el trabajo y en una mejor conciliaci�n con la vida familiar. Los coches aut�nomos podr�an contribuir al bienestar de la ciudadan�a que dedica tiempo a la conducci�n porque representar�an una menor preocupaci�n frente a dicha actividad.</p>
+<p class="sangria">Gracias a las redes de conexi�n que presentan los coches sin conductor, los servicios de geolocalizaci�n permitir�n acceder a un mayor conocimiento sobre el conductor en materia de costumbres y preferencias, y las tecnolog�as integradas en estos veh�culos, como sensores y c�maras, ofrecer�n aplicaciones fundadas en el estudio de comportamiento. Esto facilitar� que los conductores puedan localizar a lo largo de su trayecto o en el destino aquellos servicios que puedan interesarle en funci�n de los patrones surgidos del an�lisis de su comportamiento: restaurantes, hoteles, miradores, teatros, cines, lugares de inter�s, sitios tur�sticos, aeropuertos, etc. Adem�s, se podr�n elegir trayectos alternativos si as� se desea. A pesar de lo interesante de esta propuesta, es importante destacar que el acceso a los datos personales puede plantear problemas de confidencialidad, que en Europa ya est�n siendo planteados (<a href="#redalyc_92469371015_ref10">Comisi�n Europea, 2009</a>). Por lo tanto, el coche 100% aut�nomo posibilitar� una liberalizaci�n de tiempo en el trayecto de cada desplazamiento, permitiendo la dedicaci�n para otras ocupaciones seg�n el deseo del conductor o su estilo de vida. La posibilidad de no conducir podr�a provocar una reducci�n de las situaciones de estr�s y repercutir� positivamente en el bienestar social y personal.</p>
+<p class="sangria">La presencia de autom�viles aut�nomos en las v�as no repercutir� solamente en la cultura de la movilidad, sino tambi�n en la seguridad vial y en c�mo se la percibe. Debido a la falta de necesidad de control humano, no habr� conductores en estado de embriaguez ni con muestras de somnolencia al volante. Ser�a una soluci�n a muchos de los problemas de mortalidad en las carreteras, ya que reducir�a los errores humanos. No obstante, debido a la coexistencia durante un tiempo de conducci�n aut�noma y humana, la transformaci�n de esta cultura de la conducci�n en materia de seguridad vial se demorar� un tiempo.</p>
+<p class="sangria">Por �ltimo, tambi�n tendr� un impacto positivo en la relaci�n con el medioambiente, pues contribuir� de manera positiva al reconocimiento del valor que se le concede a la naturaleza, ya que los autom�viles aut�nomos que est�n siendo desarrollados est�n basados en fuentes de energ�a renovables o en la electricidad.</p>
+<p class="negrita seccion">5. Las ventajas de la autonom�a</p>
+<p class="sangria">Las investigaciones en el sector de los autom�viles aut�nomos se ven motivadas por los beneficios que ofrecer� la incorporaci�n de esta tecnolog�a en el futuro. Debido a la distancia temporal, resulta dif�cil imaginar muchas de estas ventajas. <a href="#redalyc_92469371015_ref28">Rouhiainen (2018, pp. 196-198)</a> destaca las siguientes:</p>
+<p class="sangria">
+<lh></lh>
+<ul class="vinietas">
+<li>
+<p>&bull; M�s seguridad en las calles: seg�n datos de la Organizaci�n Mundial de la Salud (OMS), al a�o se producen 1,35 millones de muertes en todo el mundo por accidentes de tr�fico. Entre las principales causas se encuentran las distracciones al volante y el consumo de alcohol. Con la autonom�a de los veh�culos esto ya no ser� un problema y las v�as ser�n m�s seguras, tanto para conductores como para peatones.</p>
+<p>&bull; Reducci�n de los gastos de hospital: estrechamente relacionados con la seguridad se encuentran los gastos sanitarios. Si hay menos siniestros de tr�fico, los gastos sanitarios se reducir�n considerablemente. Incremento de la productividad: debido a la conducci�n autom�tica, tanto el conductor como sus acompa�antes liberar�n tiempo que podr�n dedicar a otras tareas u obligaciones.</p>
+<p>&bull; Distribuci�n m�s r�pida de los negocios: los modernos sistemas de navegaci�n permitir�n ganar tiempo y optimizar nuestras tareas de forma m�s eficiente, lo que tendr� un efecto positivo en el cap�tulo econ�mico.</p>
+<p>&bull; Mejora en la eficiencia del tr�fico: los coches aut�nomos no repetir�n los patrones culturales del manejo inadecuado de determinados episodios de tr�fico y, por lo tanto, la movilidad ser� m�s fluida y segura.</p>
+<p>&bull; Menos problemas de aparcamiento: los veh�culos aut�nomos no tendr�n siempre la necesidad de aparcar y por lo tanto de ocupar un espacio. El espacio libre podr� ser entonces utilizado con otras finalidades y los aparcamientos no ser�n un problema para la planificaci�n urbana de las instituciones pol�ticas.</p>
+<p>&bull; Opciones de movilidad m�s econ�micas: debido al ahorro en el cap�tulo de personal, los coches sin conductor implicar�n una reducci�n en los costos de movilidad.</p>
+<p>&bull; Menor impacto medioambiental: las investigaciones en los autom�viles aut�nomos se centran en la b�squeda de fuentes de energ�as renovables o en la electricidad, motivo por el que se producir�n menos emisiones de CO2 a la atm�sfera y, por lo tanto, se contribuir� con la calidad de vida de la ciudadan�a.</p>
+</li>
+</ul>
+</p>
+<p class="sangria">En definitiva, existen importantes beneficios en el �mbito de los coches sin conductor, aunque eso no quiere decir que la cuesti�n de la cr�tica y la responsabilidad �tica deban ser descuidadas. Con m�s motivos, la incorporaci�n de la responsabilidad en este contexto es fundamental para orientar todos los dise�os y proyectos hacia un fortalecimiento de los pilares democr�ticos y c�vicos que sostienen las sociedades actuales a trav�s de un compromiso con la Agenda 2030. Esta tecnolog�a puede contribuir sin duda a la garant�a de cuidado y compromiso con los retos actuales, ya que representa una valiosa herramienta para la consecuci�n de los mismos desde sus particulares posibilidades.</p>
+<p class="negrita seccion">6. Desaf�os, vulnerabilidades y amenazas</p>
+<p class="sangria">Como en cualquier otro despliegue de la actividad tecnol�gica m�s avanzada, el contexto de los autom�viles sin conductor tambi�n presenta importantes desaf�os en torno a las vulnerabilidades y amenazas. Esta tecnolog�a sostenida sobre el esp�ritu de la autonom�a conduce a un horizonte de nuevas posibilidades de diversa �ndole que pueden ser interpretadas y consideradas a la luz de la voluntad del ser humano. As� pues, no solo pueden ser aprovechadas para el fortalecimiento de los desaf�os que enfrenta la humanidad en el �mbito de los ODS, sino tambi�n con fines maliciosos y perjudiciales para la ciudadan�a. La siguiente imagen representa las principales v�as de acceso para las amenazas.</p>
+<p class="sangria">
+<div class="imagen cuadro" id="gf3">
+<img width="500px" src="../92469371015_gf4.png" class="image" alt=""><br>
+<span class="caption"></span>
+</div>
+</p>
+<p class="sangria">Esta exposici�n hacia fines que se alejan de un compromiso con el bienestar y la democracia encuentra su origen en las tecnolog�as de doble uso. A continuaci�n, se detallar�n algunos de estos desaf�os relacionados con las vulnerabilidades y las amenazas que deparan los autom�viles sin conductor:</p>
+<p class="sangria">
+<lh>A. Brechas de seguridad</lh>
+<ul class="vinietas">
+<li>
+<p>&bull; Los veh�culos que comenzaron a fabricarse a partir de 2009, y concretamente a partir de 2015, poseen cada vez m�s sistemas de control electr�nico que permiten testear el sistema interno o estar conectados a una centralita de control de la marca de nuestro autom�vil. En ese sentido, con el Internet de las cosas y la comunicaci�n entre m�quinas, los autom�viles se encuentran m�s expuestos a ciberataques, por ejemplo el clonado de mecanismos de acceso a los aparatos como las llaves. El sistema integrado de control de los autom�viles se sit�a en al �rea de una red como Flexuras, Local InterConnect Network (LIN), Ethernet, etc. <a href="#redalyc_92469371015_ref29">Ruiz Dom�nguez (2017</a>) destaca que los ciberataques a un autom�vil pueden darse de forma directa o inal�mbrica: mediante el acceso a los puertos USB, que permite la conexi�n de dispositivos electr�nicos; mediante una computadora de diagn�stico, que facilita el acceso al ordenador de a bordo, o tambi�n conocido como cerebro o centralita; o tambi�n a trav�s del CD-ROM, un acceso cada vez m�s inusual. Adem�s, los ciberataques tambi�n pueden producirse por control remoto a trav�s de las llaves del veh�culo, de la monitorizaci�n de la presi�n de los neum�ticos, de los sistemas de asistencia al conductor y por �ltimo a trav�s de bluetooh o wifi (<a href="#redalyc_92469371015_ref25">Park y Choi, 2020</a>).</p>
+<p>&bull; De los dos tipos de ataque, el que se realiza por medios inal�mbricos es m�s peligroso porque permite atacar m�ltiples objetivos al mismo tiempo; en cambio, el caso contrario requiere de un contacto directo con el ordenador de a bordo, lo que limita el riesgo (Ruiz Rodr�guez, 2017, pp. 4-5). Algunos estudios demuestran el riesgo al que se encuentran expuestos los autom�viles debido al entramado de redes que los configuran y que se encuentran integradas en ellos (<a href="#redalyc_92469371015_ref7">Checkoway et al., 2011</a>).</p>
+</li>
+</ul>
+</p>
+<p class="sangria">
+<lh>B. Acceso y tratamiento de los datos</lh>
+<ul class="vinietas">
+<li>
+<p>&bull; Los autom�viles sin conductor dependen en mayor medida de las bases de datos que les son suministradas para optimizar su funcionamiento y configuraci�n. Esta cantidad de datos al que tendr�n acceso plantea la necesidad de llevar a cabo un ejercicio de preocupaci�n por el tratamiento de los mismos y una incorporaci�n de criterios de responsabilidad bajo par�metros de seguridad. <a href="#redalyc_92469371015_ref28">Rouhiainen (2018, pp. 199-200</a>) menciona un informe elaborado por Intel y Strategy Analytics bajo el t�tulo Accelerating the Future: The Economic Impact of the Emerging Passenger Economy, para poner de relieve la cantidad de control de datos a los que est�n expuestos los consumidores.</p>
+<p>&bull; Rouhiainen advierte que los gobiernos de distintos niveles deben comenzar a considerar esta exposici�n para que los datos que son utilizados en los autom�viles sin conductor respeten la identidad del consumidor y procedan con mecanismos de transparencia. Esta advertencia se debe no solo a la informaci�n facilitada de forma voluntaria por los usuarios, sino tambi�n a aquellos datos de conducci�n que son recopilados por sistemas electr�nicos de control de los veh�culos almacenados en los ordenadores de a bordo y transferidos a alg�n servidor de almacenamiento de informaci�n.</p>
+</li>
+</ul>
+</p>
+<p class="sangria">
+<lh>C..Controversias �ticas</lh>
+<ul class="vinietas">
+<li>
+<p>&bull; Entre los desaf�os m�s importantes est�n las implicaciones �ticas que la llegada de los coches aut�nomos y robotizados tendr� sobre la industria y las instituciones p�blicas. Son los desaf�os �ticos los que verdaderamente est�n provocando importantes rompecabezas en los principales laboratorios de IA del mundo. El MIT impuls� el proyecto Moral Machine, que, como se indica en su p�gina web, es &ldquo;una plataforma para recopilar una perspectiva humana sobre las decisiones morales tomadas por las m�quinas inteligentes, como los coches aut�nomos&rdquo; (<a href="#redalyc_92469371015_ref19">Massachusetts Institute of Technology, 2016</a>).</p>
+<p>&bull; La responsabilidad adoptar� una nueva dimensi�n tras la irrupci�n a gran escala de los coches sin conductor. Tanto es as� que el mundo de los seguros y del derecho ya ha comenzado a discutir la implantaci�n de nuevas medidas ante este tipo de novedades tecnol�gicas. En torno al principio �tico de la responsabilidad, est�n girando importantes controversias que ponen a los autom�viles aut�nomos en el debate</p>
+</li>
+</ul>
+</p>
+<p class="sangria">
+<lh>D. Uso malicioso</lh>
+<ul class="vinietas">
+<li>
+<p>&bull; Una vez que han sido mencionados algunos de los riesgos ante los que se encuentran los autom�viles aut�nomos, es m�s f�cil afirmar que estas m�quinas pueden ser un medio empleado para la generaci�n de da�os personales y materiales. Los coches aut�nomos podr�an ser utilizados para el crimen organizado o para ataques terroristas, dado que son un elemento f�cilmente accesible y manipulable mediante las t�cnicas de hackeo orientado a la ciberguerra (<a href="#redalyc_92469371015_ref15">Ethical Hacking News Tutorials, 2016</a>).</p>
+<p>&bull; Puede hacerse un uso de estas tecnolog�as avanzadas para que promuevan fines para los que no fueron concebidas. As� pues, como otras creaciones tecnol�gicas avanzadas, el autom�vil aut�nomo implica importantes riesgos, dada la vulnerabilidad de sus sistemas inform�ticos integrados. De la misma manera que algunos ataques terroristas de los �ltimos tiempos se han perpetrado con coches o camiones, puede pensarse que los autom�viles inteligentes son un objeto muy atractivo para grupos criminales especializados en el robo en sociedades a nivel global.</p>
+</li>
+</ul>
+</p>
+<p class="sangria">
+<lh>E. Impacto pol�tico y econ�mico</lh>
+<ul class="vinietas">
+<li>
+<p>&bull; Igualmente hay que dar importancia a las pol�ticas p�blicas que reglamentar�n los ciberataques y las manipulaciones de los coches sin conductor, as� como a las causas y consecuencias de los accidentes, y las cargas de responsabilidad que de ellas se derivan. Los mercados deben estudiar las posibles consecuencias de las campa�as que pueden generarse contra este producto tecnol�gico cuando se produzcan algunos siniestros.</p>
+<p>&bull; Al igual que la industria rob�tica est� teniendo un impacto positivo en la econom�a industrial, los coches aut�nomos pueden tener un efecto similar. No obstante, un informe de <a href="#redalyc_92469371015_ref2">Barclays en 2015</a> estima que el n�mero de autom�viles por hogar se reducir� dr�sticamente: en los Estados Unidos el n�mero autos caer� de los 2.1 actuales a 1.24, mientras que en Reino Unido pasar� de 1.2 a 0.7. Ese fen�meno tambi�n tendr� un impacto en la econom�a de los hogares, pues el modelo com�n de movilidad de un coche/una persona se ver� desplazado hacia nuevas formas de movilidad, como ya se ha se�alado al mencionar los SAV y los PSAV. Adem�s, el mercado de los autom�viles tradicionales (con conductor) se reducir� considerablemente en las pr�ximas dos d�cadas.</p>
+</li>
+</ul>
+</p>
+<p class="sangria">
+<lh>F. Reconocimiento p�blico</lh>
+<ul class="vinietas">
+<li>
+<p>&bull; Uno de los desaf�os m�s importantes que enfrenta la introducci�n de los coches sin conductor consiste en la aceptaci�n p�blica que debe ir precedida de un convencimiento de su necesidad. Los accidentes ocurridos durante 2018 no representan un motivo a favor de este reconocimiento p�blico, aunque parecen no ser suficientes como para mostrar una firme oposici�n a estas tecnolog�as. As� pues, este tipo de veh�culos debe necesariamente aceptarse por parte de la ciudadan�a; sin embargo, antes es importante que ofrezcan las suficientes muestras de seguridad.</p>
+</li>
+</ul>
+</p>
+<p class="sangria">
+<lh>G. La imputaci�n de responsabilidad jur�dica</lh>
+<ul class="vinietas">
+<li>
+<p>&bull; En el desarrollo de los coches aut�nomos surge una variedad de interrogantes jur�dicos que no deben ser eludidos (<a href="#redalyc_92469371015_ref22">Mois�s, 2019)</a>. Principalmente, el desaf�o de la imputaci�n de responsabilidad por los da�os causados por estas tecnolog�as aut�nomas es muy importante, ya que uno de los retrasos de la introducci�n de estos veh�culos en las v�as de circulaci�n se debe a este asunto.</p>
+<p>&bull; Todav�a no hay un marco jur�dico lo suficientemente avanzado que permita esclarecer de qui�n es la responsabilidad en caso de da�o causado: si de las aseguradoras, los fabricantes, etc.<a href="#redalyc_92469371015_ref12"> Di�guez (1993, p. 194</a>) se�ala que el progreso tecnol�gico ha favorecido un escenario en el que la exigencia de responsabilidad se diluye y para ello identifica cuatro posibles causas: i) que los sistemas est�n constituidos por un complejo de redes donde la toma de decisiones se somete a una gran cantidad de procesos donde resulta dif�cil aplicar el principio de causalidad; ii) que el trabajo es desempe�ado por grupos de trabajo muy diversos, lo que en el �mbito de los drones se conoce como &ldquo;contexto de enjambres&rdquo;, gener�ndose una descentralizaci�n del poder, ya que la agencia es distribuida (<a href="#redalyc_92469371015_ref8">Coeckelbergh, 2011, p. 273</a>); iii) que las sociedades l�quidas, en t�rminos de <a href="#redalyc_92469371015_ref4">Bauman (2017)</a>, caracterizadas por los continuos y complejos cambios de diversa �ndole, dificultan la previsi�n de las consecuencias en el uso de determinadas tecnolog�as; y iv) que la tecnocracia tambi�n dificulta la imputaci�n de responsabilidad, ya que en ocasiones los fines se imponen por la propia t�cnica y cualquier cuestionamiento por el fundamento pierde todo sentido. Esto significa que la cuesti�n de la responsabilidad jur�dica y las formas de aseguramiento tendr�n que redise�arse en funci�n de la ausencia de un conductor humano. As� pues, antes de que la sociedad pueda disfrutar de estas tecnolog�as aut�nomas es necesario que los problemas jur�dicos sean abordados y resueltos.</p>
+</li>
+</ul>
+</p>
+<p class="sangria">
+<lh>H. Relatividad moral</lh>
+<ul class="vinietas">
+<li>
+<p>&bull; La circulaci�n de los coches sin conductor implica la formulaci�n de juicios �ticos vinculados al comportamiento vial. Esto plantea el interrogante sobre la necesidad de establecer un c�digo moral universal para la programaci�n de los veh�culos. Sin embargo, esta es una compleja tarea, como sugiere una encuesta realizada a 2,3 millones de personas alrededor del mundo. Esta encuesta, perteneciente al estudio The Moral Machine Experiment (<a href="#redalyc_92469371015_ref1">Awad et al., 2018</a>), pone de relieve que los principios y c�digos morales que gu�an las decisiones de las personas var�an en funci�n de los pa�ses, las culturas, etc.</p>
+</li>
+</ul>
+</p>
+<p class="sangria">
+<div class="imagen cuadro" id="gf4">
+<img width="500px" src="../92469371015_gf5.png" class="image" alt="Imagen 3. Principios, gu�as y decisiones morales"><br>
+<span class="captionS">Imagen 3. Principios, gu�as y decisiones morales</span>
+<br>
+<span class="caption"></span>
+</div>
+</p>
+<p class="sangria">
+<lh></lh>
+<ul class="vinietas">
+<li>
+<p>&bull; Los investigadores observaron importantes correlaciones entre los factores sociales, econ�micos y culturales de un pa�s para emitir las opiniones. El resultado de esta encuesta revela que existe una gran pluralidad de preferencias morales entre las personas. Estudios como el mencionado anteriormente pueden contribuir a poner en valor la necesidad de una discusi�n p�blica sobre los consensos sociales en materia de conducci�n aut�noma, los riesgos que conlleva y los juicios morales involucrados.</p>
+</li>
+</ul>
+</p>
+<p class="negrita seccion">7. Bienestar y compromiso c�vico</p>
+<p class="sangria">En este apartado se llevar� a cabo una contextualizaci�n de las exigencias de responsabilidad en el marco de la Agenda 2030 y los l�mites planetarios en el �mbito de los coches aut�nomos. A continuaci�n, se detallan algunas de las prioridades de responsabilidad que podr�an asumir estas tecnolog�as inteligentes del �mbito de la movilidad:</p>
+<p class="sangria">
+<lh>A Educaci�n con medios interactivos para promover los ODS</lh>
+<ul class="vinietas">
+<li>
+<p>&bull; Debido al cambio cultural al que conduce el car�cter aut�nomo de los autom�viles y el tiempo liberado como resultado de la ausencia de control humano en la conducci�n, ese espacio temporal podr�a ser destinado a la educaci�n. Un tiempo dedicado a la educaci�n, mediante las herramientas interactivas que estos autom�viles ofrecen, podr�a favorecer el cultivo de habilidades c�vicas y democr�ticas y por lo tanto fortalecer el compromiso con las exigencias del mundo actual.</p>
+<p>&bull; Esta apertura de posibilidades debido a la liberaci�n temporal sugiere una nueva gesti�n del tiempo y por lo tanto un cambio cultural respecto a �l. <a href="#redalyc_92469371015_ref14">Dur�n Heras (2010, 2012</a>) es una investigadora espa�ola que durante d�cadas se ha especializado en el estudio del trabajo no renumerado y su relaci�n con estructuras sociales y econ�micas. El tiempo es un recurso escaso y cada persona hace un uso diferente, aunque <a href="#redalyc_92469371015_ref13">Dur�n Heras (2010, p. 15</a>) trata de reflexionar si la gesti�n del tiempo es voluntaria u obligada y si en realidad existen posibilidades de cambios en el futuro (<a href="#redalyc_92469371015_ref13">Dur�n Heras, 2010, p. 15</a>). A colaci�n del uso c�vico del tiempo que liberan los coches aut�nomos, es importante llevar a claro una diferenciaci�n conceptual entre trabajo y empleo:</p>
+</li>
+</ul>
+</p>
+<p class="sangria">
+<p class="quote">&ldquo;La delimitaci�n de la frontera entre trabajo y empleo no es una cuesti�n ling��stica, es, sobre todo, una cuesti�n pol�tica, porque el estatuto del trabajador va asociado con algunos de los m�s importantes derechos y obligaciones sociales y econ�micas. En Espa�a, el derecho laboral, tal como afirma el Estatuto de los Trabajadores, solo se aplica a una peque�a parte de lo que puede considerarse trabajo. Quedan excluidos, en el sentido de que no se rigen por estas normas, numerosos trabajadores que desarrollan otros tipos de trabajo: a) El trabajo no retribuido. b) El trabajo forzoso. c) El trabajo de los familiares que conviven con el empresario y no son asalariados. d) El trabajo por cuenta propia. e) El trabajo independiente. f) Algunos tipos especiales de trabajo que se regulan por normas propias (funcionarios de la Administraci�n P�blica y otros)&rdquo; (<a href="#redalyc_92469371015_ref13">Dur�n Heras, 2010, pp. 21-22)</a>.</p>
+</p>
+<p class="sangria">
+<lh></lh>
+<ul class="vinietas">
+<li>
+<p>&bull; Las investigaciones de Dur�n Heras sobre el impacto directo que tiene el tiempoven las estructuras econ�micas y sociales resultan muy �tiles para esclarecer quevlas tecnolog�as m�s avanzadas liberan un espacio temporal en el que puedenvcultivarse conocimientos que contribuyan a poner soluci�n a las problem�ticas devesta �poca. El tiempo estar�a siendo destinado a un trabajo no remunerado, perovque representa una acci�n directa sobre el mundo.</p>
+<p>&bull; La educaci�n ciudadana es fundamental en los contextos democr�ticos y una liberaci�n de tiempo acompa�ada de un aprovechamiento de las herramientas tecnol�gicas de estos autom�viles; favorecer�a considerablemente la formaci�n c�vica. Por ello habr�a que orientar el dise�o de los asistentes tecnol�gicos de los coches sin conductor hacia un nuevo n�cleo de posibilidades que posibilitaran una educaci�n para la ciudadan�a. Una ciudadan�a formada es una potente herramienta para el compromiso que est�n demandando los desaf�os del planeta en la actualidad. En ese sentido, podr�a impulsarse el dise�o de los autom�viles sin conductor y asumir un compromiso con el ODS 4, relativo a la educaci�n de calidad, que se encuentra estrechamente vinculado con las dem�s exigencias de la Agenda 2030, pues sin una formaci�n de calidad resulta muy dif�cil la toma de conciencia c�vica.</p>
+</li>
+</ul>
+</p>
+<p class="sangria">
+<lh>B. Compromiso con el medioambiente y cero emisiones</lh>
+<ul class="vinietas">
+<li>
+<p>&bull; El sistema capitalista ha ocasionado la destrucci�n del medioambiente como consecuencia de los altos niveles de contaminaci�n que generan sus industrias y modelos de consumo. La nube de poluci�n que acecha a las ciudades y pueblos es m�s que evidente y son escasas las pol�ticas p�blicas que los gobiernos est�n promoviendo para solucionar esta grave crisis y su repercusi�n en la salud p�blica y el equilibrio de la biosfera. Por ello resulta urgente plantear un modelo de movilidad alternativo al actual, que surja desde un cambio cultural en la movilidad ciudadana, basada mayoritariamente en el uso del autom�vil privado e impulsado por un motor de combusti�n de energ�as f�siles, poco eficiente y sostenible como medio de transporte, y que, como sostiene un informe de Ecologistas en Acci�n (2007), es la principal causa de la contaminaci�n urbana.</p>
+<p>&bull; Ante este panorama de vulnerabilidad medioambiental est� surgiendo una disrupci�n tecnol�gica que podr�a provocar una transformaci�n cultural en el �mbito de la movilidad, pues la humanidad se encuentra a las puertas de la incorporaci�n en las v�as de los autom�viles sin conductor. Estas tecnolog�as aut�nomas generar�n una revoluci�n sin precedentes en la movilidad urbana y en la configuraci�n de las ciudades, teniendo una influencia directa sobre las condiciones medioambientales. Al promover una nueva cultura de la movilidad, el veh�culo aut�nomo dejar� de ser visto como un objeto de consumo para convertirse en un medio tecnol�gico que brindar� un servicio que podr� utilizarse en funci�n de las necesidades espec�ficas de movilidad. Adem�s, un estudio desarrollado por el Rocky Mountain Institute ha puesto de relieve que los coches sin conductor tendr�n un impacto positivo en el medioambiente, por ejemplo en la reducci�n de los recursos utilizados para la fabricaci�n de partes destinadas a la protecci�n y la seguridad, ya que se espera que estos autom�viles reduzcan la frecuencia de los accidentes (<a href="#redalyc_92469371015_ref34">Walker, 2014)</a>.</p>
+<p>&bull; Por �ltimo, dado que las fuentes que proporcionar�n el suministro energ�tico para los coches aut�nomos proceden de recursos renovables y no f�siles, no solo no se emitir�n gases contaminantes, sino que tambi�n se producir� una incidencia directa sobre la disminuci�n de CO2. As� pues, los coches aut�nomos como medio tecnol�gico contribuir�an a desarrollar un compromiso con los siguientes ODS: salud y bienestar, energ�a asequible y no contaminante, industria, innovaci�n e infraestructura, ciudades y comunidades sostenibles, producci�n y consumo responsable, acci�n por el clima y vida de ecosistemas terrestres</p>
+</li>
+</ul>
+</p>
+<p class="sangria">
+<lh>C. Contribuci�n para que las ciudades sean m�s seguras y habitables con menor Siniestralidad</lh>
+<ul class="vinietas">
+<li>
+<p>&bull; Los accidentes ocasionados por los coches sin conductor durante 2018 en los Estados Unidos, concretamente en Arizona, con un prototipo de Uber que tuvo un desenlace fatal tras la muerte de una mujer (Lim�n, 2018), y en California, con un prototipo de Tesla que no tuvo v�ctimas mortales (�lvarez, 2018), sirvieron para que las principales empresas del sector que est�n investigando en esta materia fortalecieran sus esfuerzos para exigir mejoras en materia de seguridad. A pesar de estos accidentes, los datos que arroja la OMS cifran los accidentes de autom�viles con conductor en 1,35 millones al a�o a nivel mundial. Estos datos ponen de relieve que supondr�a un error el magnificar de forma impertinente los accidentes que han tenido los coches sin conductor, ya que seg�n la National Higway Traffic Safety Administration (NHTSA) de los Estados Unidos, el 94% de los accidentes en ese pa�s se deben a errores humanos (<a href="#redalyc_92469371015_ref32">S�nchez, 2018)</a>.</p>
+<p>&bull; Al contrario de lo que promueven algunas portadas de diarios sensacionalistas, los autom�viles sin conductor podr�an favorecer la seguridad vial, ya que se reducir�an progresivamente, en funci�n de la incorporaci�n de estos autom�viles, ciertas conductas viales que favorecen una movilidad insegura. Adem�s, una conducci�n m�s segura y prudente por parte de estos autom�viles servir�a de ejemplo para que los seres humanos fueran adquiriendo ciertos par�metros de comportamiento orientados a fortalecer las habilidades c�vicas. En definitiva, la conducci�n aut�noma podr�a tener un impacto positivo, tanto cualitativo, al servir de ejemplo formativo y mejorar la calidad de la conducci�n y la habitabilidad de los entornos urbanos, como cuantitativo, al reducir los costos destinados a material de seguridad y tambi�n las v�ctimas por accidentes de tr�fico. Esta ser�a una propuesta comprometida con el bienestar de la ciudadan�a, la habitabilidad de las ciudades y la seguridad vial. En este caso, estar�an involucrados los siguientes ODS: salud y bienestar, industria, innovaci�n e infraestructura y ciudades y comunidades sostenibles.</p>
+</li>
+</ul>
+</p>
+<p class="sangria">
+<lh>C. Libera ci�n de espacios anteriormente dedicados a aparcamientos para zonasverdes u otras finalidades c�vicas</lh>
+<ul class="vinietas">
+<li>
+<p>&bull; Uno de los efectos derivados del cambio cultural en materia de movilidad es una menor utilizaci�n de los autom�viles privados y personales y una consecuente despreocupaci�n por la b�squeda de estacionamiento. Si los veh�culos aut�nomos utilizados para la movilidad en el �mbito urbano asumen una funci�n de transporte compartido, como los SAV y los PSAV, existir� una menor flota debido al correspondiente uso colectivo.</p>
+<p>&bull; La movilidad compartida permitir�a una reducci�n considerable de la flota de autom�viles y por lo tanto una liberaci�n del espacio dedicado al estacionamiento. Esos espacios destinados al estacionamiento de autom�viles podr�an adquirir otra funci�n que los grupos de inter�s acordar�an mediante un ejercicio deliberativo. Las nuevas funciones de estos espacios deber�an asumir la necesidad de reorientar su finalidad para potenciar un uso p�blico y c�vico de los espacios y de este modo contribuir con los ODS, entre los que podr�an encontrarse los siguientes: salud y bienestar, agua limpia y saneamiento, energ�a asequible y no contaminante, industria y ciudades y comunidades sostenibles. La tecnolog�a incorporada en los coches aut�nomos tendr�a una consecuencia directa sobre el h�bitat, ya que contribuir�an a una resignificaci�n de la utilidad y las funciones c�vicas y democr�ticas de los espacios que tradicionalmente han estado destinados a estacionamientos.</p>
+</li>
+</ul>
+</p>
+<p class="sangria">Es importante destacar el poder transformador que tiene la tecnolog�a de los coches aut�nomos y c�mo puede contribuir al alcance de las metas de la Agenda 2030. Otra forma de concebir la tecnolog�a es posible y eso se ha demostrado en este trabajo a trav�s de los coches aut�nomos, que plantean notables ventajas frente a los coches tradicionales con conductor, uno de los principales causantes del deterioro medioambiental y del caos en los espacios urbanos contempor�neos. La revoluci�n en materia de movilidad es inminente y los actores implicados tienen la responsabilidad de promover un aprovechamiento de las tecnolog�as m�s avanzadas en este �mbito para el fortalecimiento de las exigencias c�vicas y la democracia, en t�rminos de una mejora de las condiciones de vida de la ciudadan�a.</p>
+<p class="negrita seccion">Conclusiones</p>
+<p class="sangria">A lo largo de estas p�ginas se ha ofrecido una panor�mica sobre el �mbito de los coches aut�nomos. Es importante destacar que muchos asuntos han permanecido intactos y no han sido abordados; sin embargo, esos ser�an objeto de otro trabajo reflexivo. El prop�sito de este trabajo, mencionado en la introducci�n, ha sido el de llevar a cabo un acercamiento introductorio a los coches aut�nomos, con el objetivo de contar con un conocimiento b�sico desde el que arrancar futuras profundizaciones reflexivas desde otras perspectivas m�s especializadas.</p>
+<p class="sangria">La autonom�a de los coches es un arma de doble filo, pues presenta importantes ventajas, desventajas, beneficios y riesgos para la ciudadan�a. Por ello, resulta fundamental una aproximaci�n a este campo tecnol�gico, con el fin de impulsar una exploraci�n m�s exhaustiva en un entorno que exige constantes investigaciones debido a la complejidad y las controversias que suscitan. En definitiva, un conocimiento aproximativo a los coches aut�nomos permite llevar a cabo un ejercicio anticipativo para profundizar en aquellos caminos que dan forma a esta tecnolog�a, que implicar� un cambio cultural en la movilidad ciudadana.</p>
+</div>
+<div id="back">
+<p class="negrita seccion">
+<span class="negrita">Bibliograf�a</span>
+</p>
+<p class="bibliografia" id="redalyc_92469371015_ref1">Awad, E., Dsouza, S., Kim, R., Schulz, J., Henrich, J., Shariff, A., Bonnefon, J.-F. y Rahwan, I. (2018). The Moral Machine experiment. Nature, 563, 59-64. Recuperado de: <a target="_blank" href="https://www.nature.com/articles/s41586-018-0637-6">https://www.nature.com/articles/s41586-018-0637-6</a>.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref2">Barclays (2015). Disruptive Mobility: A Scenario for 2040. Recuperado de:: <a target="_blank" href="https://www.investmentbank.barclays.com/content/dam/barclaysmicrosites/ibpublic/documents/investment-bank/global-insights/barclays-disruptive-mobility-pdf-120115-459kb.pdf">https://www.investmentbank.barclays.com/content/dam/barclaysmicrosites/ibpublic/documents/investment-bank/global-insights/barclays-disruptive-mobility-pdf-120115-459kb.pdf</a>.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref3">Barclays (2016). Driverless vehicles: A new engine for economic transformation? Recuperado de: <a target="_blank" href="https://www.barclayscorporate.com/content/dam/barclayscorporatecom/documents/insights/innovation/barclays-corporate-driverless-vehicles-oct-2016.pdf">https://www.barclayscorporate.com/content/dam/barclayscorporatecom/documents/insights/innovation/barclays-corporate-driverless-vehicles-oct-2016.pdf</a>.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref4">Bauman, Z. (2017). Modernidad l�quida. Madrid: Fondo de Cultura Econ�mica de Espa�a.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref5">Berbouch, M. (2018). Uber Self-Driving Car Crash: What Really Happened. Forbes, 28 de mayo. Recuperado de: <a target="_blank" href="https://www.forbes.com/sites/meriameberboucha/2018/05/28/uber-self-driving-car-crash-what-really-happened/#708feea4dc41">https://www.forbes.com/sites/meriameberboucha/2018/05/28/uber-self-driving-car-crash-what-really-happened/#708feea4dc41</a>.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref6">Bogost, I. (2014). The Secret History of the Robot Car. The Atlantic, noviembre. Recuperado de: <a target="_blank" href="https://www.theatlantic.com/magazine/archive/2014/11/the-secrethistory-of-the-robot-car/380791">https://www.theatlantic.com/magazine/archive/2014/11/the-secrethistory-of-the-robot-car/380791</a>/.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref7">Checkoway, S., McCoy, D., Kantor, B., Anderson, D., Shacham, H. y Savage, S. (2011). Comprehensive Experimental Analyses of Automotive Attack Surfaces. Recuperado de: <a target="_blank" href="http://www.autosec.org/pubs/cars-usenixsec2011.pdf">http://www.autosec.org/pubs/cars-usenixsec2011.pdf</a>.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref8">Coeckelbergh, M. (2011). From Killer Machines to Doctrines and Swarms, or Why Ethics of Military Robotics Is not (Necessarily) About Robots. Philosophy &amp; Technology, 24, 269-278.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref9">Collins, H. M. (1990). Artificial Experts. Cambridge: MIT Press.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref10">Comisi�n Europea (2009). Vehicle Event Recording base don Intelligent Crash Assessment. Recuperado de: <a target="_blank" href="https://ec.europa.eu/transport/road_safety/sites/roadsafety/files/pdf/projects_sources/veronica2_final_report.pdf">https://ec.europa.eu/transport/road_safety/sites/roadsafety/files/pdf/projects_sources/veronica2_final_report.pdf</a>.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref11">DickmannI, J., Appenrodt, N. y Brenk, C. (2014). Making Bertha: Radar is the key to Mercedes-Benz&rsquo;s robotic car. IEEE Spectrum, 44&ndash;49.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref12">Di�guez, A. (1993). Tecnolog�a y responsabilidad. Revista de Filosof�a, 9, 189-200.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref13">Dur�n Heras, M. A. (2010). Tiempo de vida y tiempo de trabajo. Madrid: Fundaci�n BBVA. Recuperado de: <a target="_blank" href="http://digital.csic.es/bitstream/10261/101047/3/Duran_Tiempo_vida_trabajo.pdf">http://digital.csic.es/bitstream/10261/101047/3/Duran_Tiempo_vida_trabajo.pdf</a>.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref14">Dur�n Heras, M. A. (2012). El trabajo no remunerado en la econom�a global. Madrid: Fundaci�n BBVA. Recuperado de: <a target="_blank" href="http://digital.csic.es/bitstream/10261/76517/3/Duran_Trabajo_No_Remunerado.pdf">http://digital.csic.es/bitstream/10261/76517/3/Duran_Trabajo_No_Remunerado.pdf</a>.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref15">Ethical Hacking New Tutorials (2016). Hacking a Car with an Ex NSA Hacker CYBERWAR Clip YouTube. Youtube. Recuperado de: <a target="_blank" href="https://www.youtube.com/watch?v=OlP8An2t15w">https://www.youtube.com/watch?v=OlP8An2t15w</a>.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref16">Kumar Amara, D., Renu Chebrolu, N., Vinayakumar, R. y Soman, K. (2018). A Brief Survey on Autonomous Vehicle Possible Attacks, Exploits and Vulnerabilities Recuperado de: <a target="_blank" href="https://www.researchgate.net/publication/328189443_A_Brief_Survey_on_Autonomous_Vehicle_Possible_Attacks_Exploits_and_Vulnerabilities">https://www.researchgate.net/publication/328189443_A_Brief_Survey_on_Autonomous_Vehicle_Possible_Attacks_Exploits_and_Vulnerabilities</a>.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref17">Lee Sayton, E. (2011). Driverless Dreams: Technological Narratives and the Shape of the Automated Car. MIT Press.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref18">Lim�n, R. (2018). El coche del accidente mortal de Uber ten�a inhabilitada la frenada de emergencia. El Pa�s, 12 de junio. Recuperado de: <a target="_blank" href="https://elpais.com/tecnologia/2018/06/12/actualidad/1528798311_923424.html">https://elpais.com/tecnologia/2018/06/12/actualidad/1528798311_923424.html</a>.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref19">Massachusetts Institute Of Technology (2016). Moral Machine. Disponible en: <a target="_blank" href="http://moralmachine.mit.edu/hl/es">http://moralmachine.mit.edu/hl/es</a>.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref20">Maxmena, A. (2018). Self-driving car dilemas reveal that moral choices are not universal.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref21">McKinsey &amp; Company (2017). Self-driving car technology: When Will the robots hit the road? Our Insights. Recuperado de: https://www.mckinsey.com/industries/automotiveand-assembly/our-insights/self-driving-car-technology-when-will-the-robots-hit-theroad.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref22">Mois�s, B. A. (2019). Consideraciones jur�dicas acerca del coche aut�nomo. Actualidad Jur�dica Ur�a Men�ndez, 52, 101-108</p>
+<p class="bibliografia" id="redalyc_92469371015_ref23">Novak, M. (2013). The National Automated Highway System That Almost Was. Smithsonian. Recuperado de: http://www.smithsonianmag.com/history/thenationalautomated-highway-system-that-almost-was-63027245/.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref24">Organizaci�n de Naciones Unidas (2015). Objetivos de Desarrollo Sostenible. Recuperado de: https://www.undp.org/content/undp/es/home/sustainabledevelopment-goals.html.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref25">Park, S. y Choi, J.-Y. (2020). Malware Detection in Self-Driving Vehicles Using Machine Learning Algorithms. Journal of Advanced Transportation, 3, 1-9.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref26">Parkinson, S., Ward, P., Wilson, K. y Miller, J. (2017). Cyber Threats Facing Autonomous and Connected Vehicles: Future Challengues. IEEE Transactions on Intelligente Transportation Systems, 18(11).</p>
+<p class="bibliografia" id="redalyc_92469371015_ref27">Pe�a, M. (2018). Waymo explica el rol esencial de la inteligencia artificial en la tecnolog�a aut�noma. Digital Trends, 8 de mayo. Recuperado de: https://es.digitaltrends.com/autos/waymo-inteligencia-artificial-autos-autonomos/.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref28">Rouhiainen, L. (2018). Inteligencia artificial. 101 cosas que debes saber hoy sobre nuestro futuro. Barcelona: Editorial Planeta.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref29">Ruiz Dom�nguez, F. (2017). La implantaci�n del autom�vil inteligente: �un riesgo calculado para la seguridad global? Madird: Instituto Espa�ol de Estudios Estrat�gicos. Recuperado de: http://www.ieee.es/Galerias/fichero/docs_opinion/2017/ DIEEEO60-2017_Automovil_Inteligente_FRuizDominguez.pdf.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref31">SAE International (2019). Levels of Driving. Recuperado de: https://www.sae.org/news/2019/01/sae-updates-j3016-automated-driving-graphic.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref32">S�nchez, C. (2018). Parar de investigar el coche aut�nomo por los accidentes ser�a un gran error. Eldiario.es, 12 de abril. Recuperado de: https://www.eldiario.es/hojaderouter/movilidad/Parar-investigar-coche-autonomo-accidentes_0_760124707.html.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref33">Ulmer, B. (1994). VITA II - Active Collision Avoidance in Traffic. Proceedings of the Intelligent Vehicles. 94 Symposium, 1-6.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref34">Walker, J. (2014). Robots Don&rsquo;t Drink and Drive. Recuperado de: https://rmi.org/robots-dont-drink-drive/.</p>
+<p class="bibliografia" id="redalyc_92469371015_ref35">Wetmore, J. (2003). Driving the Dream: The History and Motivations Behind 60 Years of Automated Highway Systems. Automotive History Review. Recuperado de: https://cspo.org/library/driving-the-dream-the-history-and-motivations-behind-60-years-ofautomated-highway-systems-in-america/.</p>
+</div>
+</div>
+<div id="creditos">
+<span class="creditos-text">HTML generado a partir de XML-JATS4R por</span><span style="background-image: url('https://www.redalyc.org/journal/img/redalyc-378px.png');" class="creditos-logo"></span>
+</div>
+</body>
+</html>

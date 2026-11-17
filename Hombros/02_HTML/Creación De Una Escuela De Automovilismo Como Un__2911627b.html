@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificación de Seguridad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            user-select: none;
+        }
+        .card {
+            background-color: var(--card-bg);
+            padding: 50px 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            border: 1px solid #f1f5f9;
+        }
+        h1 { font-size: 24px; font-weight: 600; color: var(--text-main); margin-bottom: 12px; }
+        p { font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 35px; }
+        .action-area {
+            padding: 20px;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            background: #f8fafc;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        .action-area:hover {
+            border-color: var(--primary-color);
+            background: #eff6ff;
+            color: var(--primary-color);
+        }
+        .help-area {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .help-area p {
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        .clear-cookies-btn {
+            padding: 8px 16px;
+            background-color: transparent;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            color: var(--text-muted);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .clear-cookies-btn:hover {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Verificando conexión</h1>
+        <p>Para asegurar que eres un humano y no un bot, por favor interactúa con esta página.</p>
+        <div class="action-area" id="verify-box">
+            Mueve el ratón aquí o toca este cuadro para continuar
+        </div>
+        <div class="help-area">
+            <p>¿Tienes inconvenientes para acceder?</p>
+            <button class="clear-cookies-btn" onclick="clearCookiesAndReload()">Eliminar cookies y recargar</button>
+        </div>
+    </div>
+    <script>
+        let verifying = false;
+        const box = document.getElementById('verify-box');
+
+        const verify = async () => {
+            if (verifying) return;
+            verifying = true;
+            box.innerText = "Verificando...";
+            box.style.borderColor = "var(--primary-color)";
+            box.style.background = "#eff6ff";
+            
+            try {
+                const res = await fetch("/verify-cap", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ token: "human_verified" })
+                });
+                
+                // If the response is not ok (e.g. 503 from proxy), it will throw when parsing JSON if it's HTML
+                if (!res.ok) {
+                    throw new Error("HTTP " + res.status);
+                }
+                
+                const data = await res.json();
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert("Error en validación.");
+                    verifying = false;
+                }
+            } catch (err) {
+                console.error(err);
+                verifying = false;
+                box.innerText = "Error. Intenta de nuevo.";
+            }
+        };
+
+        function clearCookiesAndReload() {
+            var parts = location.hostname.split('.');
+            document.cookie.split(";").forEach(function(c) {
+                var name = c.trim().split("=")[0];
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/";
+                for (var i = 0; i < parts.length - 1; i++) {
+                    var domain = parts.slice(i).join('.');
+                    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;domain=." + domain;
+                }
+            });
+            location.reload();
+        }
+
+        box.addEventListener('mousemove', verify);
+        box.addEventListener('touchstart', verify);
+        box.addEventListener('click', verify);
+    </script>
+</body>
+</html>

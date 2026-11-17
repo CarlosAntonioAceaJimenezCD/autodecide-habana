@@ -1,0 +1,20 @@
+¡Bienvenidos a nuestro proyecto integrador de predicción de datos en el mercado automotor! Durante este desafío, aplicaremos habilidades en machine learning para explorar, entender y modelar características de vehículos en el mercado actual. Este proyecto forma parte del M6 del Boopcamp el cual nos sirve como práctica previa a la etapa de Labs, sin embargo; cabe destacar que es opcional, no será evaluado,  ni calificado de manera cuantitativa.
+Nuestro cliente, una automotriz china, desea ingresar al mercado de automóviles local. Necesitamos analizar las características de los vehículos actuales para abarcar todos los públicos objetivos. Se proporciona un diccionario de datos con precios y atributos de varios modelos.
+- Implementar un modelo de clasificación para distinguir vehículos de gama alta y baja.
+- Implementar un modelo de regresión para predecir el precio final de los vehículos.
+- /docs - Carpeta que contiene los entregables.
+1.1.Informe De Análisis - Documento que resume hallazgos, metodologías y conclusiones del análisis.
+- /notebooks - Carpeta que contiene Jupyter Notebooks esenciales para el proyecto.
+2.1. Conociendo Nuestro Dataset - Guía detallada que le permitirá comprender la estructura y contenido del conjunto de datos (diccionario de datos).
+2.2. Limpieza de Datos - Notebook dedicado a la limpieza y preprocesamiento de datos.
+2.3. Análisis Exploratorio de Datos - Jupyter Notebook con el código para la exploración y análisis inicial del conjunto de datos.
+2.4. Modelo de Clasificación con Aprendizaje Supervisado - Este modelo permite clasificar el precio de los vehículos en baratos y caros usando la mediana de los precios como punto de corte.
+2.5. Modelo de Regresión con Aprendizaje Supervisado - Jupyter Notebook con el modelo de regresión que permite predecir el precio final de los vehículos.
+- /data - Carpeta dedicada a almacenar archivos relacionados con el manejo de datos.
+|  | Descripción | Nombre de Archivo | 
+|---|---|---|
+| Archivo Original | Representa la información en su forma bruta tal como se adquirió, antes de cualquier manipulación o transformación. | original_dataset.csv | 
+| Archivo con Data Limpia | Después del proceso de limpieza, este archivo contiene datos limpios y listos para su análisis. | cleaned_dataset.csv | 
+- /assets - Carpeta con imágenes y recursos utilizados en el desarrollo del proyecto.
+| Johanna Rangel |  | Gretel Sanchez | 
+|---|---|---|

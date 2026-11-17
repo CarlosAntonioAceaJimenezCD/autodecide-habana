@@ -1,0 +1,116 @@
+UNIVERSIDAD DE CHILE Calidad y Satisfacción en el Servicio a Clientes de la Industria Automotriz: Análisis de Principales Factores que Afectan la Evaluación de los Clientes
+Abstract
+ii "La propiedad intelectual de este trabajo es del profesor que dirigió el Seminario y de los participantes"
+References (112)
+- Satisfacción general.
+- Rapidez de la bienvenida.
+- Comodidad de la sala de espera.
+- Posibilidad de ver vehículos que le interesan.
+- Experiencia de compra sin presiones del vendedor.
+- Interés del vendedor de mostrar vehículo que se ajuste a las necesidades.
+- Trato que entregó el vendedor.
+- Cumplimiento de los compromisos que hizo el vendedor.
+- Conocimiento del vendedor de los modelos de la marca.
+- Conocimiento del vendedor para responder las preguntas.
+- Ofrecimiento de asesoría sobre la garantía por parte del vendedor (Sí o No).
+- Ofrecimiento de asesoría sobre el vehículo por parte del vendedor (Sí o No).
+- Calificación general del vendedor.
+- Explicación de costos totales del vehículo.
+- Estado en que fue entregado el vehículo (limpieza y ausencia de daños).
+- Satisfacción general.
+- Estado de las instalaciones.
+- Tiempo que tuvo que esperar para ser atendido.
+- Explicaciones del asesor de servicio durante la recepción.
+- Tiempo que tomó todo el proceso de recepción del vehículo.
+- Rapidez del proceso de entrega del vehículo.
+- Explicación y cumplimiento del precio autorizado por el cliente.
+- Cumplimiento de trabajos solicitados.
+- Explicación sobre trabajos realizados.
+- Explicación del precio del servicio.
+- Calificación general del Asesor de Servicio.
+- Cortesía y amabilidad del personal que realizó la atención.
+- Alet, J. (1994). Marketing relacional: Cómo obtener clientes leales y rentables. Barcelona: Gestion 200.
+- Babakus, E., & Boller, G. (1992). An empirical assessment of the SERVQUAL scale. Journal of Business Research, 263-268.
+- Bitner, M. (1990). Evaluating service encounters: The effects of physical surroundings and employee responses. Journal of Marketing, 69-82.
+- Bitner, M., Booms, B., & Tetreault, M. (1990). The service encounter: diagnosing favorable and unfavorable incidents. Journal of Marketing, 71-84.
+- Bitner, M., Faranda, W., Hubbert, A., & Zeithaml, V. (1997). Customer contributions and roles in service delivery. International Journal of Service Industry Managment, 193-205.
+- Bloemer, J., Ruyter, K., & Peeters, P. (1998). Investigatin drivers of bank loyalty: the complex relationship beetween image, service quality y satisfacción. International Journal of Bank Marketing, 276-286.
+- Boksberger, P., & Melsen, L. (2009). Perceived value: a critical examination of definitions, concepts and measures for service industry. Journal of Services Marketing, 229-240.
+- Bolton, R., & Drew, J. (1991a). A longitudinal analysis of the impact of service changes on consumer attitudes. Journal of Marketing, 1-9.
+- Bolton, R., & Drew, J. (1991b). A multistage model of customers' assessments of service quality and value. Journal of Customer Research, 275-284.
+- Booms, B., & Bitner, M. (1981). Marketing Strategies and Organizational Structures for Services Firms. En J. Donnelly, & W. George, Marketing of Services (págs. 47- 51). Chicago: American Marketing Association.
+- Boulding, W., Kalra, A., Staelin, R., & Zeithaml, V. (1993). A dynamic process model of service quality: From expectations to behavioural intentions. Journal of Marketing Research, 7-27.
+- Brady, M., & Cronin, J. (2001). Some new thoughts on conceptualizing perceived service quality. Journal of Marketing, 34-49.
+- Burns, M., & Woodruff, R. (1992). Delivering value to customers: implications for strategy development and implementation. En C. Allen, T. Madden, T. Shimp, R. Howell, G. Zinkan, D. Heisley, y otros, Marketing Theory and Application (págs. 209-216). Chicago: American Marketing Association.
+- Carman, J. (1990). Consumer perceptions of service quality: an assessment of the SERVQUAL dimensions. Journal of Retailing, 33-55.
+- Caruana, A., Money, A., & Berthon, P. (2000). Service quality and satisfaction -the moderating role of value. European Journal of Marketing, 1338-1352.
+- Cronin, J., Brady, M., & Hult, G. (2000). Assesing the effects of quality, value and customer satisfaciton on consumer behavioural intentions in service environments. Journal of Retailing, 193-218.
+- Dabholkar, P., Thorpe, D., & Rentz, J. (1996). A measure of service quality for retail stores: scale development and validation. Journal of the Academy of Marketing Science, 3-16.
+- Darby, M., & Karni, E. (1973). Free competition and the optimal amount of fraud. Journal of Law and Economics, 67-86.
+- De Ruyter, K., Bloemer, J., & Peeters, P. (1997). Merging services quality and service satisfaction. An empirical test of an integrative model. Journal of Economic Psychology, 387-406.
+- Dodds, W., Monroe, K., & Grewal, D. (1991). Effects of price, brand and store information on buyers' product evaluations. Journal of Marketing Research, 307- 319.
+- Fornell, C. (1992). A national customer satisfaction barometer: the swedish experience. Journal of Marketing, 6-21.
+- Gallarza, M., & Gil, I. (2006). , 25-59.
+- Giese, J., & Cote, J. (2000). Defining consumer satisfaction. Academy of Marketing Science, 1-24.
+- Gil, I., & González, M. (2008). La investigación en valor percibido desde el marketing. Innovar, 9-18.
+- Gil, I., Sánchez, M., Berenguer, G., & González-Gallarza, M. (2005). Encuentro de servicio, valor percibido y satisfacción del cliente en la relación entre empresas. Cuadernos de Estudios Empresariales, 47-72.
+- Grönroos, C. (1984). A service quality model and its market implications. European Journal of Marketing, 36-44.
+- Heskett, J., Sasser, W., & Schlesinger, L. (1997). The Service-Profit Chain. New York: Free Press.
+- Hirschmann, E., & Holbrook, M. (1982). Hedonic consumption: emerging concepts, methods and propositions. Journal of Marketing, 92-101.
+- Homans, G. (1961). Social Behaviour: Its Elementary Forms. London: Routledge.
+- Hurley , R., & Estelami, H. (1998). Alternative indices for monitoring customer perceptions of service quality: a comparative evaluation in a retail context. Journal of the Academy of Marketing Science, 20-21.
+- Iaboucci, D., Grayson, K., & Ostrom, A. (1994). The calculus of service quality and customer satisfaction: theoretical and empirical differentiation and integration. Advances in Services Marketing and Managment, 1-67.
+- Iacobucci, D. (1992). An empirical examination of some basic tenets in services: Goods-Services continua. En T. Swartz, D. Bowen, & S. Brown, Advances in Services Marketing and Managment (págs. 23-52). Greenwich: JAI Press.
+- Jacoby, J., & Olson, J. (1977). Consumer response to price: an attitudinal, information- processing perspective. En Y. Wind, & M. Greenberg, Moving a Head with Attitude Research (págs. 73-86). Chicago: American Marketing Association.
+- Johnson, M., & Fornell, C. (1991). A framework for comparing customer satisfaction across individuales and product categories. Journal of Economics Psychology, 267-286.
+- Khalifa, A. (2004). Customer value: a review of recent literature and an integrative configuration. Management Decision, 645-666.
+- Lee, H., Lee, Y., & Yoo, D. (2000). The determinants of perceived service quality and its relationship with satisfaction. Journal of Services Marketing, 271-231.
+- Lehtinen, J., & Lehtinen, U. (1982). Service quality: a study of quality dimensions. Unpublished working paper. Helsinki: Service Management Institute.
+- Leigh, J., & Gabel, T. (1992). Symbolic interactionism: its effects on consumer behaviour and implications for marketing strategy. Journal of Services Marketing, 5-16.
+- Nelson, P. (1970). Information nad Consumer Behavior. Journal of Political Economy, 311-329.
+- Nilson, T. (1992). Value-added marketing: marketing managment for superior results. Berkshire: McGraw-Hill.
+- Oliver, R. (1980). A cognitive model of the antecedents and consequences of satisfaction decisions. Journal of Marketing Research, 460-469.
+- Oliver, R. (1993a). A conceptual model of service quality and service satisfaction: compatible goals, different concepts". Advances in Services Marketing and Managment: Research and Practice, 65-85.
+- Oliver, R. (1993b). Cognitive, affective, and attribute bases of the satisfaction response. Journal of Customer Research, 418-430.
+- Ostrom, A., & Iacobucci, D. (1995). Consumer trade-offs and the evaluation of services. Journal of Marketing, 17-28.
+- Parasuraman, A. (1997). Reflections on gaining competitive advantage through customer value. Journal of Academy Marketing Science, 154-161.
+- Parasuraman, A., & Grewal, D. (2000). The impact of technology and the quality-value- loyalty chain: a research agenda. Journal of the Academy of Marketing Science, 168-174.
+- Parasuraman, A., Zeithaml, V., & Berry, L. (1985a). Problems and strategies in service marketing. Journal of Marketing, 33-46.
+- Parasuraman, A., Zeithaml, V., & Berry, L. (1985b). A conceptual model of service quality and its implications for future research. Journal of Marketing, 41-50.
+- Parasuraman, A., Zeithaml, V., & Berry, L. (1988). SERVQUAL: A multiple item scale for measuring cosumer perceptions of service quality. Journal of Retailing, 12- 40.
+- Parker, C., & Mathews, B. (2001). Customer satisfaction: contrasting academic and consumers' interpretations. Marketing Intelligence & Planning, 38-44.
+- Peterson, R., & Wilson, W. (1992). Measuring customer satisfaction: fact and artifact. Journal of the Academy of Marketing Science, 19-30.
+- Ravald, A., & Grönroos, C. (1996). The value concept and relationship marketing. European Journal of Marketing, 19-30.
+- Reichheld, F. (1996). The loyalty effect. Boston: Harvard Bussiness School Press.
+- Richins, M. (1997). Measuring emotions in the consumption experience. Journal of Consumer Research, 127-146.
+- Sánchez, J., Callarisa, L., Rodriguez, R., & Moliner, M. (2006). Perceived value of the purchase of a tourism product. Tourism Management, 394-409.
+- Sureshchandar, G., Rajendran, C., & Anantharaman, R. (2002). The relationship between service quality and customer satisfaction -a factor specific approach. Journal of Services Marketing, 363-379.
+- Vanhamme, J. (2001). L'influence de la surprise sur la satisfaction des consommateurs -étude exploratoire par journal de bord. Recherche et Applications en Marketing, 1-31.
+- Vázquez, R., Díaz, A., & Rodriguez Del Bosque, I. (1997). Calidad de servicio y satisfacción del consumidor: Un enfoque multidimensional para empresas de supermercados. Información Comercial Española, Revista de Economía, 120- 133.
+- Von Neumann, J., & Morgenstern, O. (2004). Theory of Games and Economic Behavior. Princeton: Princeton University Press.
+- Westbrook, R., & Reilly, M. (1983). Value-percept disparity: An alternative to the disconfirmation of expectations theory of customer satisfaction. Advances in Customer Research, 256-261.
+- Yi, Y. (1990). A critical review of customer satisfaction. En V. Zeithaml, Review of Marketing (págs. 68-123). Chicago: American Marketing Association.
+- Zeithaml, V. (1988). Consumer perceptions of price, quality and value: a means-end model and synthesis of evidence. Journal of Marketing, 2-22.
+- Zeithaml, V., & Bitner, M. (2002). Marketing de Servicios. Un enfoque de integración del cliente a la empresa. México: McGraw Hill.
+- Zeithaml, V., Bitner, M., & Gremler, D. (2009). Marketing de Servicios. Ciudad de México: McGraw-Hill/Interamericana.
+- Satisfacción general.
+- Rapidez de la bienvenida.
+- Estado en que fue entregado el vehículo (limpieza y ausencia de daños).
+- Explicación de las características y controles del vehículo durante el proceso de entrega.
+- Cantidad de minutos que tomó el proceso de entrega desde que llegó al concesionario.
+- Calificación general del proceso de entrega.
+- Entrega del vehículo en fecha y hora prometida (Sí o No).
+- Entrega del color correcto del vehículo (Sí o No).
+- Satisfacción general.
+- Estado de las instalaciones.
+- Tiempo que tuvo que esperar para ser atendido.
+- Explicación que hizo el Asesor acerca trabajo a realizar antes de ingresar el vehículo.
+- Explicación que hizo el Asesor acerca del tiempo que tomará el servicio a realizarse en el vehículo.
+- Explicación del precio del servicio.
+- Calificación general del Asesor de Servicio.
+- Cortesía y amabilidad del personal que realizó la atención.
+- Diagnóstico realizado sobre el vehículo.
+- Consideración que tuvieron del tiempo del cliente durante el proceso (desde el primer encuentro hasta la entrega del vehículo).
+- Calificación de los últimos trabajos realizados en el vehículo.
+- Vehículo quedó bien a la primera (Sí o No).
+- Ofrecimiento de taxi o transporte alternativo después de dejar el vehículo (Sí o No). Std. Residual -5,995 3,843 ,003 ,999 1460 a. Dependent Variable: Satisfacción_General

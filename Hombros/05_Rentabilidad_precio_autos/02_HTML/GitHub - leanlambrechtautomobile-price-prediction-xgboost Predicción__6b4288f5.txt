@@ -1,0 +1,100 @@
+Se desarrolla un modelo de aprendizaje automático para estimar el precio de automóviles a partir de sus características técnicas. El desempeño se evalúa mediante métricas de regresión y un análisis segmentado del error para identificar dónde las predicciones son más precisas y en qué grupos presentan mayores desvíos.
+El proyecto aborda un problema de regresión supervisada: predecir el precio de un automóvil a partir de variables relacionadas con su marca, carrocería, motorización, dimensiones, peso, potencia, consumo y sistema de combustible.
+El análisis combina dos componentes:
+- Modelado predictivo en Python, mediante un modelo XGBoost de referencia y una configuración ajustada por búsqueda de hiperparámetros.
+- Análisis de errores en Power BI, para estudiar el Error Absoluto Medio —MAE— en distintos segmentos del mercado automotor.
+Esta segunda etapa permite ir más allá de una métrica global y detectar grupos donde el modelo puede utilizarse con mayor confianza, así como segmentos que requieren más datos, ajustes específicos o revisión manual.
+Desarrollar un modelo capaz de estimar precios de automóviles y evaluar si sus predicciones son suficientemente robustas para apoyar procesos de valuación automatizada.
+Los objetivos específicos son:
+- preparar las variables numéricas y categóricas necesarias para el modelado;
+- entrenar y evaluar un modelo XGBoost de referencia;
+- optimizar sus hiperparámetros mediante validación cruzada;
+- comparar el desempeño del modelo base y del modelo ajustado;
+- analizar la distribución del error por marca y características del vehículo;
+- identificar riesgos y condiciones para una posible implementación operativa.
+El notebook utiliza el conjunto Automobile del repositorio UCI Machine Learning Repository. La variable objetivo es el precio del vehículo y el modelo incorpora 23 variables predictoras relacionadas con:
+- marca y tipo de carrocería;
+- combustible y aspiración;
+- dimensiones y peso;
+- cilindrada, potencia y revoluciones máximas;
+- sistema de combustible;
+- consumo urbano y en ruta;
+- características mecánicas y estructurales.
+Para estabilizar la distribución de la variable objetivo, el entrenamiento se realiza sobre ln(price). Las predicciones se transforman nuevamente a la escala monetaria antes de calcular las métricas finales y analizar los errores.
+El flujo de trabajo comprende las siguientes etapas:
+- Exploración y preparación de los datos.
+- Tratamiento de variables categóricas y numéricas.
+- Transformación logarítmica del precio.
+- División del conjunto en 75 % de entrenamiento y 25 % de validación, con semilla 1234.
+- Entrenamiento de un modelo XGBRegressor de referencia.
+- Evaluación mediante MAE, MSE y R².
+- Búsqueda de hiperparámetros sobre 432 configuraciones y 864 ajustes de validación cruzada.
+- Selección y evaluación del modelo ajustado.
+- Conversión de las predicciones a la escala monetaria original.
+- Exportación de resultados para el análisis segmentado en Power BI.
+| Modelo | MAE | MSE | R² | 
+|---|---|---|---|
+| XGBoost base | 1.809,728 | 6.712.593,027 | 0,880 | 
+| XGBoost ajustado | 1.472,955 | 4.366.779,377 | 0,919 | 
+El ajuste de hiperparámetros redujo el MAE aproximadamente un 18,6 % y elevó el R² de 0,880 a 0,919. Esto indica una mejora relevante en la precisión media y en la capacidad del modelo para explicar la variabilidad de los precios.
+El tablero de Power BI registra un MAE global de 1.460,1767 sobre el conjunto exportado para el análisis de errores.
+El desempeño del modelo no es uniforme en todos los vehículos. El análisis en Power BI muestra que los mayores errores se concentran en:
+- marcas de alta gama;
+- carrocerías convertibles;
+- vehículos diésel;
+- motores con aspiración turbo;
+- determinados sistemas de combustible.
+Por el contrario, algunos segmentos de mayor presencia en los datos muestran errores más bajos y un comportamiento más estable.
+Estos resultados evidencian que una única métrica promedio no alcanza para evaluar el uso operativo del modelo. Una implementación real debería contemplar reglas de confianza, monitoreo por cohortes y derivación a revisión manual cuando el vehículo pertenezca a un segmento poco representado o de alta variabilidad.
+El tablero permite analizar el MAE global y su distribución por:
+- marca (make);
+- tipo de combustible (fuel-type);
+- aspiración (aspiration);
+- carrocería (body-style);
+- sistema de combustible (fuel-system).
+El archivo editable se encuentra en:
+powerbi/automobile-price-error-analysis.pbix
+automobile-price-prediction-xgboost/
+├── assets/
+│   └── figures/          # Gráficos y capturas del tablero
+├── notebooks/
+│   └── automobile-price-prediction-xgboost.ipynb
+├── powerbi/
+│   └── automobile-price-error-analysis.pbix
+├── reports/
+│   ├── informe_prediccion_precios_automoviles_xgboost.pdf
+│   └── informe_prediccion_precios_automoviles_xgboost.docx
+├── results/              # Métricas y resultados exportados
+├── .gitattributes
+├── .gitignore
+├── README.md
+└── requirements.txt
+Clonar el repositorio y crear un entorno virtual:
+git clone https://github.com/leanlambrecht/automobile-price-prediction-xgboost.git
+cd automobile-price-prediction-xgboost
+python -m venv .venv
+Activar el entorno:
+source .venv/bin/activate
+En Windows:
+.venv\Scripts\activate
+Instalar las dependencias y abrir el notebook:
+pip install -r requirements.txt
+jupyter notebook notebooks/automobile-price-prediction-xgboost.ipynb
+El notebook busca primero los siguientes archivos locales:
+data/automobile_prepared.csv
+data/automobile_raw.csv
+Cuando no están disponibles, descarga el conjunto Automobile de UCI y ejecuta el preprocesamiento necesario.
+La búsqueda exhaustiva de hiperparámetros está desactivada por defecto debido a su costo computacional. Para ejecutarla debe cambiarse:
+RUN_FULL_GRID = True
+Los resultados pueden presentar pequeñas variaciones según las versiones de las librerías, el preprocesamiento aplicado y la configuración del entorno de ejecución.
+- Python 3.11
+- Jupyter Notebook
+- pandas y NumPy
+- scikit-learn
+- XGBoost
+- Matplotlib
+- Responsible AI Toolbox
+- Power BI
+El modelo XGBoost ajustado mejora de manera significativa la predicción de precios respecto de la configuración inicial. Sin embargo, el análisis segmentado demuestra que la precisión depende de las características del vehículo y de la representación de cada grupo en los datos.
+La implementación de un modelo de estas características no debería basarse únicamente en su MAE global. También requiere controles por segmento, monitoreo periódico, criterios de confianza y mecanismos de revisión manual para las predicciones con mayor riesgo de error.
+El desarrollo metodológico, los resultados y la interpretación completa están disponibles en:

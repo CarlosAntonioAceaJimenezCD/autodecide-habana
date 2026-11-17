@@ -1,0 +1,197 @@
+<!doctype html><html lang="es"><head><title>Verificando acceso | Universidad de Chile</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&amp;family=Raleway:wght@500;700&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="/.within.website/x/xess/xess.min.css?cachebuster=1.26.2-uchile-20261103c"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow"><style>
+    /* Colores y tipografía tomados de uchile.cl */
+    :root {
+      --azul: #004b93;
+      --azul-hover: #0097a7;
+      --verde: #007e47;
+      --rojo: #e63329;
+      --amarillo: #fdd757;
+      --texto: #1d1d1b;
+      --texto-suave: #5a5f66;
+      --filete: #e5e9ed;
+      --fondo: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: "PT Sans", Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Barra institucional de cuatro colores */
+    .barra {
+      display: flex;
+      height: 6px;
+    }
+    .barra span { flex: 1; }
+    .barra span:nth-child(1) { background: var(--azul); }
+    .barra span:nth-child(2) { background: var(--verde); }
+    .barra span:nth-child(3) { background: var(--rojo); }
+    .barra span:nth-child(4) { background: var(--amarillo); }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 16px;
+      text-align: center;
+    }
+
+    .logo img {
+      display: block;
+      width: 260px;
+      max-width: 70vw;
+      height: auto;
+    }
+
+    h1 {
+      margin: 40px 0 8px;
+      font-family: "Raleway", Arial, sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      line-height: 1.25;
+      color: var(--azul);
+    }
+
+    .estado {
+      margin: 0;
+      color: var(--texto-suave);
+      font-size: 1.125rem;
+    }
+
+    /* Barra de progreso indeterminada */
+    .progreso {
+      position: relative;
+      width: min(360px, 100%);
+      height: 6px;
+      margin: 32px 0;
+      overflow: hidden;
+      background: var(--filete);
+      border-radius: 3px;
+    }
+    .progreso::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 40%;
+      background: var(--azul);
+      border-radius: 3px;
+      animation: avance 1.4s ease-in-out infinite;
+    }
+    @keyframes avance {
+      from { transform: translateX(-100%); }
+      to   { transform: translateX(250%); }
+    }
+
+    details {
+      width: min(600px, 100%);
+      text-align: left;
+      border-top: 1px solid var(--filete);
+      border-bottom: 1px solid var(--filete);
+    }
+    summary {
+      padding: 12px 0;
+      cursor: pointer;
+      color: var(--azul);
+      font-weight: 700;
+    }
+    summary:hover { color: var(--azul-hover); }
+    details p {
+      margin: 0 0 16px;
+      color: var(--texto-suave);
+      font-size: 0.9375rem;
+    }
+
+    a { color: var(--azul); }
+    a:hover, a:focus-visible { color: var(--azul-hover); }
+    :focus-visible { outline: 2px solid var(--azul-hover); outline-offset: 2px; }
+
+    footer {
+      padding: 20px 16px;
+      border-top: 1px solid var(--filete);
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--texto-suave);
+    }
+    footer p { margin: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .progreso::before {
+        animation: none;
+        width: 100%;
+        opacity: 0.6;
+      }
+    }
+  
+    html { display: block; }
+    body { width: 100%; min-height: 100vh; height: auto; align-items: stretch; justify-content: normal; }
+    main { width: 100%; max-width: none; margin: 0; font-family: inherit; }
+    a, a:active, a:visited { color: var(--azul); background: transparent; }
+    .barra { width: 100%; }
+    .centered-div { width: min(600px, 100%); text-align: center; }
+    footer .centered-div { margin: 0 auto; }
+    .barra { flex: none; }
+    #status { margin: 0; color: var(--texto-suave); font-size: 1.125rem; }
+    #progress { position: relative; display: block; width: min(360px, 100%); height: 6px; margin: 32px auto; overflow: hidden; background: var(--filete); border-radius: 3px; outline: none; }
+    #progress:not(.completado)::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 40%; background: var(--azul); border-radius: 3px; animation: avance 1.4s ease-in-out infinite; }
+    #progress:not(.completado) .bar-inner { visibility: hidden; }
+    @media (prefers-reduced-motion: reduce) { #progress:not(.completado)::before { animation: none; width: 100%; opacity: 0.6; } }
+    .bar-inner { height: 100%; width: 0; background: var(--azul); transition: width 0.25s ease-in; }
+    #image { display: none; }
+    details { margin: 0 auto; }
+    @media (prefers-reduced-motion: reduce) { .bar-inner { transition: none; } }
+			</style><script id="anubis_version" type="application/json">"1.26.2-uchile-20261103c"
+</script><script id="anubis_challenge" type="application/json">{"rules":{"algorithm":"fast","difficulty":3},"challenge":{"issuedAt":"2026-11-16T22:59:01.662010621-03:00","metadata":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36","X-Real-Ip":"152.207.201.51"},"id":"01a1e73a-a11e-7019-a56b-6d2c02b09895","method":"fast","randomData":"fb330484bf6036acbbaa713f425d9a4715f7fa580bb23d80b79517424c66db87e4c9ca584e8d321cbf1e4fd3f3c2e273a6d4aefd9f9b26f97052b506f14adc97","policyRuleHash":"535c6ccf5299a7c4","difficulty":3,"spent":false}}
+</script><script id="anubis_base_prefix" type="application/json">""
+</script><script id="anubis_public_url" type="application/json">""
+</script></head><body id="top"><div class="barra" aria-hidden="true"><span></span><span></span><span></span><span></span></div><script type="ignore"><a href="/.within.website/x/cmd/anubis/api/honeypot/c8e8932a-e475-479f-b653-f0f24993a0b1/init">Don't click me</a></script><main><a class="logo" href="https://uchile.cl/"><img src="/.within.website/x/cmd/anubis/static/img/escudo-uchile.jpg?cacheBuster=1.26.2-uchile-20261103c" alt="Universidad de Chile" width="260" height="111"></a><h1 id="title" class="centered-div">Verificando acceso</h1><div class="centered-div"><img id="image" style="width:100%;max-width:256px;" src="/.within.website/x/cmd/anubis/static/img/pensive.webp?cacheBuster=1.26.2-uchile-20261103c"> <img style="display:none;" style="width:100%;max-width:256px;" src="/.within.website/x/cmd/anubis/static/img/happy.webp?cacheBuster=1.26.2-uchile-20261103c"><p id="status" role="status">Cargando...</p><p id="anubis-script-error" style="display:none;">No se pudo cargar el JavaScript de Anubis. Es posible que el servidor esté sobrecargado. Por favor recarga la página para intentarlo de nuevo.</p><script id="anubis-main" async type="module" src="/.within.website/x/cmd/anubis/static/js/main.mjs?cacheBuster=1.26.2-uchile-20261103c"></script><script>/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this page.
+
+Copyright (c) 2026 Xe Iaso <xe.iaso@techaro.lol>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+@licend  The above is the entire license notice
+for the JavaScript code in this page.
+
+## Rationale
+
+This script catches `main.mjs` failing to load and re-injects it with
+jittered exponential backoff.
+
+Without this any failures loading `main.mjs` leaves the challenge page
+sitting on the "Loading..." message forever with no error messaging
+outside of the browser console, which is unavailable on mobile browsers.
+
+Disable loading this script at your peril. You have been warned.
+*/
+(()=>{var f=(e,t=750,n=1e4)=>Math.random()*Math.min(n,t*Math.pow(e,2));var d=(e,t={},n=[])=>{let s=typeof e=="function"?e(t):Object.assign(document.createElement(e),t);return Array.isArray(n)||(n=[n]),s.append(...n),s};var i=e=>document.getElementById(e);var _=e=>e.map(i);(()=>{let e=i("anubis-main");if(!e){console.debug("can't find anubis main.mjs element via ID `anubis-main`, bailing");return}let t=e.getAttribute("src");if(!t){console.debug("can't find src attribute of script element `anubis-main`, bailing");return}let n=t.indexOf("?")===-1?"?":"&",s=4,E=750,A=1e4,c=1e4,a=0,l=0,u=()=>window.__anubisBooted===!0,p=()=>{let r=_(["anubis-script-error","status","progress"]);if(r.filter(D=>D==null).length!==0){console.debug("missing one of the following elements: anubis-script-error, status, progress. cannot proceed, bailing.");return}let[o,M,T]=r;o.style.display="block",M.style.display="none",T.style.display="none"},m=r=>()=>{if(u()||r!==l)return;if(l++,a++,a>s){p();return}let o=f(a,E,A);setTimeout(y,o)},y=()=>{if(u())return;let r=m(l),o=d("script",{async:!0,type:"module",src:t+n+"anubisRetry="+a,onerror:r});document.head.appendChild(o),setTimeout(r,c)},b=m(0);e.onerror=b,setTimeout(b,c)})();})();
+</script><div id="progress" role="progressbar" aria-labelledby="status"><div class="bar-inner"></div></div><details><summary>Detalles</summary> <p>Ves esto porque el administrador de este sitio web ha configurado Anubis para proteger el servidor contra las de empresas de IA que rastrean agresivamente los sitios web. Esto puede y causa tiempo de inactividad para los sitios web, haciendo que sus recursos sean inaccesibles para todos.</p><p>Anubis es un compromiso. Anubis utiliza un esquema de Prueba de Trabajo en la línea de Hashcash, un esquema de prueba de trabajo propuesto para reducir el spam por correo electrónico. La idea es que a escala individual, la carga adicional es insignificante, pero a escala de raspadores masivos, se acumula y hace que el raspado sea mucho más costoso.</p><p>En última instancia, esta es una solución provisional para que se pueda dedicar más tiempo a la identificación y el reconocimiento de navegadores sin cabeza (por ejemplo, a través de cómo renderizan las fuentes) de modo que la página de prueba de trabajo del desafío no tenga que presentarse a usuarios que son mucho más propensos a ser legítimos.</p><p>Ten en cuenta que Anubis requiere el uso de características modernas de JavaScript que plugins como JShelter deshabilitarán. Por favor, deshabilita JShelter u otros plugins similares para este dominio.</p></details><noscript><p>Desafortunadamente, necesitas habilitar JavaScript para pasar este desafío. Esto es requerido porque las empresas de IA han cambiado el contrato social sobre cómo funciona el alojamiento de sitios web. Una solución sin JS está en desarrollo.</p></noscript><div id="testarea"></div></div></main><footer><div class="centered-div"><p>Universidad de Chile · Dirección de Servicios de Información y Bibliotecas</p></div></footer></body></html>

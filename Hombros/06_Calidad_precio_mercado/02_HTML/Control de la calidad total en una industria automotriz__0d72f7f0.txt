@@ -1,0 +1,23 @@
+Control de la calidad total en una industria automotriz
+| dc.audience | generalPublic |  | 
+| dc.contributor.author | Sanchez Y Sanchez, Guadalupe |  | 
+| dc.coverage.place | Tesiteca Biblioteca Central 3er. piso |  | 
+| dc.date.accessioned | 2025-01-29T19:30:59Z |  | 
+| dc.date.available | 2025-01-29T19:30:59Z |  | 
+| dc.date.issued | 1993 |  | 
+| dc.description.abstract | "En nuestros días, debido a la inflación y al crecimiento demográfico, se demanda una unidad mayor de bienes y servicios parta satisfacer las necesidades de usuario o clientes, que están demandando productos de calidad y bajo costo, además de que se les surtan a tiempo y en volumen requeridos. La industria automotriz en México, requiere de sistemas de calidad que permitan dar competitividad a sus productos y/o servicios; que ayuden permanecer en el mercado nacional y entrar al mercado mundial. Esta tesis pretende proporcionar algunas herramientas en materia de calidad, que permiten asegurar en forma efectiva satisfactoria y económica, una buena calidad. Constituir las bases para tener un enfoque global y propiciar las acciones conjunta e integrada, encaminada a crear una cultura de la empresa en cuanto a calidad; una filosofía orientada a la satisfacción absoluta del cliente en calidad, servicio y atención, a través de una política de trabajo en equipo, de todos lo elementos de la empresa en interrelación con el cliente, ya que esto exigirá en los productos y servicios: eficiencia, confiabilidad, buena apariencia, bajo costo, etc. y para esto, proponemos una política en el que la calidad ya no solo es responsabilidad de los implicados en la producción, sino cada individuo en la empresa, considerando que se requiere producir altos volúmenes con las especificaciones que el mercado exige, además de que actualmente de manera racional, no es posible obtener los productores idénticos y no es conveniente por tiempo y costo inspeccionar al 100% los productores al final de su proceso de fabricación para garantizar la calidad de estos. Este trabajo pretende servir de guía para implementar el sistema de control de calidad en la Industria Automotriz en México." |  | 
+| dc.identifier.bibrecord | IQ1993 S2C6 |  | 
+| dc.identifier.uri | https://hdl.handle.net/20.500.12371/24459 |  | 
+| dc.language.iso | spa |  | 
+| dc.publisher | Benemérita Universidad Autónoma de Puebla |  | 
+| dc.rights.acces | restrictedAccess |  | 
+| dc.subject.lcc | Industria Automotriz -- Calidad en la industria automotriz |  | 
+| dc.subject.lcc | Control de calidad -- Calidad en México |  | 
+| dc.subject.lcc | Control de calidad -- Gestión -- Tecnología |  | 
+| dc.thesis.career | Licenciatura en Ingeniería Química |  | 
+| dc.thesis.degreediscipline | Área de Ingeniería y Ciencias Exactas |  | 
+| dc.thesis.degreegrantor | Facultad de Ingeniería Química |  | 
+| dc.thesis.degreetoobtain | Ingeniero (a) Químico (a) |  | 
+| dc.title | Control de la calidad total en una industria automotriz |  | 
+| dc.type | Tesis de licenciatura |  | 
+| dc.type.degree | Licenciatura |  |

@@ -1,0 +1,41 @@
+# Entornos y cachés / Environments and caches
+.venv/
+**/.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+Auxiliares/cache/
+*.log
+
+# Repositorios auxiliares: NO se suben, solo se listan como referencia en README.md
+# Auxiliary repositories: not uploaded, only listed as references in README.md
+Auxiliares/Repositorios/
+Auxiliares/Repositorios Referencias/
+Hombros/03_Repositorios/
+Copias/
+
+# Corpus legal completo: no versionar (usar almacenamiento externo o Git LFS)
+# Full legal corpus: not versioned (use external storage or Git LFS)
+Anexos/Leyes/*
+!Anexos/Leyes/gaceta_catalog.json
+!Anexos/Leyes/.herramientas/
+Anexos/Leyes/.herramientas/__pycache__/
+
+# Bases grandes: no versionar sin Git LFS
+# Large databases: not versioned without Git LFS
+Data/catalogos_concesionarios/*.sqlite
+Data/Revolico/revolico.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+
+# Estado interno del script de informe / Internal report script state
+Auxiliares/herramientas/.informe_state.json
+
+# Salidas locales / Local outputs
+Data/raw/
+Data/processed/
+outputs/
+.DS_Store
+Thumbs.db

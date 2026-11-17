@@ -1,0 +1,13 @@
+Modelado de precios de combustibles y su efecto en la rentabilidad del transporte de carga en Colombia
+QRCode
+Fecha
+Fecha
+Autores
+Título de la revista
+ISSN de la revista
+Título del volumen
+Editor
+Cobertura regional / País
+Ciudad
+Descripción del contenido
+El transporte de carga en Colombia ha enfrentado un aumento significativo en los costos operativos desde 2023, principalmente debido al alza en los precios de los combustibles, afectando directamente la rentabilidad del sector. En 2025, el costo del combustible se ha incrementado en un 12.81% con respecto al año 2024, siendo el factor más determinante en la estructura de costos, superando incrementos en mano de obra y peajes. Según el DANE, el Índice de Costos del Transporte de Carga por Carretera reportó una variación anual del 8.59% a mediados de 2025, reflejando la presión de estos aumentos en la operación del sector (DANE - Índice de Costos Del Transporte de Carga Por Carretera (ICTC)). Este trabajo aplica ciencia de datos para analizar la evolución del precio del diésel y su impacto en los costos y la rentabilidad del transporte de carga. Mediante análisis descriptivo y modelos predictivos, se identifican tendencias y se proyectan escenarios que permiten comprender la influencia del combustible en la operación del sector. También se emplean visualizaciones en Python, para facilitar la interpretación de los resultados y apoyar decisiones estratégicas. Los hallazgos evidencian la alta dependencia del sector del precio del diésel y la necesidad de usar herramientas analíticas que permitan anticipar riesgos y fortalecer su sostenibilidad financiera.

@@ -1,0 +1,425 @@
+<!DOCTYPE html><html lang="es">
+  <head>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text&#x2F;html&#x3B;&#x20;charset&#x3D;UTF-8">
+<meta name="Generator" content="VuFind&#x20;6.1.2">    <title></title>        <!-- RTL styling -->
+        <link href="&#x2F;themes&#x2F;kimuk&#x2F;css&#x2F;compiled.css&#x3F;_&#x3D;1644108871" media="all" rel="stylesheet" type="text&#x2F;css">
+<link href="&#x2F;themes&#x2F;bootstrap3&#x2F;css&#x2F;print.css&#x3F;_&#x3D;1584358123" media="print" rel="stylesheet" type="text&#x2F;css">
+<!--[if lt IE 10]><link href="&#x2F;themes&#x2F;bootstrap3&#x2F;css&#x2F;flex-fallback.css&#x3F;_&#x3D;1584358123" media="" rel="stylesheet" type="text&#x2F;css"><![endif]-->
+<link href="&#x2F;themes&#x2F;kimuk&#x2F;images&#x2F;vufind-favicon.ico&#x3F;_&#x3D;1624839306" rel="shortcut&#x20;icon" type="image&#x2F;x-icon">
+<link href="&#x2F;Search&#x2F;OpenSearch&#x3F;method&#x3D;describe" rel="search" type="application&#x2F;opensearchdescription&#x2B;xml" title="B&#xFA;squeda&#x20;en&#x20;el&#x20;cat&#xE1;logo">            <script type="text&#x2F;javascript">
+    //<!--
+    var userIsLoggedIn = false;
+    //-->
+</script>
+<script type="text&#x2F;javascript" src="&#x2F;themes&#x2F;bootstrap3&#x2F;js&#x2F;vendor&#x2F;jquery.min.js&#x3F;_&#x3D;1584358123"></script>
+<script type="text&#x2F;javascript" src="&#x2F;themes&#x2F;bootstrap3&#x2F;js&#x2F;vendor&#x2F;bootstrap.min.js&#x3F;_&#x3D;1584358123"></script>
+<script type="text&#x2F;javascript" src="&#x2F;themes&#x2F;bootstrap3&#x2F;js&#x2F;vendor&#x2F;bootstrap-accessibility.min.js&#x3F;_&#x3D;1584358123"></script>
+<script type="text&#x2F;javascript" src="&#x2F;themes&#x2F;bootstrap3&#x2F;js&#x2F;vendor&#x2F;validator.min.js&#x3F;_&#x3D;1584358123"></script>
+<script type="text&#x2F;javascript" src="&#x2F;themes&#x2F;bootstrap3&#x2F;js&#x2F;lib&#x2F;form-attr-polyfill.js&#x3F;_&#x3D;1584358123"></script>
+<script type="text&#x2F;javascript" src="&#x2F;themes&#x2F;bootstrap3&#x2F;js&#x2F;lib&#x2F;autocomplete.js&#x3F;_&#x3D;1584358123"></script>
+<script type="text&#x2F;javascript" src="&#x2F;themes&#x2F;bootstrap3&#x2F;js&#x2F;common.js&#x3F;_&#x3D;1584358123"></script>
+<script type="text&#x2F;javascript" src="&#x2F;themes&#x2F;bootstrap3&#x2F;js&#x2F;lightbox.js&#x3F;_&#x3D;1584358123"></script>
+<script type="text&#x2F;javascript" src="&#x2F;themes&#x2F;bootstrap3&#x2F;js&#x2F;record.js&#x3F;_&#x3D;1584358123"></script>
+<script type="text&#x2F;javascript" src="&#x2F;themes&#x2F;bootstrap3&#x2F;js&#x2F;check_save_statuses.js&#x3F;_&#x3D;1584358123"></script>
+<script type="text&#x2F;javascript" src="&#x2F;themes&#x2F;bootstrap3&#x2F;js&#x2F;account_ajax.js&#x3F;_&#x3D;1584358123"></script>
+<script type="text&#x2F;javascript">
+    //<!--
+    VuFind.path = '';
+VuFind.defaultSearchBackend = 'Solr';
+VuFind.addTranslations({"add_tag_success": "Etiquetas Guardadas","bulk_email_success": "Sus elementos han sido enviados","bulk_noitems_advice": "Ninguna copia fue seleccionada. Por favor hacer clic en la casilla cercana a la copia e intentar nuevamente.","bulk_save_success": "Sus elementos han sido guardados","close": "cerrar","collection_empty": "No hay elementos a desplegar.","error_occurred": "Ha ocurrido un error","go_to_list": "Ir a la Lista","hold_available": "Disponible para llevar","libphonenumber_invalid": "Número de teléfono no válido","libphonenumber_invalidcountry": "Código de país no válido","libphonenumber_invalidregion": "Código de región no válido","libphonenumber_notanumber": "La numeración suministrada no parece ser un número de teléfono","libphonenumber_toolong": "La numeración suministrada es demasiado larga para ser un número de teléfono","libphonenumber_tooshort": "La numeración suministrada es demasiada corta para ser un número de teléfono","libphonenumber_tooshortidd": "Número de teléfono demasiado corto después del Marcado Directo Internacional","loading": "Cargando","more": "más","number_thousands_separator": ",","sms_success": "Mensaje enviado.","Phone number invalid": "Número de teléfono no válido","Invalid country calling code": "Código de país no válido","Invalid region code": "Código de región no válido","The string supplied did not seem to be a phone number": "La numeración suministrada no parece ser un número de teléfono","The string supplied is too long to be a phone number": "La numeración suministrada es demasiado larga para ser un número de teléfono","The string supplied is too short to be a phone number": "La numeración suministrada es demasiada corta para ser un número de teléfono","Phone number too short after IDD": "Número de teléfono demasiado corto después del Marcado Directo Internacional","account_has_alerts": "Tu cuenta tiene alertas","Checked Out Items": "Copias Prestadas","ill_request_available": "Disponible para llevar","renew_item_due_tooltip": "Items por vencer pronto","renew_item_overdue_tooltip": "Items vencidos","request_in_transit": "En Tránsito para recoger en la biblioteca","storage_retrieval_request_available": "Disponible para llevar"});
+    //-->
+</script>  </head>
+  <body class="template-dir-record template-name-view ">
+        <header class="hidden-print">
+            <a class="sr-only" href="#content">Saltar al contenido</a>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74979115-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-74979115-1');
+</script>
+
+
+<div class="container logos hidden-xs hidden-sm">
+  <div class="row">
+    <div class="col-md-6 text-left logo-repo">
+    <img class="img-responsive" src="/themes/kimuk/images/logoKimuk.png?_=1643303336" alt="Logo de Kimuk" />
+    </div>
+    <div class="col-md-6 text-right logo-inst">
+    <img class="img-responsive" src="/themes/kimuk/images/logo2026.png?_=1770246253" alt="Logo de CONARE" />
+    </div>
+  </div>
+</div>
+
+<div class="banner container navbar">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#header-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <a class="navbar-brand lang-es visible-xs-block visible-sm-block" href="/">Repo Abreviatura</a>
+  </div>
+      <div class="collapse navbar-collapse" id="header-collapse">
+      <nav>
+        <ul role="navigation" class="nav navbar-nav navbar-left flip">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/Content/about">Acerca de</a></li>
+          <li><a href="/Content/repos">Quiénes somos</a></li>
+          <li><a href="/Content/stats">Estadísticas</a></li>
+          <li><a href="/Content/aabierto">Acceso abierto</a></li>
+                      <li class="language dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lenguaje <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                                  <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;en" rel="nofollow">
+                      English                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;de" rel="nofollow">
+                      Deutsch                    </a>
+            </li>
+                            <li class="active">
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;es" rel="nofollow">
+                      Español                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;fr" rel="nofollow">
+                      Français                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;it" rel="nofollow">
+                      Italiano                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;ja" rel="nofollow">
+                      日本語                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;nl" rel="nofollow">
+                      Nederlands                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;pt" rel="nofollow">
+                      Português                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;pt-br" rel="nofollow">
+                      Português (Brasil)                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;zh-cn" rel="nofollow">
+                      中文(简体)                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;zh" rel="nofollow">
+                      中文（繁體）                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;tr" rel="nofollow">
+                      Türkçe                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;he" rel="nofollow">
+                      עברית                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;ga" rel="nofollow">
+                      Gaeilge                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;cy" rel="nofollow">
+                      Cymraeg                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;el" rel="nofollow">
+                      Ελληνικά                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;ca" rel="nofollow">
+                      Català                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;eu" rel="nofollow">
+                      Euskara                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;ru" rel="nofollow">
+                      Русский                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;cs" rel="nofollow">
+                      Čeština                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;fi" rel="nofollow">
+                      Suomi                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;sv" rel="nofollow">
+                      Svenska                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;pl" rel="nofollow">
+                      polski                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;da" rel="nofollow">
+                      Dansk                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;sl" rel="nofollow">
+                      slovenščina                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;ar" rel="nofollow">
+                      اللغة العربية                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;bn" rel="nofollow">
+                      বাংলা                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;gl" rel="nofollow">
+                      Galego                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;vi" rel="nofollow">
+                      Tiếng Việt                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;hr" rel="nofollow">
+                      Hrvatski                    </a>
+            </li>
+                            <li>
+                    <a href="&#x2F;Record&#x2F;RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x3F;lng&#x3D;hi" rel="nofollow">
+                      हिंदी                    </a>
+            </li>
+                  </ul>
+        </li>
+            
+    </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="search container navbar">
+    <nav class="nav searchbox hidden-print">
+        <form id="searchForm" class="searchForm navbar-form navbar-left flip" method="get" action="/Search/Results" name="searchForm" autocomplete="off">
+            <input id="searchForm_lookfor" class="searchForm_lookfor form-control search-query autocomplete searcher:Solr ac-auto-submit" type="text" name="lookfor" value="" aria-label="Términos de búsqueda" />
+          <select id="searchForm_type" class="searchForm_type form-control" name="type" data-native-menu="false" aria-label="Search type">
+                                    <option value="AllFields">Todos los Campos</option>
+                            <option value="Title">Título</option>
+                            <option value="Author">Autor</option>
+                            <option value="Subject">Materia</option>
+                            <option value="CallNumber">Número de Clasificación</option>
+                            <option value="ISN">ISBN/ISSN</option>
+                            <option value="tag">Etiqueta</option>
+                      </select>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Buscar</button>
+          <a href="/Search/Advanced" class="btn btn-link" rel="nofollow">Avanzado</a>
+        
+                    
+  </form>
+
+    </nav>
+  </div>
+    </header>
+    <nav class="breadcrumbs">
+      <div class="container">
+                  <ul class="breadcrumb hidden-print">
+                          <li><li class="active"><a href="/Record/RUNA_68035cfbe6a72ec6c2a41a46a1867837">Análisis del sector automovilí...</a></li>                       </ul>
+              </div>
+    </nav>
+    <div role="main" class="main">
+      <div id="content" class="container">
+        
+
+<nav class="record-nav">
+  <ul class="action-toolbar">
+          <li><a class="cite-record toolbar-btn btn-type-cite" data-lightbox href="/Record/RUNA_68035cfbe6a72ec6c2a41a46a1867837/Cite" rel="nofollow">Citar</a></li>
+            <!--li><a class="mail-record toolbar-btn btn-type-email" data-lightbox href="/Record/RUNA_68035cfbe6a72ec6c2a41a46a1867837/Email" rel="nofollow">Enviar este por Correo electrónico</a></li-->
+
+              <li class="dropdown">
+        <a class="export-toggle toolbar-btn btn-type-export dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" href="/Record/RUNA_68035cfbe6a72ec6c2a41a46a1867837/Export" rel="nofollow">Exportar Registro</a>
+        <ul class="dropdown-menu" role="menu">
+                      <li role="none"><a href="/Record/RUNA_68035cfbe6a72ec6c2a41a46a1867837/Export?style=RefWorks" rel="nofollow" role="menuitem">Exportar a  RefWorks</a></li>
+                      <li role="none"><a target="EndNoteWebMain" href="/Record/RUNA_68035cfbe6a72ec6c2a41a46a1867837/Export?style=EndNoteWeb" rel="nofollow" role="menuitem">Exportar a  EndNoteWeb</a></li>
+                      <li role="none"><a href="/Record/RUNA_68035cfbe6a72ec6c2a41a46a1867837/Export?style=EndNote" rel="nofollow" role="menuitem">Exportar a  EndNote</a></li>
+                  </ul>
+      </li>
+    
+          <li>
+                  <a class="save-record toolbar-btn btn-type-save" data-lightbox href="/Record/RUNA_68035cfbe6a72ec6c2a41a46a1867837/Save" rel="nofollow">Agregar a favoritos</a>
+              </li>
+              </ul>
+</nav>
+
+<div class="record sourceSolr">
+    <div class="mainbody right">
+    <input type="hidden" value="RUNA_68035cfbe6a72ec6c2a41a46a1867837" class="hiddenId" />
+    <input type="hidden" value="Solr" class="hiddenSource" />
+        <div class="media" vocab="http://schema.org/" resource="#record" typeof=" Product">
+      <div class="media-body">
+
+    <h1 property="name">Análisis del sector automovilístico en Costa Rica: un estudio sobre la competitividad del mercado de vehículos nuevos para el periodo 2007-2017  </h1>
+    
+    <p>&nbsp;</p>
+
+                <div class="savedLists">
+        <strong>Guardado en:</strong>
+      </div>
+    
+                  <table class="table table-striped">
+        <caption class="sr-only">Detalles Bibliográficos</caption>
+                  <tr><th>Autor:</th><td><span class="author-data" property="author">
+      <a href="  /Author/Home?author=Hern%C3%A1ndez+Rodr%C3%ADguez%2C+Andr%C3%A9s">
+        Hernández Rodríguez, Andrés</a></span></td></tr>
+                  <tr><th>Fecha de Publicación:</th><td>2017</td></tr>
+                  <tr><th>Descripción:</th><td>En la actualidad, según la información de la base de datos de bienes muebles del Registro Nacional de Costa Rica (2017), vivimos en un mercado de vehículos con niveles de ventas sin precedentes gracias en parte a la estructura competitiva del mercado y al estado de la economía nacional e internacional. Pero ¿cómo es la estructura competitiva del sector automovilístico en Costa Rica? Esta investigación tiene como objetivo analizar el sector automovilístico en Costa Rica para el periodo 2007 – 2017, a través de un estudio de competitividad del mercado de vehículos nuevos. A nivel internacional se encontraron estudios del sector automotriz, sin embargo, su enfoque es diferente ya que se trata de países que producen vehículos. En estos casos, son países donde se puede analizar cuántos vehículos son importados, cuántos son exportados, cuál es el total de ventas anuales y cuántos vehículos se ensamblan en períodos determinados de tiempo. En Costa Rica no se logró encontrar estudios similares a este o con el enfoque que se desea para este trabajo, sino más bien estudios de mercado pagados a empresas privadas para ciertas marcas o agencias en específico, lo que limita mucho el alcance de dichos estudios. Esta investigación se diferencia debido a que se enfoca al sector automotriz costarricense, el cual se caracteriza por tener importaciones y no producción. Primero se realiza una caracterización el estado actual del mercado de vehículos nuevos en Costa Rica a través de información de importaciones del Registro Nacional. Adicionalmente se analizará la estructura competitiva del mercado de vehículos nuevos en Costa Rica a través del modelo de competitividad de Porter. Se incluye la perspectiva de diversos gerentes en cada uno de los factores del Diamante de Porter para determinar qué aspectos afectan la competitividad del sector. Adicionalmente se estudia la relación entre la tasa de interés y las ventas de vehículos nuevos para el periodo 2007 – 2017, con datos trimestrales de las variables en cuestión. Tras realizar la investigación, se logró caracterizar la competitividad del sector automovilístico nacional y su comportamiento a lo largo del periodo estudiado. También se analizó diversas variables, como la tasa de interés, el índice de precio al consumidor (IPC), el Producto Interno Bruto (PIB), índice de confianza del consumidor (ICC), gasto de consumo final de los hogares y el precio del combustible y como estas afectan las ventas en dicho país.</td></tr>
+                  <tr><th>País:</th><td>Repositorio UNA</td></tr>
+                  <tr><th>Institución:</th><td>Universidad Nacional de Costa Rica</td></tr>
+                  <tr><th>Repositorio:</th><td>Repositorio UNA</td></tr>
+                  <tr><th>Lenguaje:</th><td>Español</td></tr>
+                  <tr><th>OAI Identifier:</th><td>oai:null:11056/24382</td></tr>
+                  <tr><th>Acceso en línea:</th><td><a href="http&#x3A;&#x2F;&#x2F;hdl.handle.net&#x2F;11056&#x2F;24382">http://hdl.handle.net/11056/24382</a><br/></td></tr>
+                  <tr><th>Palabra clave:</th><td>COSTA RICA<br />SECTOR<br />MERCADOS<br />COMPETITIVIDAD<br />VEHÍCULOS<br />MARKETS<br />COMPETITIVENESS<br />VEHICLES</td></tr>
+              </table>
+          </div>
+</div>
+
+    
+    <span class="Z3988" title="url_ver&#x3D;Z39.88-2004&amp;ctx_ver&#x3D;Z39.88-2004&amp;ctx_enc&#x3D;info&#x25;3Aofi&#x25;2Fenc&#x25;3AUTF-8&amp;rfr_id&#x3D;info&#x25;3Asid&#x25;2Fvufind.svn.sourceforge.net&#x25;3Agenerator&amp;rft.title&#x3D;An&#x25;C3&#x25;A1lisis&#x2B;del&#x2B;sector&#x2B;automovil&#x25;C3&#x25;ADstico&#x2B;en&#x2B;Costa&#x2B;Rica&#x25;3A&#x2B;un&#x2B;estudio&#x2B;sobre&#x2B;la&#x2B;competitividad&#x2B;del&#x2B;mercado&#x2B;de&#x2B;veh&#x25;C3&#x25;ADculos&#x2B;nuevos&#x2B;para&#x2B;el&#x2B;periodo&#x2B;2007-2017&amp;rft.date&#x3D;2017&amp;rft_val_fmt&#x3D;info&#x25;3Aofi&#x25;2Ffmt&#x25;3Akev&#x25;3Amtx&#x25;3Adc&amp;rft.creator&#x3D;Hern&#x25;C3&#x25;A1ndez&#x2B;Rodr&#x25;C3&#x25;ADguez&#x25;2C&#x2B;Andr&#x25;C3&#x25;A9s&amp;rft.format&#x3D;UnknownFormat&amp;rft.language&#x3D;spa"></span>  </div>
+
+  <div class="sidebar left hidden-print">
+    <div id="usage-stats">
+
+    <script>
+      (function (w,d,s,o,p,f,js,fjs) {
+          w[o] = w[o] || function () { (w[o][p] = w[o][p] || {}); Object.assign(w[o][p],arguments[0]||{}); };
+          js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+          js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+      }(window, document, 'script', 'lrw', 'parameters', 'https://cdn.jsdelivr.net/gh/lareferencia/lrw@2.0.8/dist/lrw.js'));
+      lrw({ 
+          widget_div_id: 'usage-stats', 
+          identifier: 'oai:null:11056/24382', // provide the identifier directly  
+
+          event_labels: { 'view': 'Vistas', 'download': 'Descargas', 'outlink': 'Enlaces' }, 
+          scope_labels: { 'L': 'LA Referencia', 'N': 'Kímuk', 'R': 'Repositorio'}, 
+          country: 'CR',
+          nacional_source: 'SITEID::55',
+        });
+      </script>
+
+    </div>
+          <h4>Ejemplares similares</h4>
+  <ul class="list-group">
+          <li class="list-group-item">
+                <i class="fa fa-x"></i>
+        <a href="/Record/RUNA_d4fc9009c9d8781eb19f2eee35b539be">
+          Estado de la ayuda para el comercio en el sector servicios, período 2007-2019: el caso de Guatemala y Honduras        </a>
+                  <br/>por: Arroyo Hurtado, Ingrid Yerleyn                          <br/>Publicado: (2019)
+              </li>
+          <li class="list-group-item">
+                <i class="fa fa-x"></i>
+        <a href="/Record/RUNA_4fec3b0584afa874364c03f9c5ce670d">
+          Cadenas productivas agroindustriales y competitividad: definición de políticas y estrategias en el meso nivel        </a>
+                  <br/>por: Chaves Murillo, Johanna                          <br/>Publicado: (2000)
+              </li>
+          <li class="list-group-item">
+                <i class="fa fa-x"></i>
+        <a href="/Record/RUNA_4a39b370779c2cdfcaf536c3b00171e2">
+          Estado de la ayuda para el comercio en el sector servicios, período 2007-2019: el caso de Guatemala y Honduras        </a>
+                  <br/>por: Arroyo Hurtado, Ingrid Yerleyn                          <br/>Publicado: (2019)
+              </li>
+          <li class="list-group-item">
+                <i class="fa fa-x"></i>
+        <a href="/Record/RUNA_723b3aa8a7b43a9688c5cd3375b063fc">
+          Elementos teóricos y metodológicos para el análisis de la competitividad en empresas, sectores productivos y paises        </a>
+                  <br/>por: Chacón, Wendy                          <br/>Publicado: (2005)
+              </li>
+          <li class="list-group-item">
+                <i class="fa fa-x"></i>
+        <a href="/Record/RUTN_1016307150d04b9027f858ee9bbf344a">
+          Condiciones de la política comercial de Costa Rica en el marco del Sector Cafetalero para el acceso a mercados y su vinculación con la competitividad del sector, periodo 1995-2020        </a>
+                  <br/>por: Castro Vargas, Gerardo Antonio                          <br/>Publicado: (2024)
+              </li>
+      </ul>
+      </div>
+</div>
+<script type="text&#x2F;javascript">
+    //<!--
+    $(document).ready(recordDocReady);
+    //-->
+</script>      </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+<footer class="hidden-print">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 footer-contact">
+        <p>Subcomisión de Conocimiento Abierto de CONARE</p>
+        <p><a href="mailto: kimuk@conare.ac.cr" class="">kimuk@conare.ac.cr</a></p>
+      </div>
+      <div class="col-sm-4 text-center social-media">
+      <p>
+        <!--<a class="socialMediaLink" href="#" target="_blank"><i class="fa fa-facebook-square fa-fw fa-2x" aria-hidden="true"></i></a>
+        <a class="socialMediaLink" href="#" target="_blank"><i class="fa fa-twitter-square fa-fw fa-2x" aria-hidden="true"></i></a>
+        <a class="socialMediaLink" href="#" target="_blank"><i class="fa fa-flickr fa-fw fa-2x" aria-hidden="true"></i></a>
+        <a class="socialMediaLink" href="#" target="_blank"><i class="fa fa-google-plus-square fa-fw fa-2x" aria-hidden="true"></i></a>
+        <a class="socialMediaLink" href="#" target="_blank"><i class="fa fa-instagram fa-fw fa-2x" aria-hidden="true"></i></a>
+        <a class="socialMediaLink" href="#" target="_blank"><i class="fa fa-youtube-square fa-fw fa-2x" aria-hidden="true"></i></a>
+        <a class="socialMediaLink" href="#" target="_blank"><i class="fa fa-linkedin-square fa-fw fa-2x" aria-hidden="true"></i></a>-->
+      </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- MODAL IN CASE WE NEED ONE -->
+    <div id="modal" class="modal fade hidden-print" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <div class="modal-body">Cargando...</div>
+        </div>
+      </div>
+    </div>
+    <div class="offcanvas-overlay" data-toggle="offcanvas"></div>
+        <script type="text&#x2F;javascript">
+    //<!--
+    
+function initVuFindPiwikTracker1794860229654(){
+    var VuFindPiwikTracker = Piwik.getTracker();
+
+    VuFindPiwikTracker.setSiteId(55);
+    VuFindPiwikTracker.setTrackerUrl('https://matomo.lareferencia.info/piwik.php');
+    VuFindPiwikTracker.setCustomUrl('https\x3A\x2F\x2Fkimuk.conare.ac.cr\x2FRecord\x2FRUNA_68035cfbe6a72ec6c2a41a46a1867837\x3Flng\x3Des');
+    VuFindPiwikTracker.setCustomVariable(1, 'RecordFormat', '', 'page');
+    VuFindPiwikTracker.setCustomVariable(2, 'RecordData', 'RUNA_68035cfbe6a72ec6c2a41a46a1867837&#x7C;Hern&#xE1;ndez&#x20;Rodr&#xED;guez,&#x20;Andr&#xE9;s&#x7C;An&#xE1;lisis&#x20;del&#x20;sector&#x20;automovil&#xED;stico&#x20;en&#x20;Costa&#x20;Rica&#x3A;&#x20;un&#x20;estudio&#x20;sobre&#x20;la&#x20;competitividad&#x20;del&#x20;mercado&#x20;de&#x20;veh&#xED;culos&#x20;nuevos&#x20;para&#x20;el&#x20;periodo&#x20;2007-2017', 'page');
+    VuFindPiwikTracker.setCustomVariable(3, 'RecordInstitution', 'UNA', 'page');
+    VuFindPiwikTracker.setCustomVariable(6, 'oaipmhID', 'oai&#x3A;null&#x3A;11056&#x2F;24382', 'page');
+    VuFindPiwikTracker.setCustomVariable(7, 'countryID', '', 'page');
+    VuFindPiwikTracker.setCustomVariable(8, 'repositoryID', '2844', 'page');
+    VuFindPiwikTracker.trackPageView();
+    VuFindPiwikTracker.enableLinkTracking();
+};
+(function(){
+    if (typeof Piwik === 'undefined') {
+        var d=document, g=d.createElement('script'),
+            s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.defer=true; g.async=true;
+        g.src='https://matomo.lareferencia.info/piwik.js';
+        g.onload=initVuFindPiwikTracker1794860229654;
+        s.parentNode.insertBefore(g,s);
+    } else {
+        initVuFindPiwikTracker1794860229654();
+    }
+})();
+    //-->
+</script>      </body>
+</html>

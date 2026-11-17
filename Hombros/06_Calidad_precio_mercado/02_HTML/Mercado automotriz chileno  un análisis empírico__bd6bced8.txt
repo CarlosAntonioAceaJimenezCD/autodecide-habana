@@ -1,0 +1,15 @@
+Mercado automotriz chileno : un análisis empírico
+Autor
+Profesor guía
+Resumen/Reseña
+El presente trabajo tiene como objetivo realizar un estudio del mercado automotriz chileno, evaluar su comportamiento a través del tiempo y determinar que variables influyen en la decisión de tener un automóvil.
+La economía chilena en el último tiempo ha gozado de "buena salud", que se refleja en el dinamismo de esta misma, bajas tasas de desempleo, crecimiento económico constante y acelerado, una solidez que ha permitido enfrentar las grandes crisis económicas del último tiempo (crisis sub-prime) y salir "bien parados", con efectos menos devastadores que los observados en países vecinos. Sin embargo, ¿Es este ambiente de bonanza económica suficiente para generar cambios en la industria automotriz? El objetivo de este estudio es analizar el mercado automotriz para obtener información relevante relacionada a este. De esta forma, buscamos contestar preguntas como ¿Existe sobre endeudamiento en el mercado del crédito automotriz? ¿Son las exigencias demasiado bajas? Inclusive en materia de políticas públicas, ¿Cuál es la tasa esperada de crecimiento del parque automotriz? ¿Tiene el país la infraestructura necesaria para soportar este crecimiento? Antiguamente, la compra de un automóvil estaba asociada al nivel socioeconómico y a la capacidad de endeudamiento, sin embargo con la entrada al mercado de nuevos competidores y la aparición de nuevas marcas de autos con precios más bajos (tanto en costos de adquisición como en costos de mantención), sumado al contexto de solidez y de confianza económica antes descrito, le han brindado al mercado automotriz un dinamismo nunca antes visto.
+En los últimos años, se han registrado volúmenes de venta históricos en la industria automotriz, lo cual puede ser explicado por la confianza de los consumidores, las bajas tasas de interés asociadas al endeudamiento, específicamente a las deudas automotrices y a la normativa vigente referente a este último punto (Amicar, Forum, 
+podemos ver por ejemplo que Tanner tiene solo tres requisitos para obtener financiamiento: Renta líquida superior a $300.000, un año de antigüedad laboral y las tres últimas liquidaciones de sueldo. La particularidad de este tipo de créditos, es que no aparecen en el sistema financiero, por lo que no interfiere a la hora de postular a un crédito hipotecario, por ejemplo , y por ende que no se esté reflejando el real nivel de deuda de un individuo en el sistema.
+El trabajo se estructura como sigue, en la sección II, contexto en la sección III, se explican los datos utilizados y las transformaciones realizadas a estos datos, en la sección IV, se explica la metodología a utilizar y, el por qué de esta misma, en la sección V se presentan los resultados obtenidos y finalmente en la sección VI conclusiones y comentarios.
+Nota general
+Serminario para optar al grado de Ingeniero Comercial, Mención Economía No autorizada por el autor para ser publicada a texto completo 
+Identificador
+URI: https://repositorio.uchile.cl/handle/2250/116653
+Colecciones
+Los siguientes archivos de licencia se asocian a este ítem:

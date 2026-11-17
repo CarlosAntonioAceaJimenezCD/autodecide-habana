@@ -1,0 +1,39 @@
+Control de costos de servicio y rentabilidad empresarial; análisis de su relación en el sector transporte
+DOI:
+https://doi.org/10.56926/unaaaciencia.v2i1.35
+Palabras clave:
+Costo de servicios, rentabilidad, costos fijos, costos variables, rentabilidad financiera, rentabilidad operativa
+Resumen
+La gestión de costos en la vida empresarial es una herramienta para generar la información contable y a partir de allí diseñar estrategias que optimicen el proceso productivo con fines de lograr una rentabilidad y desarrollo empresarial sostenido en el futuro. El problema abordado fue ¿Qué relación existe entre control de costos de servicio y rentabilidad empresarial en el sector transporte? El objetivo del estudio fue determinar la relación que existe entre control de costos de servicio y rentabilidad empresarial en el sector transporte. Se desarrolló una investigación básica de enfoque cuantitativo con un diseño no experimental de corte descriptivo correlacional causal. La muestra de estudio constituyó 04 Balances de situación financiera y 04 Estados de resultados de la empresa; se recogió los datos utilizando el análisis documental y su respectiva guía. Finalmente, se demostró la existencia de una relación significativa entre control de los costos de servicio y rentabilidad empresarial en el sector transporte, pues el nivel de significancia es igual a p-valor= 0,005 < 0,05; además, la correlación es positiva y fuerte (r=0,995*).
+Descargas
+Citas
+Accostupa, L. E. (2023). Costos operativos y rentabilidad en empresas de transporte. Fronteras en ciencias sociales y humanidades, 2(1), 260-268. Recuperado de: https://fronterasdelasociedad.com/index.php/ferevista/article/view/108/184
+Alvarez Cabrera, W. J., & Guadaña Sandoval, A. D. (2023). Los costos de servicio y su relación con la rentabilidad en la empresa aurea implant eirl de la ciudad de cajamarca, en los años 2019-2020. Recuperado de: http://65.111.187.205/handle/UPAGU/2616
+Arboleda, X., Bermudez-Barrezueta, N., & Camino-Mogro, S. (2022). Producción y rentabilidad empresarial en el sector agrícola del Ecuador. REVISTA DE LA CEPAL, 2022(137), 133–157. Disponible en: https://biblio.ugent.be/publication/8769543
+Arellano Cepeda, O. et al. (2017). Estudio de la aplicación del método de costos ABC en las MYPES del Ecuador. Revista de Investigaciones Altoandinas, Journal of High Andean Research 19(1):33–46.
+Berru, E. (2019). Diseño de una estructura de costos de servicio de transporte de carga para la mejora de la rentabilidad de la empresa M&B SAC [Universidad Católica Santo Toribio de Mogrovejo]. https://tesis.usat.edu.pe/bitstream/20.500.12423/2035/1/TL_BerruRamonEdgar.pdf
+Cantero-Cora, H., & Leyva-Cardeñosa, E. (2016). La rentabilidad económica, un factor para alcanzar la eficiencia empresarial. Ciencias Holguín, 22(4), 1-17. Recuperado de: https://www.redalyc.org/articulo.oa?id=181548029004
+Estrella, E., & Góngora, G. (2012). La contabilidad de costos de las pymes y su relación con el rendimiento. Un estudio empírico. COFIN HABANA, Recuperado de http://congreso.investiga.fca.unam.mx/docs/xvii/docs/C23.pdf
+Flores, C., Arévalo, J., Pérez, J., & Escalante, J. (2020). Gestión del inventario y el rendimiento financiero en las empresas automotrices, Tarapoto, 2020. Ciencia Latina Revista Científica Multidisciplinar, 6(1), 2007–2027. https://ciencialatina.org/index.php/cienciala/article/view/1631
+Germán-Soto, V., & Marines López, A. (2023). Modelando crecimiento y rentabilidad empresarial de la industria de Coahuila: Modeling Business Growth and Profitability in the Coahuila Industry. Ensayos Revista De Economía, 42(1), 1–32. https://doi.org/10.29105/ensayos42.1-1
+González, H., Narváez, C., Lituma, M., & Erazo, J. (2019). Sistema de gestión de costos ABC/ABM para la industria de textiles. Caso empresa Vatex. Visionario Digital, 3(2.1.), 260–283. https://doi.org/10.33262/visionariodigital.v3i2.1..555
+Huaman Huaman, R. (2023). Análisis de costos de producción y rentabilidad en la empresa TROTO ATLETIC, Cusco. Recuperado de: https://repositorio.ucv.edu.pe/handle/20.500.12692/109208
+León Brito, K. J., & Keyla, P. F. E. (2023). Sistema de costos por órdenes de producción para incrementar la rentabilidad de la empresa H & J LION´ S CONTRATISTAS SAC 2022. Recuperado de: http://185.209.223.160/handle/20.500.14142/367
+Maldonado Correa, K., Armijos Rogel, G., & Lalangui Balcazar, M. (2023). Aplicación de la gestión de costos en pequeñas empresas productoras de banano, Provincia El Oro. Polo del Conocimiento, 8(2), 1479-1499. doi:http://dx.doi.org/10.23857/pc.v8i2.5255
+Meza, K. (2023). El control interno y su influencia en la rentabilidad en la Empresa Transportes Flores Hnos. SRL, Lima 2020. Recuperado de: http://190.119.244.198/handle/123456789/2907
+Ochoa, C., Marrufo, R., & Ibáñez, L. (2020). Gestión de costos como herramienta de la rentabilidad en pequeñas y medianas empresas. Revista Espacios, 41(50), 287–298. Disponible en: https://doi.org/10.48082/espacios-a20v41n50p20
+Pincay Mendoza, Y., Gutiérrez Bravo, J., Chichande Zambrano, S., & Del Peso Chilan, W. (2023). Costos operativos y rentabilidad de la Asociación “Asesagra” del cantón Jipijapa, periodo 2018-2021. Polo del Conocimiento, 8(2), 1254-1271. doi:http://dx.doi.org/10.23857/pc.v8i2.5243
+Rincón, A., Molina, R., y Vásquez, V. (2019). Componentes del costo con aproximaciones a las NIC 02 y NIIF 08. Bogotá, Colombia: Ediciones de la U, 2ª. Edición.
+Safra, V. (2020). Costo de servicio y rentabilidad en las empresas de transporte de carga distrito La Victoria- Lima metropolitana, 2017- 2019 [Universidad César Vallejo]. https://repositorio.ucv.edu.pe/bitstream/handle/20.500.12692/57705/Safra_PV-SD.pdf?sequence=4&isAllowed=y
+Veliz Rodríguez, E. A. (2023). Análisis de la Rentabilidad y Competitividad Digital como Componentes Claves del Éxito en las Organizaciones Empresariales Latinoamericanas en Respuesta al COVID-19, 2020. REICIT, 2(2), 96–112. Recuperado a partir de http://www.uptv.up.ac.pa/index.php/REICIT/article/view/3583
+Publicado
+Cómo citar
+Número
+Sección
+Licencia
+Derechos de autor 2023 Amy Esteffany López-Grández, Margot Vásquez-Tuanama
+Esta obra está bajo una licencia internacional Creative Commons Atribución 4.0.
+Los autores retienen sus derechos:
+a. Los autores retienen sus derechos de marca y patente, y también sobre cualquier proceso o procedimiento descrito en el artículo.
+b. Los autores retienen el derecho de compartir, copiar, distribuir, ejecutar y comunicar públicamente el articulo publicado en la revista científica UNAAACIENCIA-PERÚ (por ejemplo, colocarlo en un repositorio institucional o publicarlo en un libro), con un reconocimiento de su publicación inicial en la UNAAACIENCIA-PERÚ.
+c. Los autores retienen el derecho a hacer una posterior publicación de su trabajo, de utilizar el artículo o cualquier parte de aquel (por ejemplo: una compilación de sus trabajos, notas para conferencias, tesis, o para un libro), siempre que indiquen la fuente de publicación (autores del trabajo, revista, volumen, numero y fecha).
