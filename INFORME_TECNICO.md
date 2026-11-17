@@ -276,6 +276,20 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (18 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas/analisis_mercado.py` | script / script | — | 8 816 B | 3 / 3 | Análisis descriptivo inicial del mercado de autos usados en La Habana. | Añadido / Added |
+| 2026-11-17 | `Data` | carpeta / folder | — | carpeta / folder (11 entradas) | 7 / 7 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/analisis` | carpeta / folder | — | carpeta / folder (8 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/analisis/cobertura.csv` | datos / data | — | 174 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/dashboard.html` | HTML / HTML | — | 14 753 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/informe_descriptivo.md` | documento / document | — | 6 498 B | 2 / 2 | Análisis descriptivo inicial — mercado de autos usados en La Habana | Añadido / Added |
+| 2026-11-17 | `Data/analisis/outliers.csv` | datos / data | — | 768 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/precios_por_anio.csv` | datos / data | — | 728 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/precios_por_marca.csv` | datos / data | — | 803 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/precios_por_municipio.csv` | datos / data | — | 741 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/resumen_general.csv` | datos / data | — | 102 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 65 081 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 63 764 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
 | 2026-11-17 | `README.md` | documento / document | — | 16 116 B | 9 / 9 | AutoDecide Habana / AutoDecide Habana | Actualizado / Updated |
 
@@ -552,6 +566,14 @@ A petición del usuario, el objetivo inmediato deja de ser la recomendación int
 - El marco detallado de la sección 20 se mantiene, pero sus bloques 1 y 8 se interpretan ahora como *objetivo del análisis* y *entregables del análisis*, respectivamente.
 
 **EN.** At the user's request, the immediate objective becomes market analysis instead of interactive purchase recommendation. Phase 8 is renamed; user-preference weighting and the recommender are deferred to a later specialization.
+
+## 22. Análisis descriptivo inicial / Initial descriptive analysis (18/11/2026)
+
+Se creó `Auxiliares/herramientas/analisis_mercado.py`, que genera en `Data/analisis/`: `resumen_general.csv`, `precios_por_marca.csv`, `precios_por_municipio.csv`, `precios_por_anio.csv`, `outliers.csv`, `cobertura.csv`, `informe_descriptivo.md` y `dashboard.html`.
+
+Resultados sobre 323 autos: 248 precios USD válidos (≥500 USD); 74 precios <500 USD marcados como inválidos y 1 en CUP excluidos. Precio mediano **22.000 USD**, media 24.416,59 USD, IQR 11.375–35.000 USD, rango 600–95.000 USD. Marca más frecuente: Hyundai (n=75); municipio con más oferta: Playa (n=53). Cobertura de campos derivados: marca 68,4 %, año 63,5 %, km 6,2 % (heurísticos, extraídos solo de título/descripción). Detectados 5 outliers por IQR.
+
+**EN.** Initial descriptive analysis: 323 cars, 248 valid USD prices, median 22,000 USD, IQR 11,375–35,000, Hyundai and Playa leading, 5 IQR outliers. Derived year/km fields remain partial and heuristic.
 
 ---
 
