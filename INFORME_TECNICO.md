@@ -276,6 +276,8 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 56 770 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 53 268 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
 
 | 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (17 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
@@ -467,6 +469,27 @@ Fuentes académicas y repositorios revisados para definir los requerimientos del
 **Requerimientos derivados:** (1) esquema común con precio+moneda normalizada, año/km/combustible/transmisión/marca/modelo/provincia/tipo de vendedor y procedencia; (2) clasificación de calidad y estimación de costos ocultos; (3) comparables por marca-modelo-año-provincia; (4) modelo de rentabilidad = precio de reventa esperado − precio de compra − costos − impuestos; (5) ponderación de preferencias del usuario; (6) serie temporal con snapshots; (7) dashboard/producto interactivo; (8) validación, dedup y sin datos personales.
 
 **EN.** Academic sources and integrated repositories were reviewed to define the Fase 7-8 requirements: common schema with normalized currency, quality classification and hidden costs, comparables, profitability model, user-preference weighting, time series, interactive product, and validation/provenance.
+
+## 18. Auditoría de procedencia / Source audit (18/11/2026)
+
+| Fuente | Naturaleza | Verificación | Uso en el análisis |
+|---|---|---|---|
+| DfT / DVLA (UK), `gov.uk/government/statistical-data-sets/vehicle-licensing-statistics-data-files` | **Oficial gubernamental** | Verificado en vivo: publicado por Department for Transport + DVLA, actualizado 23/09/2026, Open Government Licence | Repos `uk-automotive-transition`: erste Registrierungen por marca/combustible/trimestre |
+| VAHAN (India), declarado por `vahan-india-automotive-market-2025` | **Oficial gubernamental** (MoRTH) | No accesible desde este entorno (error de transporte); el repo documenta 12 exportaciones mensuales 2025 y manifiesto de verificacion | Registros por fabricante/combustible |
+| BCC (Banco Central de Cuba) | **Oficial gubernamental** | No accesible en vivo desde este entorno; citado en `Data/investigacion-mercado-automotor-cuba.md` y Resolución 102/2026 | Tasa oficial |
+| Gaceta Oficial / MINCEX / MITRANS / MININT | **Oficial gubernamental** | Verificado en investigacion previa (Gaceta 65/2026, Decreto 163/2026) | Marco legal y normativo |
+| ANFAC (España) | **Gremial** (asociación de fabricantes) | Verificado en vivo: anfac.com, cifras de matriculaciones y parque, informe anual | Contexto sectorial, no precio de Cuba |
+| AEADE (Ecuador) | **Gremial** | Verificado en vivo: aeade.net, anuarios y boletines de ventas | Fuente declarada por el estudio PUCE de vehículos usados |
+| INEGI (México), EY, BBVA Research, COIIM, OICA | **Oficial / consultoría / gremio internacional** | Citados en los informes descargados en `Hombros/01_PDFs/`; no todos re-verificados en vivo | Contexto macro y tendencias |
+| Universidades (PUCE, UPS, UPV, UChile, UNAL, etc.) | **Académico** | Repositorios institucionales (.edu / repositorios oficiales) en `Hombros/indice.md` | Metodología, encuestas, EDA |
+| CarDekho (Kaggle), Spinny, OLX, Revolico, Autocubana, Dongfeng | **Marketplace / anuncios** | No son estadísticas oficiales; son precios **pedidos**, no transaccionados | Señal de precios; requiere dedup, verificación y sesgo declarado |
+| WhatsApp / Telegram / Facebook groups | **Redes sociales** | No verificables como fuente estadística; requieren consentimiento y sin datos personales | Precios reportados por usuarios |
+| elTOQUE, QvaPay, Binance (en `taso-api`) | **No oficial** (medios/P2P/crypto) | No verificados en vivo; elTOQUE es medio independiente, no BCC | Tasa informal/P2P, separada de la oficial |
+| UCI Automobile, datasets sintéticos (Zimbabwe/Nigeria) | **Académico/sintético** | Declarado en los propios README | Solo referencia metodológica, nunca precio real de Cuba |
+
+**Conclusión:** las fuentes oficiales y gremiales sirven de **contexto y validación**; los anuncios y redes son la **señal de precio** pero no sustituyen estadísticas oficiales. El análisis debe etiquetar cada métrica con su procedencia y nivel de confianza, y no mezclar tasas oficiales e informales ni precios anunciados con precios de transacción.
+
+**EN.** Official/governmental and industry sources are used for context and validation; marketplaces and social platforms provide advertised-price signals only. Every metric must carry provenance and confidence level, keeping official vs informal rates and asking vs transaction prices separate.
 
 ---
 
