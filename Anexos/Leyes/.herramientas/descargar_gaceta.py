@@ -89,7 +89,9 @@ def build_items():
             base = base / '_originales'
         name = Path(r['file_name']).name
         path = ROOT / base / name
-        if path.exists() and path.stat().st_size > 64 and magic_ok(path, r.get('ext', '')):
+        if path.exists() and path.stat().st_size > 64:
+            # Los archivos ya descargados se validaron (tamaño + cabecera) al renombrarlos.
+            # Evitar releer 3.000 PDF en cada reinicio: el arranque pasa de minutos a segundos.
             status, size = 'existente', path.stat().st_size
         elif name in fallidos:
             status, size = 'error_permanente', 0
