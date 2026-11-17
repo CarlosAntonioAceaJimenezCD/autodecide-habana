@@ -26,6 +26,8 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 from curl_cffi import requests as creq
 
+import telegram_db as tdb
+
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "Data/integraciones/telegram"
 CANALES_POR_DEFECTO = ["goldenbullbusinessfamilycars", "Motos_Autos_Discover"]
@@ -148,7 +150,10 @@ def main() -> None:
     todas: list[dict] = []
     for canal in canales:
         for fila in scrapear(canal, args.max_paginas):
-            todas.append(extraer_campos(fila))
+            fila = extraer_campos(fila)
+            todas.append(fila)
+            if fila["es_auto"]:
+                tdb.upsert_anuncio(fila)
 
     anuncios = [f for f in todas if f["es_auto"]]
     with (OUT / "anuncios.jsonl").open("w", encoding="utf-8") as fh:
@@ -167,6 +172,7 @@ def main() -> None:
         "anuncios_auto": len(anuncios),
     }
     (OUT / "estado.json").write_text(json.dumps(estado, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    tdb.set_estado("anuncios_telegram", str(len(anuncios)))
     print(f"Total mensajes={len(todas)} | anuncios auto={len(anuncios)}", flush=True)
 
 

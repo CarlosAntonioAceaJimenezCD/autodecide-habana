@@ -18,6 +18,8 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 from curl_cffi import requests as creq
 
+import telegram_db as tdb
+
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "Data/integraciones/telegram"
 SALIDA = OUT / "canales_referencia.jsonl"
@@ -122,6 +124,7 @@ def main() -> None:
         for i, fut in enumerate(as_completed(futuros), 1):
             fila = fut.result()
             resultados.append(fila)
+            tdb.upsert_canal(fila)
             if i % 25 == 0:
                 print(f"  validados {i}/{len(usuarios)}", flush=True)
 
@@ -139,6 +142,7 @@ def main() -> None:
         for fila in resultados:
             fh.write(json.dumps(fila, ensure_ascii=False) + "\n")
 
+    tdb.set_estado("canales_referencia", str(len(resultados)))
     print(f"Referencias guardadas: {len(resultados)} (objetivo {OBJETIVO})", flush=True)
     print(f"Automotrices: {sum(1 for f in resultados if f['es_automotriz'])}", flush=True)
     print(f"Con mensajes públicos: {sum(1 for f in resultados if f['publico'])}", flush=True)

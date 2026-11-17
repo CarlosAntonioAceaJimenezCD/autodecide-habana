@@ -276,6 +276,18 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (23 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas/descubrir_canales_telegram.py` | script / script | — | 6 017 B | 3 / 3 | Descubre canales de Telegram referentes al mercado cubano hasta 100. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/scraper_telegram_publico.py` | script / script | — | 6 740 B | 3 / 3 | Scraper de canales públicos de Telegram sin credenciales MTProto. | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas/telegram_db.py` | script / script | — | 3 972 B | 3 / 3 | Base SQLite compartida para datos de Telegram (canales + anuncios). | Añadido / Added |
+| 2026-11-17 | `Data/Revolico` | carpeta / folder | — | carpeta / folder (12 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/pipeline.sqlite` | base de datos / database | — | 104 624 128 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/progreso.md` | documento / document | — | 429 B | 2 / 2 | Progreso Revolico — 2026-11-17T18:09:58+00:00 | Actualizado / Updated |
+| 2026-11-17 | `Data/integraciones/telegram` | carpeta / folder | — | carpeta / folder (5 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/integraciones/telegram/canales_referencia.jsonl` | archivo / file | — | 42 199 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/telegram/telegram.sqlite` | base de datos / database | — | 135 168 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 93 240 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (21 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
 | 2026-11-17 | `Auxiliares/herramientas/aviso_revolico.py` | script / script | — | 4 560 B | 3 / 3 | Aviso de progreso del scraper de Revolico cada 10 minutos. | Añadido / Added |
 | 2026-11-17 | `Auxiliares/herramientas/scrape_revolico_pipeline.py` | script / script | — | 16 481 B | 3 / 3 | Pipeline de 3 etapas con colas persistentes para Revolico. | Actualizado / Updated |
@@ -723,6 +735,23 @@ Corrida final (50 páginas): **152 mensajes**, **54 anuncios de autos** del cana
 **Búsqueda de más canales:** se probaron `Revolico_Cuba_Oficial`, `Ventas_Revolico_Holguin_Cuba`, `revolico_baracoa`, `timbirichi_compra_y_venta_cuba`, `PiezasdeCarrosCU`, `directoriocubano`, `eltoquecom`, `coventcuba`, `APublished`, `GEEKSCUBANS_PLUS` y `lachopivaraderooo`. Ninguno publicó anuncios de autos accesibles sin unirse: son noticias, eventos, compra-venta general, repuestos o grupos con invitación. Quedan documentados en `CANALES_DESCUBIERTOS` del scraper para no repetir la búsqueda.
 
 **EN.** Final run: 152 messages, 54 car ads from one channel, 45 with year, no prices. Eleven additional Cuban channels were checked and found unusable without joining (news, events, general trading, parts or invite-only).
+
+## 29. Base de datos de Telegram (17/11/2026)
+
+Se creó `Auxiliares/herramientas/telegram_db.py` con `Data/integraciones/telegram/telegram.sqlite` y tres tablas: `canales`, `anuncios` y `estado`. Ambos scripts escriben en ella **mientras corren**: `descubrir_canales_telegram.py` guarda cada canal validado y `scraper_telegram_publico.py` guarda cada anuncio de auto.
+
+Backfill inicial completado:
+
+| Tabla | Registros |
+|---|---:|
+| `canales` | 119 |
+| `canales` con contexto automotriz | 4 |
+| `anuncios` | 54 |
+| `anuncios` marcados `es_auto` | 54 |
+
+Objetivo de 100 canales de referencia superado (119). El descubrimiento usa 26 búsquedas en tgden.com y valida cada usuario con `t.me/s/`, filtrando por contexto cubano. Los JSONL originales se conservan como respaldo.
+
+**EN.** A shared SQLite DB now stores Telegram channels and car ads as they are discovered/scraped: 119 channels, 54 ads, with JSONL backups.
 
 ---
 
