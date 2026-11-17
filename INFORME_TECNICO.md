@@ -276,6 +276,13 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `Auxiliares/herramientas/scrape_revolico_pipeline.py` | script / script | — | 16 200 B | 3 / 3 | Pipeline de 3 etapas con colas persistentes para Revolico. | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico` | carpeta / folder | — | carpeta / folder (10 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/partes` | carpeta / folder | — | carpeta / folder (48 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/pipeline.sqlite` | base de datos / database | — | 15 765 504 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/resumen.md` | documento / document | — | 412 B | 2 / 2 | Revolico — base de datos completa de la categoría Vehículos | Actualizado / Updated |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 86 136 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `Auxiliares/herramientas/actualizar_revolico.py` | script / script | — | 6 532 B | 3 / 3 | Actualización incremental de la BD de Revolico y subida por partes a Git. | Actualizado / Updated |
 | 2026-11-17 | `Data/Revolico` | carpeta / folder | — | carpeta / folder (11 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
 | 2026-11-17 | `Data/Revolico/partes` | carpeta / folder | — | carpeta / folder (47 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
@@ -669,6 +676,19 @@ Se amplió `analisis_mercado.py`:
 - **Reanudación:** se reanuda el pipeline desde las colas pendientes (13 URLs, 1 descarga y 16 decisiones pendientes) con `revolico-scrape.timer` activo e indefinido.
 
 **EN.** Map libraries installed, systemd auto-restart added, catalog availability/publication-date assumption encoded, and the pipeline resumed from pending queues.
+
+## 26. Orden corregido: enlace → clasificación → BD (17/11/2026)
+
+Se identificó la causa del retraso en la clasificación: el timer ejecutaba `actualizar_revolico.py`, que solo corre el scraper y divide la BD, sin escribir nunca `autos`/`revision`. El servicio ahora ejecuta `scrape_revolico_pipeline.py`, que sigue el orden pedido:
+
+1. **Descubrimiento**: obtiene el enlace y, con el título del listado, aplica `clasificar_enlace()`; los que claramente no son vehículos 4+ ruedas se marcan `rechazado` y se registran en `revision` sin descargarlos.
+2. **Descarga**: solo procesa enlaces con `es_auto_candidato=1`.
+3. **Procesamiento**: clasificación definitiva con la página completa y commit cada 25 procesados a `autos`/`revision`.
+4. **Partes**: al terminar, genera `estado.json` y las partes de la BD para `revolico-git.timer`.
+
+Prueba con 1 página: 120 enlaces descubiertos, 63 descartados tempranamente y 185 candidatos descargados; `autos` pasó de 323 a 326 y `revision` de 6.085 a 6.134.
+
+**EN.** Root cause fixed: the timer now runs the queue pipeline, which classifies each link at discovery time before downloading, so only car candidates reach the database. Early test: 120 links, 63 rejected early, 185 candidates, autos 323→326.
 
 ---
 
