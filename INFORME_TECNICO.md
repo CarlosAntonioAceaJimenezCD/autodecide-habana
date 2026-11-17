@@ -276,6 +276,8 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 75 373 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (19 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
 | 2026-11-17 | `Auxiliares/herramientas/analisis_mercado.py` | script / script | — | 12 282 B | 3 / 3 | Análisis descriptivo inicial del mercado de autos usados en La Habana. | Actualizado / Updated |
 | 2026-11-17 | `Auxiliares/herramientas/graficos_mercado.py` | script / script | — | 9 312 B | 3 / 3 | Funciones para generar todas las gráficas del análisis de mercado. | Añadido / Added |
@@ -611,6 +613,14 @@ Se amplió `analisis_mercado.py`:
 - **Gráficas**: `Auxiliares/herramientas/graficos_mercado.py` usa matplotlib, seaborn y plotly (instalados) y genera 8 PNG + `dashboard_interactivo.html` en `Data/analisis/graficos/`.
 
 **EN.** Prices converted to CUP with elTOQUE daily TRMI, divided by vehicle year, with a daily/monthly price-vs-rate series and a full plotting module (matplotlib/seaborn/plotly). Active ads are assumed purchasable.
+
+## 24. Estado del scrapeo y procesamiento de diccionarios (18/11/2026)
+
+**Diccionarios/JSON guardados** (6.334/6.334 anuncios): `meta_json`, `ad_json` y `apollo_full`. En `ad_json` hay 21 claves, entre ellas `price`, `currency`, `status`, `updatedOnByUser`, `province`, `municipality`, `subcategory`, `imagesCount`, `viewCount`, `permalink`. En `apollo_full` hay cinco tipos: `ImageType`, `CategoryType`, `ProvinceType`, `MunicipalityType`, `AdType` y `ROOT_QUERY`. **No hay claves estructuradas de año, kilometraje, marca, modelo, combustible ni transmisión**: por eso `anio_est`, `marca_est` y `km_est` se derivan con regex del texto visible (cobertura 63,5 %, 68,4 % y 6,2 %). Los diccionarios se usan hoy para precio/moneda/estado/fecha/geografía y como respaldo de trazabilidad; `autos` no guarda esas columnas y se hace `JOIN` con `anuncios` para el análisis.
+
+**Reporte de scrapeo:** `anuncios` 6.334 · `autos` 323 · `revision` 6.085 · `imagenes` 13.932 · `telefonos` 7.699 · BD 520,6 MB. Colas: `url_queue` 141 (125 done, 3 downloading, 13 pending); `download_queue` 125 (123 processed, 1 processing, 1 pending); `process_queue` 123 (107 committed, 16 pending). Los pendientes quedaron de una corrida interrumpida por reinicio del servidor. Snapshot `ultimo.json` de 17/11 04:44 (6.334 entradas); partes generadas: 0. `revolico-git.timer` activo (última ejecución 10:12). El análisis descriptivo y las 8 gráficas + dashboard ya están en `Data/analisis/`.
+
+**EN.** JSON dictionaries hold price/currency/status/date/geography but no structured year/km/brand; those remain heuristic. Scrape report: 6,334 ads, 323 cars, 6,085 rejections, queues with pending items from an interrupted run, no DB chunks uploaded yet.
 
 ---
 
