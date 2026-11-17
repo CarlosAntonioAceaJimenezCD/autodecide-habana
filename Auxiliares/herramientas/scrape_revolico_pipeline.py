@@ -126,8 +126,14 @@ def ensure_main_tables(c: sqlite3.Connection) -> None:
 
 
 STOP = threading.Event()
+DISCOVERY_DONE = threading.Event()
 lock_commit = threading.Lock()
 processed_counter = {"n": 0}
+skipped_counter = {"n": 0}
+SNAPSHOT: dict[str, str] = {}
+# El timestamp `updatedOnToOrder` del listado cambia por ranking, no por edición
+# del anuncio, así que no es una firma fiable. Por defecto se descarga todo.
+SKIP_UNCHANGED = False
 
 
 def discover(max_pages: int) -> None:
@@ -139,32 +145,42 @@ def discover(max_pages: int) -> None:
             break
         html = sr.get_html(sr.SEARCH.format(page=page))
         st = sr.state_from(html)
-        found = []
+        found = {}
         for k, v in st.items():
             if k.startswith("AdType:") and isinstance(v, dict) and v.get("permalink"):
-                found.append(v["permalink"])
-        found = list(dict.fromkeys(found))
+                found[v["permalink"]] = (
+                    str(v.get("id") or ""),
+                    str(v.get("updatedOnToOrder") or ""),
+                )
         now = sr.now()
-        for path in found:
+        for path, (ad_id, sig) in found.items():
             c.execute(
-                "INSERT OR IGNORE INTO url_queue (path,status,discovered_at) VALUES (?,?,?)",
-                (path, "pending", now),
+                "INSERT OR IGNORE INTO url_queue (path,status,discovered_at,ad_id,sig) VALUES (?,?,?,?,?)",
+                (path, "pending", now, ad_id, sig),
             )
             written += 1
         c.commit()
         print(f"[descubridor] página {page}: {len(found)} enlaces (cola {written})", flush=True)
         time.sleep(0.35)
     c.close()
+    DISCOVERY_DONE.set()
 
 
 def download_loop() -> None:
     c = conn_queue()
     while not STOP.is_set():
-        row = c.execute("SELECT path FROM url_queue WHERE status='pending' LIMIT 1").fetchone()
+        row = c.execute("SELECT path,ad_id,sig FROM url_queue WHERE status='pending' LIMIT 1").fetchone()
         if not row:
             time.sleep(0.5)
             continue
-        path = row[0]
+        path, ad_id, sig = row
+        # Adaptado de diff_runs.py: si la firma no cambió, no volvemos a descargar.
+        if SKIP_UNCHANGED and ad_id and sig and SNAPSHOT.get(ad_id) == sig:
+            c.execute("UPDATE url_queue SET status='done' WHERE path=?", (path,))
+            c.commit()
+            with lock_commit:
+                skipped_counter["n"] += 1
+            continue
         c.execute("UPDATE url_queue SET status='downloading' WHERE path=?", (path,))
         c.commit()
         try:
@@ -296,12 +312,17 @@ def main() -> None:
     ap.add_argument("--downloaders", type=int, default=8)
     ap.add_argument("--processors", type=int, default=4)
     ap.add_argument("--batch-size", type=int, default=25)
+    ap.add_argument("--skip-unchanged", action="store_true", help="omitir anuncios cuya firma de listado no cambió (no fiable para precio)")
     args = ap.parse_args()
-    global BATCH
+    global BATCH, SKIP_UNCHANGED
     BATCH = args.batch_size
+    SKIP_UNCHANGED = args.skip_unchanged
 
     OUT.mkdir(parents=True, exist_ok=True)
     init_queues()
+    global SNAPSHOT
+    SNAPSHOT = load_snapshot()
+    print(f"Snapshot cargado: {len(SNAPSHOT)} anuncios", flush=True)
     m = conn_main()
     ensure_main_tables(m)
     m.close()
@@ -325,7 +346,7 @@ def main() -> None:
                    (SELECT count(*) FROM process_queue WHERE status='pending')"""
             ).fetchone()
             q.close()
-            if sum(pending) == 0:
+            if DISCOVERY_DONE.is_set() and sum(pending) == 0:
                 print("Colas vacías; cerrando pipeline.", flush=True)
                 break
     except KeyboardInterrupt:
@@ -335,7 +356,11 @@ def main() -> None:
         commit_batch()
         for t in threads:
             t.join(timeout=5)
-    print(f"Procesados en total: {processed_counter['n']}", flush=True)
+        save_snapshot()
+    print(
+        f"Procesados: {processed_counter['n']} | omitidos por snapshot: {skipped_counter['n']}",
+        flush=True,
+    )
 
 
 if __name__ == "__main__":

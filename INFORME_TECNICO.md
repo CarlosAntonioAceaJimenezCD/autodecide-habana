@@ -276,6 +276,14 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (17 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas/scrape_revolico_pipeline.py` | script / script | — | 14 401 B | 3 / 3 | Pipeline de 3 etapas con colas persistentes para Revolico. | Añadido / Added |
+| 2026-11-17 | `Data/Revolico` | carpeta / folder | — | carpeta / folder (7 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/pipeline.sqlite` | base de datos / database | — | 10 625 024 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/snapshots` | carpeta / folder | — | carpeta / folder (1 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/snapshots/ultimo.json` | datos / data | — | 101 344 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 48 537 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `Auxiliares/herramientas/limpiar_revolico.py` | script / script | — | 7 655 B | 3 / 3 | Limpieza de la BD de Revolico: solo vehículos de 4+ ruedas con datos útiles. | Actualizado / Updated |
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 46 466 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
 
@@ -420,6 +428,20 @@ The database is **not versioned as a single file**. Every 10 minutes a systemd t
 **Limpieza ejecutada / Cleaning run (17/11/2026):** sobre los 6.332 anuncios actuales, `limpiar_revolico.py` conservó **304 autos** en la tabla `autos` y registró **6.028 exclusiones** en `revision` (5.983 no vehículo 4+ ruedas, 45 sin datos necesarios, 0 páginas sin datos suficientes). No se borraron filas originales: `anuncios` conserva las columnas de auditoría `es_auto`, `motivo_exclusion`, `pagina_revisada` y `datos_necesarios`. Se añadieron `microbús/guagua/ómnibus/bus` a los patrones de inclusión. / On the current 6,332 ads, 304 cars were kept and 6,028 exclusions logged; no original rows were deleted and microbus terms were added to the inclusion patterns.
 
 **Permanencia / Retention:** las Condiciones de Uso de Revolico (23/09/2026) no fijan un plazo de caducidad de los anuncios. Empíricamente, un anuncio con `updated_on_by_user=2024-12-17` seguía en HTTP 200 el 17/11/2026 (~699 días), por lo que no puede asumirse una expiración de 30 días. El 99,3 % de los anuncios tiene `updated_on_by_user` en los últimos 7 días (mediana 1 día en los 189 autos), lo que indica renovación frecuente por parte del vendedor. Revolico's Terms (23/09/2026) set no fixed expiry; an ad last updated 2024-12-17 was still HTTP 200 on 2026-11-17 (~699 days), while 99.3% of ads were updated within 7 days, suggesting frequent seller renewal.
+
+## 16. Pipeline de colas / Queue-based pipeline (18/11/2026)
+
+`Auxiliares/herramientas/scrape_revolico_pipeline.py` separa el trabajo en tres etapas simultáneas con colas persistentes en `Data/Revolico/pipeline.sqlite`:
+
+1. **Descubrimiento**: recorre página por página y guarda enlace, `ad_id` y firma de listado en `url_queue`.
+2. **Descarga**: workers toman URLs pendientes y guardan **todos** los campos parseados (`raw_html`, `apollo_full`, `meta_json`, imágenes, teléfonos, etc.) en `download_queue`.
+3. **Procesamiento**: workers clasifican cada anuncio con `limpiar_revolico.clasificar` y escriben la decisión en `process_queue`. Cada **25 anuncios procesados** (aceptados o rechazados) se hace un commit por lotes en `anuncios`/`autos`/`imagenes`/`telefonos` o en `revision`.
+
+Se adaptó el patrón `output_writer.py` + `diff_runs.py` de `spinny-scraper` como snapshot `Data/Revolico/snapshots/ultimo.json` (`{id: firma}`). El campo `updatedOnToOrder` del listado resultó ser un marcador de ranking y no de edición, así que el salto de descarga queda desactivado por defecto (`--skip-unchanged`); el snapshot se conserva como registro de diferencias.
+
+Prueba con 1 página: **119 enlaces** descubiertos y procesados, 7 lotes de 25, BD principal de 6.332 a **6.334 anuncios** y de 304 a **317 autos**. Todo queda auditado; no se descarta información.
+
+**EN.** The new pipeline runs three concurrent stages with persistent queues, committing every 25 processed ads. The spinny diff pattern was adapted as a snapshot, but skipping downloads is disabled by default because the listing timestamp is a ranking signal, not an edit signal. Test run: 119 links, 6,334 ads and 317 cars in the main DB.
 
 ---
 
