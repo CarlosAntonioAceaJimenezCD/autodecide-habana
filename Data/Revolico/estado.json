@@ -1,5 +1,5 @@
 {
-  "actualizado_utc": "2026-11-17T15:29:31+00:00",
+  "actualizado_utc": "2026-11-17T15:47:42+00:00",
   "db_bytes": 795373568,
   "db_sha256": "dadd2bffba615d8a6c2dd3abc6f3a3d87d4402e1413ed03762d1a8b90d5b5148",
   "tamano_parte": 16777216,
@@ -245,5 +245,5 @@
       "orden": 48
     }
   ],
-  "sin_cambios": false
+  "sin_cambios": true
 }
