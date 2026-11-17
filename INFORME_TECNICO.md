@@ -276,6 +276,8 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 62 338 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 59 613 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
 
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 56 770 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
@@ -516,6 +518,26 @@ Fuentes académicas y repositorios revisados para definir los requerimientos del
 - **Límites**: precios pedidos no transaccionados, sesgo de supervivencia de anuncios, sin datos personales, vigencia normativa a verificar.
 
 **EN.** An eight-step generic framework was adapted to Havana: scope, regulatory/theoretical frame, data design, curation, descriptive analysis, comparables and profitability, affordability, and an explainable interactive recommender, with explicit provenance and limitations.
+
+## 20. Marco analítico detallado / Detailed analytical framework (18/11/2026)
+
+**ES.** El marco operativo completo consta de nueve bloques:
+
+1. **Decisión objetivo**: recomendar la compra de auto más rentable en La Habana según las preocupaciones del usuario.
+2. **Alcance**: La Habana, autos 4+ ruedas, canales formal e informal, precios anunciados separados por moneda.
+3. **Marco teórico**: asimetría de información, selección adversa, riesgo moral, diferenciación de precios y calidad por antigüedad.
+4. **Marco normativo**: Decreto 163/2026, resoluciones 104/17/52/171-175/312/102 de 2026, Gaceta 65/2026; impedimentos legales para recolección y uso de datos.
+5. **Arquitectura de datos**: fuentes (Revolico, concesionarios, tasas BCC/elTOQUE, salarios Resolución 14, redes), esquema común con IDs, precio+moneda, geografía, timestamps y procedencia; pipeline de 3 colas con commit cada 25 procesados; limpieza a `autos`/`revision`.
+6. **Descriptivo**: distribuciones (mediana, IQR, outliers), segmentación por marca-modelo-año, precio/km, geografía municipal, series con snapshots.
+7. **Analítico**: comparables por modelo ±2 años y municipio, depreciación, clasificación de calidad y costos ocultos, regresión hedónica, margen de rentabilidad, asequibilidad precio/salario, ponderación de preferencias, explicabilidad tipo SHAP.
+8. **Producto**: entrada de preferencias del usuario, salida de recomendación explicada, dashboard y trazabilidad de cada cifra.
+9. **Validación y entrega**: dedup, manejo de missing, sensibilidad a moneda y supuestos, pruebas con datos conocidos, informe bilingüe, limitaciones y monitoreo continuo.
+
+**Lo que ya existe:** BD de 6.334 anuncios / 317 autos, esquema con 30 campos + auditoría, imágenes/teléfonos, snapshots de precios, normativa documentada, tasas y salarios referenciados, repositorios de modelos y dashboards.
+
+**Lo que falta por conseguir:** extracción estructurada de año/km/marca/modelo/combustible/transmisión desde `ad_json`/`apollo_full`; montos de costos ocultos; precios de transacción reales; estadísticas oficiales cubanas de parque y matriculaciones; encuestas a compradores habaneros; series históricas de tasas y salarios digitalizadas; geocodificación de ubicaciones; validación en vivo de anuncios.
+
+**EN.** The detailed framework covers nine blocks: decision, scope, theory, regulation, data architecture, descriptive analytics, causal/comparable analytics, interactive product, and validation/delivery. Existing assets and missing data needs are listed explicitly.
 
 ---
 
