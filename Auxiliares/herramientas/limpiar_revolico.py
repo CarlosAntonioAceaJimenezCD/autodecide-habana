@@ -40,7 +40,7 @@ EXCLUDE_TITLE = re.compile(
     re.IGNORECASE,
 )
 INCLUDE_TITLE = re.compile(
-    r"\b(carro|autom[oó]vil|coche|camioneta|furgoneta|cam[ií]on|autob[oú]s|jeep|suv|pickup|"
+    r"\b(carro|autom[oó]vil|coche|camioneta|furgoneta|cam[ií]on|autob[oú]s|microb[uú]s|microbus|guagua|[oó]mnibus|bus|jeep|suv|pickup|"
     r"chevrolet|ford|toyota|renault|nissan|honda|hyundai|kia|mazda|vw|volkswagen|"
     r"pontiac|buick|changan|dongfeng|volvo|bmw|mercedes|lexus|peugeot|fiat)\b",
     re.IGNORECASE,

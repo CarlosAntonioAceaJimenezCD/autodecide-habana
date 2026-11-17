@@ -276,6 +276,9 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `Auxiliares/herramientas/limpiar_revolico.py` | script / script | — | 7 655 B | 3 / 3 | Limpieza de la BD de Revolico: solo vehículos de 4+ ruedas con datos útiles. | Actualizado / Updated |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 46 466 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 45 634 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
 
 | 2026-11-17 | `Data/Revolico` | carpeta / folder | — | carpeta / folder (5 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
@@ -413,6 +416,8 @@ The database is **not versioned as a single file**. Every 10 minutes a systemd t
 **EN.** For more Havana market data, the most efficient route is Telegram MTProto (`telethon`, already integrated): no browser, incremental cursor, server-side search and `FloodWaitError` handling. Next is Facebook GQL: authenticated GraphQL calls with `price-parser`/`iso4217parse`, faster than Selenium. WhatsApp has no public personal API; the practical option is self-hosted WAHA REST with id deduplication, implemented in `waha_client.py`. Playwright/Selenium remain a last resort. All three should converge into a common schema with source-based deduplication and no personal data.
 
 **Nota / Note (17/11/2026):** se detuvo manualmente `revolico-scrape.timer` y su servicio a petición del usuario. El scraper había ampliado la BD de 3.682 a **6.332 anuncios** (520,6 MB) antes de detenerse; no se generaron partes (`estado.json` ausente) porque se detuvo antes de la fase de división. `revolico-git.timer` sigue activo para no perder cambios ya versionados. / The scrape timer and its service were stopped manually at the user's request. The scraper had grown the DB from 3,682 to **6,332 ads** (520.6 MB) before stopping; no chunks were produced because it was stopped before the split phase. `revolico-git.timer` remains active so versioned changes are not lost.
+
+**Limpieza ejecutada / Cleaning run (17/11/2026):** sobre los 6.332 anuncios actuales, `limpiar_revolico.py` conservó **304 autos** en la tabla `autos` y registró **6.028 exclusiones** en `revision` (5.983 no vehículo 4+ ruedas, 45 sin datos necesarios, 0 páginas sin datos suficientes). No se borraron filas originales: `anuncios` conserva las columnas de auditoría `es_auto`, `motivo_exclusion`, `pagina_revisada` y `datos_necesarios`. Se añadieron `microbús/guagua/ómnibus/bus` a los patrones de inclusión. / On the current 6,332 ads, 304 cars were kept and 6,028 exclusions logged; no original rows were deleted and microbus terms were added to the inclusion patterns.
 
 **Permanencia / Retention:** las Condiciones de Uso de Revolico (23/09/2026) no fijan un plazo de caducidad de los anuncios. Empíricamente, un anuncio con `updated_on_by_user=2024-12-17` seguía en HTTP 200 el 17/11/2026 (~699 días), por lo que no puede asumirse una expiración de 30 días. El 99,3 % de los anuncios tiene `updated_on_by_user` en los últimos 7 días (mediana 1 día en los 189 autos), lo que indica renovación frecuente por parte del vendedor. Revolico's Terms (23/09/2026) set no fixed expiry; an ad last updated 2024-12-17 was still HTTP 200 on 2026-11-17 (~699 days), while 99.3% of ads were updated within 7 days, suggesting frequent seller renewal.
 
