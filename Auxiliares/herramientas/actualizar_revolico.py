@@ -18,6 +18,7 @@ import fcntl
 import hashlib
 import json
 import os
+import shutil
 import subprocess
 import tempfile
 from datetime import datetime, timezone
@@ -95,9 +96,9 @@ def split_database() -> dict:
             if digest in previous and (PARTS / previous[digest]).is_file():
                 source = PARTS / previous[digest]
                 if source != final:
-                    source.replace(final)
+                    shutil.move(str(source), str(final))
             else:
-                (tmpdir / name).replace(final)
+                shutil.move(str(tmpdir / name), str(final))
             kept.append({"name": name, "sha256": digest, "orden": position})
 
         wanted = {entry["name"] for entry in kept}
