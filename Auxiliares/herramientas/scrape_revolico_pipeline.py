@@ -33,6 +33,10 @@ import limpiar_revolico as lr
 OUT = sr.OUT
 MAIN_DB = sr.DB
 QUEUE_DB = OUT / "pipeline.sqlite"
+# Adaptado de integraciones/spinny (output_writer.py + diff_runs.py):
+# snapshot {id: precio} entre corridas para no descargar anuncios sin cambios.
+SNAP_DIR = OUT / "snapshots"
+SNAP_FILE = SNAP_DIR / "ultimo.json"
 BATCH = 25
 
 
@@ -64,8 +68,29 @@ def init_queues() -> None:
         CREATE INDEX IF NOT EXISTS idx_pr_status ON process_queue(status);
         """
     )
+    for col, decl in (("ad_id", "TEXT"), ("price", "TEXT"), ("sig", "TEXT")):
+        existing = {r[1] for r in c.execute("PRAGMA table_info(url_queue)")}
+        if col not in existing:
+            c.execute(f"ALTER TABLE url_queue ADD COLUMN {col} {decl}")
     c.commit()
     c.close()
+
+
+def load_snapshot() -> dict:
+    if SNAP_FILE.is_file():
+        try:
+            return json.loads(SNAP_FILE.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            pass
+    return {}
+
+
+def save_snapshot() -> None:
+    SNAP_DIR.mkdir(parents=True, exist_ok=True)
+    m = conn_main()
+    data = {str(r[0]): str(r[1] or "") for r in m.execute("SELECT id, updated_on_to_order FROM anuncios")}
+    m.close()
+    SNAP_FILE.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
 
 
 def conn_main() -> sqlite3.Connection:
