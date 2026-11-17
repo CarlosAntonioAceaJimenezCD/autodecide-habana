@@ -507,7 +507,7 @@ The database is **not versioned as a single file**. Every 10 minutes a systemd t
 | Última ejecución / Last run | Tamaño / Size | Partes / Chunks | SHA-256 (inicio) | Reconstrucción / Rebuild |
 |---|---|---|---|---|
 <!-- SYNC_REVOLICO -->
-| 2026-11-17T15:00:43+00:00 | 794664960 B | 48 partes de 16 MiB | `0ec119bba302b0c4…` | Reconstruir con `reconstruir_revolico.py` / Rebuild with `reconstruir_revolico.py` |
+| 2026-11-17T15:29:31+00:00 | 795373568 B | 48 partes de 16 MiB | `dadd2bffba615d8a…` | Reconstruir con `reconstruir_revolico.py` / Rebuild with `reconstruir_revolico.py` |
 
 ## 15. Eficiencia de Telegram, WhatsApp y Facebook / Efficiency of Telegram, WhatsApp and Facebook
 
