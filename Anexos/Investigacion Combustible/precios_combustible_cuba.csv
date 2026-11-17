@@ -1,0 +1,44 @@
+fecha_dato,vigente_desde,combustible,moneda,ambito,precio_min,precio_max,unidad,fuente,documento,notas
+2020-12-10,2021-01-01,Gasolina 100 octanos,CUP,Oficial,37.50,37.50,L,Gaceta Oficial EX68 de 2020,Acuerdo 8957 del Consejo de Ministros (Anexo I),Vigente hasta 2024-02-29; publicado 10-12-2020
+2020-12-10,2021-01-01,Gasolina 94 octanos,CUP,Oficial,30.00,30.00,L,Gaceta Oficial EX68 de 2020,Acuerdo 8957 del Consejo de Ministros (Anexo I),Vigente hasta 2024-02-29
+2020-12-10,2021-01-01,Gasolina 90 octanos,CUP,Oficial,25.00,25.00,L,Gaceta Oficial EX68 de 2020,Acuerdo 8957 del Consejo de Ministros (Anexo I),Vigente hasta 2024-02-29
+2020-12-10,2021-01-01,Gasolina 83 octanos,CUP,Oficial,20.00,20.00,L,Gaceta Oficial EX68 de 2020,Acuerdo 8957 del Consejo de Ministros (Anexo I),Vigente hasta 2024-02-29
+2020-12-10,2021-01-01,Diesel Regular,CUP,Oficial,25.00,25.00,L,Gaceta Oficial EX68 de 2020,Acuerdo 8957 del Consejo de Ministros (Anexo I),Vigente hasta 2024-02-29
+2024-03-01,2024-03-01,Gasolina 100 octanos,CUP,Oficial,198.00,198.00,L,Gaceta Oficial GOC-2024-EX10,Acuerdo 9810 del Consejo de Ministros,Anunciado 09-01-2024; aplazado 31-01-2024 por incidente de ciberseguridad; aplicado 01-03-2024
+2024-03-01,2024-03-01,Gasolina 94 octanos,CUP,Oficial,156.00,156.00,L,Gaceta Oficial GOC-2024-EX10,Acuerdo 9810 del Consejo de Ministros,Idem
+2024-03-01,2024-03-01,Gasolina 90 octanos,CUP,Oficial,132.00,132.00,L,Gaceta Oficial GOC-2024-EX10,Acuerdo 9810 del Consejo de Ministros,Idem
+2024-03-01,2024-03-01,Gasolina 83 octanos,CUP,Oficial,114.00,114.00,L,Gaceta Oficial GOC-2024-EX10,Acuerdo 9810 del Consejo de Ministros,Idem
+2024-03-01,2024-03-01,Diesel Regular,CUP,Oficial,132.00,132.00,L,Gaceta Oficial GOC-2024-EX10,Acuerdo 9810 del Consejo de Ministros,Idem
+2024-03-01,2024-03-01,Gasolina 100 octanos,USD,Oficial (servicentros en divisas),1.65,1.65,L,Gaceta Oficial GOC-2024-EX10,Acuerdo 9810 del Consejo de Ministros,Primeros precios minoristas oficiales en USD; red inicial de 28 servicentros Cimex
+2024-03-01,2024-03-01,Gasolina 94 octanos,USD,Oficial (servicentros en divisas),1.30,1.30,L,Gaceta Oficial GOC-2024-EX10,Acuerdo 9810 del Consejo de Ministros,Idem
+2024-03-01,2024-03-01,Gasolina 90 octanos,USD,Oficial (servicentros en divisas),1.10,1.10,L,Gaceta Oficial GOC-2024-EX10,Acuerdo 9810 del Consejo de Ministros,Idem
+2024-03-01,2024-03-01,Gasolina 83 octanos,USD,Oficial (servicentros en divisas),0.95,0.95,L,Gaceta Oficial GOC-2024-EX10,Acuerdo 9810 del Consejo de Ministros,Idem
+2024-03-01,2024-03-01,Diesel Regular,USD,Oficial (servicentros en divisas),1.10,1.10,L,Gaceta Oficial GOC-2024-EX10,Acuerdo 9810 del Consejo de Ministros,Idem
+2026-05-15,2026-05-15,Gasolina Especial B100,USD,Oficial Cimex minorista,2.60,2.60,L,CiberCuba (Circular Especial 03/2026 de Cimex),Circular Especial 03/2026,Entrada en vigor 15-05-2026 12:00; sustituye ~1.30 USD/L; documento confirmado por CiberCuba con fuentes internas
+2026-05-15,2026-05-15,Gasolina Especial B94,USD,Oficial Cimex minorista,2.00,2.00,L,CiberCuba (Circular Especial 03/2026 de Cimex),Circular Especial 03/2026,Idem
+2026-05-15,2026-05-15,Gasolina Regular B90,USD,Oficial Cimex minorista,1.90,1.90,L,CiberCuba (Circular Especial 03/2026 de Cimex),Circular Especial 03/2026,Idem
+2026-05-15,2026-05-15,Gasolina Motor B83,USD,Oficial Cimex minorista,1.80,1.80,L,CiberCuba (Circular Especial 03/2026 de Cimex),Circular Especial 03/2026,Idem
+2026-05-15,2026-05-15,Diesel Especial,USD,Oficial Cimex minorista,2.20,2.20,L,CiberCuba (Circular Especial 03/2026 de Cimex),Circular Especial 03/2026,Idem
+2026-05-15,2026-05-15,Diesel Regular,USD,Oficial Cimex minorista,2.00,2.00,L,CiberCuba (Circular Especial 03/2026 de Cimex),Circular Especial 03/2026,Idem
+2026-09-11,2026-09-11,Gasolina Especial B100,USD,Oficial Cimex mayorista,2.50,2.50,L,Directorio Cubano (datos Cimex),Precio del combustible en Cuba hoy,Captura Wayback 05-11-2026; el sitio muestra la fecha de los datos como 11-09-2026
+2026-09-11,2026-09-11,Gasolina Especial B100,USD,Oficial Cimex minorista,2.60,2.60,L,Directorio Cubano (datos Cimex),Precio del combustible en Cuba hoy,Idem
+2026-09-11,2026-09-11,Gasolina Especial B94,USD,Oficial Cimex mayorista,1.90,1.90,L,Directorio Cubano (datos Cimex),Precio del combustible en Cuba hoy,Idem
+2026-09-11,2026-09-11,Gasolina Especial B94,USD,Oficial Cimex minorista,2.00,2.00,L,Directorio Cubano (datos Cimex),Precio del combustible en Cuba hoy,Idem
+2026-09-11,2026-09-11,Gasolina Regular B90,USD,Oficial Cimex mayorista,1.80,1.80,L,Directorio Cubano (datos Cimex),Precio del combustible en Cuba hoy,Idem
+2026-09-11,2026-09-11,Gasolina Regular B90,USD,Oficial Cimex minorista,2.50,2.50,L,Directorio Cubano (datos Cimex),Precio del combustible en Cuba hoy,"Valor publicado por la fuente; coherente con la coexistencia de precios por operador, pero conviene verificarlo"
+2026-09-11,2026-09-11,Gasolina Motor B83,USD,Oficial Cimex mayorista,1.70,1.70,L,Directorio Cubano (datos Cimex),Precio del combustible en Cuba hoy,Idem
+2026-09-11,2026-09-11,Gasolina Motor B83,USD,Oficial Cimex minorista,1.80,1.80,L,Directorio Cubano (datos Cimex),Precio del combustible en Cuba hoy,Idem
+2026-09-11,2026-09-11,Diesel Especial,USD,Oficial Cimex mayorista,2.10,2.10,L,Directorio Cubano (datos Cimex),Precio del combustible en Cuba hoy,Idem
+2026-09-11,2026-09-11,Diesel Especial,USD,Oficial Cimex minorista,2.20,2.20,L,Directorio Cubano (datos Cimex),Precio del combustible en Cuba hoy,Idem
+2026-09-11,2026-09-11,Diesel Regular,USD,Oficial Cimex mayorista,1.90,1.90,L,Directorio Cubano (datos Cimex),Precio del combustible en Cuba hoy,Idem
+2026-09-11,2026-09-11,Diesel Regular,USD,Oficial Cimex minorista,2.00,2.00,L,Directorio Cubano (datos Cimex),Precio del combustible en Cuba hoy,Idem
+2026-09-11,2026-09-11,Gasolina Especial B94,CUP,Informal,7000,8000,L,elToque vía Directorio Cubano,Precio del combustible en Cuba hoy,No oficial; varía por provincia y disponibilidad
+2026-09-11,2026-09-11,Gasolina Regular B90,CUP,Informal,3200,4000,L,elToque vía Directorio Cubano,Precio del combustible en Cuba hoy,No oficial; la fuente indica -7.5 %
+2026-09-11,2026-09-11,Gasolina Motor B83,CUP,Informal,3300,3300,L,elToque vía Directorio Cubano,Precio del combustible en Cuba hoy,No oficial; la fuente indica -5.7 %
+2026-09-11,2026-09-11,Petroleo/Diesel,CUP,Informal,1600,2000,L,elToque vía Directorio Cubano,Precio del combustible en Cuba hoy,No oficial
+2026-04-01,2026-04-01,Gasolina (general),CUP,Informal,4000,6000,L,CiberCuba,"Nuevo tarifazo en Cuba: gasolina en dolares sube hasta 2,60",Oferta observada en abril-mayo de 2026; equivalente a ~7-12 USD al tipo de cambio informal
+2026-03-01,2026-03-01,Gasolina (general),USD,Informal,7.93,7.93,L,BBC News Mundo (citado en el resumen de investigacion),Reporte sobre mercado informal,30 USD/galon ~ 7.93 USD/L; dato no oficial y puntual
+2026-11-09,2026-11-09,Gasolina (promedio pais),CUP,Referencia agregada,240.96,240.96,L,GlobalPetrolPrices,Cuba gasoline prices,"Fecha de la fuente 09-11-2026; conversion propia de la fuente, no tarifa oficial"
+2026-11-09,2026-11-09,Gasolina (promedio pais),USD,Referencia agregada,2.00,2.00,L,GlobalPetrolPrices,Cuba gasoline prices,Fecha de la fuente 09-11-2026
+2026-11-09,2026-11-09,Gasolina (promedio pais),EUR,Referencia agregada,1.791,1.791,L,GlobalPetrolPrices,Cuba gasoline prices,Fecha de la fuente 09-11-2026
+2026-11-06,2026-11-06,Gasolina (promedio percibido),USD,Encuesta,1.26,1.26,L,Numbeo,Cost of Living Cuba,Rango 1.00-1.40 USD/L; 253 entradas de 21 contribuyentes; fecha 06-11-2026

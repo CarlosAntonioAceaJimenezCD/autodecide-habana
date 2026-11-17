@@ -1,0 +1,87 @@
+{
+  "fuente": "elTOQUE / Cubanomic — TRMI (tasa representativa del mercado informal)",
+  "url_excel": "https://api.cubanomic.com/api/v1/download-excel/all-days-stats",
+  "url_panel": "https://eltoque.com/tasas-de-cambio-cuba",
+  "descargado": "2026-11-16",
+  "monedas": {
+    "CAD": {
+      "registros": 1446,
+      "desde": "2021-03-24",
+      "hasta": "2026-11-17",
+      "archivo": "trmi_CAD.json"
+    },
+    "CHF": {
+      "registros": 518,
+      "desde": "2021-01-21",
+      "hasta": "2026-09-21",
+      "archivo": "trmi_CHF.json"
+    },
+    "DOP": {
+      "registros": 2,
+      "desde": "2021-06-29",
+      "hasta": "2025-11-06",
+      "archivo": "trmi_DOP.json"
+    },
+    "ECU": {
+      "registros": 2145,
+      "desde": "2021-01-02",
+      "hasta": "2026-11-17",
+      "archivo": "trmi_ECU.json"
+    },
+    "FRF": {
+      "registros": 98,
+      "desde": "2021-02-04",
+      "hasta": "2024-12-13",
+      "archivo": "trmi_FRF.json"
+    },
+    "GBP": {
+      "registros": 1004,
+      "desde": "2021-02-02",
+      "hasta": "2026-11-10",
+      "archivo": "trmi_GBP.json"
+    },
+    "JPY": {
+      "registros": 1,
+      "desde": "2021-02-23",
+      "hasta": "2021-02-23",
+      "archivo": "trmi_JPY.json"
+    },
+    "MLC": {
+      "registros": 2141,
+      "desde": "2021-01-04",
+      "hasta": "2026-11-16",
+      "archivo": "trmi_MLC.json"
+    },
+    "MXN": {
+      "registros": 992,
+      "desde": "2021-04-29",
+      "hasta": "2026-11-16",
+      "archivo": "trmi_MXN.json"
+    },
+    "RUR": {
+      "registros": 90,
+      "desde": "2021-07-28",
+      "hasta": "2026-11-08",
+      "archivo": "trmi_RUR.json"
+    },
+    "USD": {
+      "registros": 2144,
+      "desde": "2021-01-01",
+      "hasta": "2026-11-17",
+      "archivo": "trmi_USD.json"
+    }
+  },
+  "total_registros": 10581,
+  "rango_global": {
+    "desde": "2021-01-01",
+    "hasta": "2026-11-17"
+  },
+  "anios": [
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025",
+    "2026"
+  ]
+}

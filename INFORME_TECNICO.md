@@ -276,6 +276,8 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 42 490 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 42 341 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
 
 | 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (14 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
