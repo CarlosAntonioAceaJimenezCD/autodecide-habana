@@ -68,7 +68,10 @@ def init_queues() -> None:
         CREATE INDEX IF NOT EXISTS idx_pr_status ON process_queue(status);
         """
     )
-    for col, decl in (("ad_id", "TEXT"), ("price", "TEXT"), ("sig", "TEXT")):
+    for col, decl in (
+        ("ad_id", "TEXT"), ("price", "TEXT"), ("sig", "TEXT"),
+        ("titulo", "TEXT"), ("es_auto_candidato", "INTEGER DEFAULT 1"), ("motivo", "TEXT"),
+    ):
         existing = {r[1] for r in c.execute("PRAGMA table_info(url_queue)")}
         if col not in existing:
             c.execute(f"ALTER TABLE url_queue ADD COLUMN {col} {decl}")
@@ -136,6 +139,22 @@ SNAPSHOT: dict[str, str] = {}
 SKIP_UNCHANGED = False
 
 
+def clasificar_enlace(titulo: str) -> tuple[int, str]:
+    """Clasificación temprana con el título del listado (antes de descargar).
+
+    Regla: si el título tiene palabras claramente excluidas (moto, repuesto,
+    accesorio, llanta, alquiler, servicio…) y NO tiene palabras de vehículo
+    4+ ruedas, se descarta. En caso de duda se marca candidato para no perder
+    autos reales; la clasificación definitiva sigue siendo la del procesamiento.
+    """
+    texto = titulo or ""
+    excluido = bool(lr.EXCLUDE_TITLE.search(texto))
+    candidato = bool(lr.INCLUDE_TITLE.search(texto))
+    if excluido and not candidato:
+        return 0, "descartado en descubrimiento: no es vehículo 4+ ruedas"
+    return 1, ""
+
+
 def discover(max_pages: int) -> None:
     """Página por página, anuncio por anuncio: guarda el enlace en la cola."""
     c = conn_queue()
@@ -151,14 +170,27 @@ def discover(max_pages: int) -> None:
                 found[v["permalink"]] = (
                     str(v.get("id") or ""),
                     str(v.get("updatedOnToOrder") or ""),
+                    str(v.get("title") or ""),
                 )
         now = sr.now()
-        for path, (ad_id, sig) in found.items():
+        m = conn_main()
+        for path, (ad_id, sig, titulo) in found.items():
+            candidato, motivo = clasificar_enlace(titulo)
+            estado = "pending" if candidato else "rechazado"
             c.execute(
-                "INSERT OR IGNORE INTO url_queue (path,status,discovered_at,ad_id,sig) VALUES (?,?,?,?,?)",
-                (path, "pending", now, ad_id, sig),
+                """INSERT OR IGNORE INTO url_queue
+                   (path,status,discovered_at,ad_id,sig,titulo,es_auto_candidato,motivo)
+                   VALUES (?,?,?,?,?,?,?,?)""",
+                (path, estado, now, ad_id, sig, titulo, candidato, motivo),
             )
+            if not candidato:
+                m.execute(
+                    "INSERT OR IGNORE INTO revision VALUES (?,?,?,?,?)",
+                    (ad_id, "https://www.revolico.com" + path, "", motivo, now),
+                )
             written += 1
+        m.commit()
+        m.close()
         c.commit()
         print(f"[descubridor] página {page}: {len(found)} enlaces (cola {written})", flush=True)
         time.sleep(0.35)
@@ -169,7 +201,9 @@ def discover(max_pages: int) -> None:
 def download_loop() -> None:
     c = conn_queue()
     while not STOP.is_set():
-        row = c.execute("SELECT path,ad_id,sig FROM url_queue WHERE status='pending' LIMIT 1").fetchone()
+        row = c.execute(
+            "SELECT path,ad_id,sig FROM url_queue WHERE status='pending' AND es_auto_candidato=1 LIMIT 1"
+        ).fetchone()
         if not row:
             time.sleep(0.5)
             continue
@@ -361,6 +395,16 @@ def main() -> None:
         f"Procesados: {processed_counter['n']} | omitidos por snapshot: {skipped_counter['n']}",
         flush=True,
     )
+
+    # Mantener las partes de la BD listas para revolico-git.timer.
+    try:
+        import actualizar_revolico as ar
+
+        estado = ar.split_database()
+        ar.update_report(estado)
+        print(f"Partes generadas: {len(estado['partes'])}", flush=True)
+    except Exception as exc:
+        print(f"No se pudieron generar partes: {exc}", flush=True)
 
 
 if __name__ == "__main__":
