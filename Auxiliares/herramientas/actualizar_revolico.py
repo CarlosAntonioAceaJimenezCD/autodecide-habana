@@ -73,7 +73,8 @@ def split_database() -> dict:
     new_db_hash = sha256_file(DB)
     size = DB.stat().st_size
 
-    with tempfile.TemporaryDirectory(prefix="revolico_parts_") as tmp:
+    # Usar el mismo filesystem que OUT: /tmp es tmpfs pequeño y se agota.
+    with tempfile.TemporaryDirectory(prefix="revolico_parts_", dir=OUT) as tmp:
         tmpdir = Path(tmp)
         hashes: list[str] = []
         index = 0

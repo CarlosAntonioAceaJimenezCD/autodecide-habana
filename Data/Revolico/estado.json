@@ -1,0 +1,244 @@
+{
+  "actualizado_utc": "2026-11-17T14:58:24+00:00",
+  "db_bytes": 784105472,
+  "db_sha256": "9d069e25fc79a5671174b940950e41cb88e86ce5d098a19ccde9488dce5696af",
+  "tamano_parte": 16777216,
+  "partes": [
+    {
+      "name": "revolico.sqlite.part001",
+      "sha256": "a229823c80a337cd052dd604284a9daac255cc1744263fd76e336ac486ea8e88",
+      "orden": 1
+    },
+    {
+      "name": "revolico.sqlite.part002",
+      "sha256": "0c5cedd6b059f86eeee3b50bc7579372e40f5a630f403ce271b220f2be4df618",
+      "orden": 2
+    },
+    {
+      "name": "revolico.sqlite.part003",
+      "sha256": "74a6996bea33ee6ac29dcc817588e76d72c1f591e5f09467c63bcaa6396421e8",
+      "orden": 3
+    },
+    {
+      "name": "revolico.sqlite.part004",
+      "sha256": "a63e785afce6c898eed6c6ef873fa27807385636e61f0f039f4b687bc8a1b851",
+      "orden": 4
+    },
+    {
+      "name": "revolico.sqlite.part005",
+      "sha256": "a0754ee60342f5228fbf7e75c48930505be3a02f609ae2c43affa71f9b68f42a",
+      "orden": 5
+    },
+    {
+      "name": "revolico.sqlite.part006",
+      "sha256": "52e6077fcfd4df582a0f89bea7009fdedece410045b8414e0186c0273175f2e2",
+      "orden": 6
+    },
+    {
+      "name": "revolico.sqlite.part007",
+      "sha256": "af2fec4463f788c4bf207665a51cabc77776217e9a88bef5aa3505a8e19015dd",
+      "orden": 7
+    },
+    {
+      "name": "revolico.sqlite.part008",
+      "sha256": "c4916b6df9c8992cb9435eb1927673100648b0f2482d7766144b92189903188c",
+      "orden": 8
+    },
+    {
+      "name": "revolico.sqlite.part009",
+      "sha256": "d0b3fe583805577c8731317f289f3347ffa7ad015e5411d021432ad825847334",
+      "orden": 9
+    },
+    {
+      "name": "revolico.sqlite.part010",
+      "sha256": "170247f6c28cbd30198889b1d93f503c2d95fce380342d1e6ac6a70b4a079349",
+      "orden": 10
+    },
+    {
+      "name": "revolico.sqlite.part011",
+      "sha256": "08e823c031f848a1c93c4f8104ea6b495de01df0569a4c76a4e6f59435635a01",
+      "orden": 11
+    },
+    {
+      "name": "revolico.sqlite.part012",
+      "sha256": "c4510150acb00b47f6df91e30169f7bf31ecfa58e79ee779e2f07827d305bd38",
+      "orden": 12
+    },
+    {
+      "name": "revolico.sqlite.part013",
+      "sha256": "26cec1e36da36680caff6a9e1a55fcf364328080442fca230592dbbd228ab6cc",
+      "orden": 13
+    },
+    {
+      "name": "revolico.sqlite.part014",
+      "sha256": "552b71d97c7d6353add415bb3d28941c04bd9b11f651a5d6a202a67f9684eca6",
+      "orden": 14
+    },
+    {
+      "name": "revolico.sqlite.part015",
+      "sha256": "27e1bc9eec0ad2c16d194d53cadbc494d5a7bf71419a3d07975b27c5152a6926",
+      "orden": 15
+    },
+    {
+      "name": "revolico.sqlite.part016",
+      "sha256": "fd3c9d055f463a273d4940f8e85e67f18e6f176836a4f02019800e96f06de9db",
+      "orden": 16
+    },
+    {
+      "name": "revolico.sqlite.part017",
+      "sha256": "dc19d69a0f5fd60dde32b70284577a0df0ba757b0a59743d3c3974a655afbcc2",
+      "orden": 17
+    },
+    {
+      "name": "revolico.sqlite.part018",
+      "sha256": "a99a2926e78399aa5628bd816b2d2d83ec2e3c75c27f6aa6a4af373143677f24",
+      "orden": 18
+    },
+    {
+      "name": "revolico.sqlite.part019",
+      "sha256": "3c9fdd0c2e48730b944454d8bec01f9432a4de1500ef0020d0f081b49c9cf10e",
+      "orden": 19
+    },
+    {
+      "name": "revolico.sqlite.part020",
+      "sha256": "68e6ee5507a91d2adb0ee51511109dea6ddf2808d44101a1a5152725c282a380",
+      "orden": 20
+    },
+    {
+      "name": "revolico.sqlite.part021",
+      "sha256": "c17c0f72d490c0d449cdf9d982b93828777c39d2c23026711b39b01153bf7f74",
+      "orden": 21
+    },
+    {
+      "name": "revolico.sqlite.part022",
+      "sha256": "5902c5b9c57ec3572affadb24304958787d84fcc0b816178370f7832cd8ae507",
+      "orden": 22
+    },
+    {
+      "name": "revolico.sqlite.part023",
+      "sha256": "0b8747c8fd01b54d7697c1a9e68582437e789541af6ef09126d320792a0fda80",
+      "orden": 23
+    },
+    {
+      "name": "revolico.sqlite.part024",
+      "sha256": "1a81f535d947e4404f5c8ee922051e147e9205b9fdfe8b78100d06d76fa3d2ac",
+      "orden": 24
+    },
+    {
+      "name": "revolico.sqlite.part025",
+      "sha256": "76a6569eff18251cd5e3eb832335d66064db4bcc35356e62aaa10c52dd0c5769",
+      "orden": 25
+    },
+    {
+      "name": "revolico.sqlite.part026",
+      "sha256": "a2fde56e4eb5764488730a6f66c52a5048a755d3f6b832563fd7cf8984620e7c",
+      "orden": 26
+    },
+    {
+      "name": "revolico.sqlite.part027",
+      "sha256": "c5019790117fbf1387c5ec4d2f041d32b2751bc3f74f38279fdc62dfc7111dc4",
+      "orden": 27
+    },
+    {
+      "name": "revolico.sqlite.part028",
+      "sha256": "5187f3b54f6992da4c75d332e67e049a5d9ab38c71abcc15ad85dfe9d4833bf0",
+      "orden": 28
+    },
+    {
+      "name": "revolico.sqlite.part029",
+      "sha256": "8714883c9cfd7d34adbfcb391e9d18fe79dd5ac72eb675b5dc42be01c8fb2ec9",
+      "orden": 29
+    },
+    {
+      "name": "revolico.sqlite.part030",
+      "sha256": "d2c9b308ff234d52d1939c285ca32121c5e9ef4373ae45a8033742cc20eda00d",
+      "orden": 30
+    },
+    {
+      "name": "revolico.sqlite.part031",
+      "sha256": "236d8d34237fbd0bfecf68bcfbaba3a83b956eb4f1fb36e8c23f46075613abdd",
+      "orden": 31
+    },
+    {
+      "name": "revolico.sqlite.part032",
+      "sha256": "39c1b89e40e85a2515de1adb70ba4624075c11265832c7b168627e5bdde0a667",
+      "orden": 32
+    },
+    {
+      "name": "revolico.sqlite.part033",
+      "sha256": "ab7f3af8de99ec81db8b48b357f9789b45b2ee2e3bb789996f73a4d9538f6689",
+      "orden": 33
+    },
+    {
+      "name": "revolico.sqlite.part034",
+      "sha256": "55229e692063f855a21bb2882a421c300ae8579bd53c730be10bf236d4b4741d",
+      "orden": 34
+    },
+    {
+      "name": "revolico.sqlite.part035",
+      "sha256": "2b99e5af2810ac349e28d683940347c00ca27204e017a800420f47a457726dcb",
+      "orden": 35
+    },
+    {
+      "name": "revolico.sqlite.part036",
+      "sha256": "747c40b70e175b95942617a44f5d7bf1a3c6310b3148b3d3e11cebd506012790",
+      "orden": 36
+    },
+    {
+      "name": "revolico.sqlite.part037",
+      "sha256": "4d00860f8b489a6594cd2a2bf13b21900fe8f8458b6589d753d3657e022578c0",
+      "orden": 37
+    },
+    {
+      "name": "revolico.sqlite.part038",
+      "sha256": "fe862803ee7a302bab59bd23118cdd33c899b34f15e910a37fde06905f1e0255",
+      "orden": 38
+    },
+    {
+      "name": "revolico.sqlite.part039",
+      "sha256": "29a14039d51c545ac00f5bc7e7cc605264cd61cc0f528e8cb79fb4ccc03f14d2",
+      "orden": 39
+    },
+    {
+      "name": "revolico.sqlite.part040",
+      "sha256": "b1c839f918fb40b2a1ed12e28d23da3ea684ed6c9d196dac065cbf1adf0e8637",
+      "orden": 40
+    },
+    {
+      "name": "revolico.sqlite.part041",
+      "sha256": "46178f0392b4c3929847e8b4f6bc0b81cc265d1af8db0c43cd6d2ff2ea74d419",
+      "orden": 41
+    },
+    {
+      "name": "revolico.sqlite.part042",
+      "sha256": "17d9294069111a3831b7eb074e85ff81c5db91c1cd2150197069eb788e65cf25",
+      "orden": 42
+    },
+    {
+      "name": "revolico.sqlite.part043",
+      "sha256": "5b0642e6dba1a374c161f7bf74030506825296c0f65d05d7f54fe4aeeaec5824",
+      "orden": 43
+    },
+    {
+      "name": "revolico.sqlite.part044",
+      "sha256": "588009567f4c8c3891a8bc3dc920b648db633f2b2b7c3dee5e3eae565214b108",
+      "orden": 44
+    },
+    {
+      "name": "revolico.sqlite.part045",
+      "sha256": "f3ff271658ccfebcf57601b78cb9b70be0e658d78d848830459e2a66d7f1a732",
+      "orden": 45
+    },
+    {
+      "name": "revolico.sqlite.part046",
+      "sha256": "6c6d1791711e62a0150f8d3e7d5efdd9a3f153768b1e15431463a161c996f8de",
+      "orden": 46
+    },
+    {
+      "name": "revolico.sqlite.part047",
+      "sha256": "8ca718ee22e66dda16be64929765881095c8f0c574e5f016756c4629517b7b22",
+      "orden": 47
+    }
+  ],
+  "sin_cambios": false
+}

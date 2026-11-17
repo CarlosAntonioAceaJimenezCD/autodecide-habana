@@ -276,6 +276,42 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `Auxiliares/herramientas/actualizar_revolico.py` | script / script | — | 6 532 B | 3 / 3 | Actualización incremental de la BD de Revolico y subida por partes a Git. | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico` | carpeta / folder | — | carpeta / folder (11 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/partes` | carpeta / folder | — | carpeta / folder (47 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/pipeline.sqlite` | base de datos / database | — | 10 625 024 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/resumen.md` | documento / document | — | 412 B | 2 / 2 | Revolico — base de datos completa de la categoría Vehículos | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt` | carpeta / folder | — | carpeta / folder (28 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part001` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part002` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part003` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part004` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part005` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part006` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part007` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part008` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part009` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part010` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part011` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part012` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part013` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part014` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part015` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part016` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part017` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part018` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part019` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part020` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part021` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part022` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part023` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part024` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part025` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part026` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part027` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/Revolico/revolico_parts_9qprzigt/revolico.sqlite.part028` | archivo / file | — | 16 777 216 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 77 264 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `Auxiliares/herramientas/analisis_mercado.py` | script / script | — | 13 794 B | 3 / 3 | Análisis descriptivo inicial del mercado de autos usados en La Habana. | Actualizado / Updated |
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 76 824 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
 
@@ -471,7 +507,7 @@ The database is **not versioned as a single file**. Every 10 minutes a systemd t
 | Última ejecución / Last run | Tamaño / Size | Partes / Chunks | SHA-256 (inicio) | Reconstrucción / Rebuild |
 |---|---|---|---|---|
 <!-- SYNC_REVOLICO -->
-| pendiente / pending | — | — | — | Ejecutar `reconstruir_revolico.py` / run it |
+| 2026-11-17T14:58:24+00:00 | 784105472 B | 47 partes de 16 MiB | `9d069e25fc79a567…` | Reconstruir con `reconstruir_revolico.py` / Rebuild with `reconstruir_revolico.py` |
 
 ## 15. Eficiencia de Telegram, WhatsApp y Facebook / Efficiency of Telegram, WhatsApp and Facebook
 
