@@ -699,6 +699,14 @@ Prueba con 1 página: 120 enlaces descubiertos, 63 descartados tempranamente y 1
 
 **EN.** A 10-minute timer reports progress via desktop notification and a markdown file. At 4,000 unreviewed ads it triggers a queue-draining service that classifies pending items without new page discovery.
 
+## 28. Primeros datos de Telegram (17/11/2026)
+
+No hay credenciales MTProto (`TELEGRAM_API_ID`/`TELEGRAM_API_HASH` vacías), así que se implementó `Auxiliares/herramientas/scraper_telegram_publico.py`, que lee la vista pública `t.me/s/<canal>` y pagina con `?before=<id>`. No requiere login, redacta teléfonos y guarda `Data/integraciones/telegram/{anuncios.jsonl,anuncios.csv,estado.json}`.
+
+Primera corrida (25 páginas): **139 mensajes**, **49 anuncios de autos** del canal `goldenbullbusinessfamilycars`. El canal `Motos_Autos_Discover` no devolvió mensajes públicos. 37 anuncios tienen año detectable; **ninguno tiene precio explícito** — el canal expresa kilómetros como `25500K`, `40K`, etc. Por eso hoy esta fuente sirve para señal de oferta/modelo, no de precio.
+
+**EN.** First Telegram data: public web scraper (no credentials), 139 messages, 49 car ads from one channel, 37 with year, no explicit prices (the channel posts mileage as "K").
+
 ---
 
 **Firma / Signature:** responsable del proyecto / project owner.  
