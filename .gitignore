@@ -26,6 +26,7 @@ Anexos/Leyes/.herramientas/__pycache__/
 # Large databases: not versioned without Git LFS
 Data/catalogos_concesionarios/*.sqlite
 Data/Revolico/revolico.sqlite
+Data/Revolico/.revolico_sync.lock
 *.sqlite-journal
 *.sqlite-wal
 *.sqlite-shm

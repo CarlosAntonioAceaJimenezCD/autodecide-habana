@@ -162,7 +162,27 @@ Para corpus grandes, usar Git LFS o almacenamiento externo y dejar en el reposit
 
 ---
 
-## 10. Repositorios auxiliares usados (solo referencia) / Auxiliary repositories used (reference only)
+## 10. Sincronización automática de Revolico / Automatic Revolico sync
+
+**ES.** Un timer de usuario de systemd (`revolico-update.timer`, indefinido) ejecuta cada 10 minutos `Auxiliares/herramientas/actualizar_revolico.py`. El script corre el scraper incremental, divide `Data/Revolico/revolico.sqlite` en partes de 16 MiB en `Data/Revolico/partes/`, sube **solo las partes que cambiaron**, actualiza `estado.json` y una única fila del informe técnico, y hace `commit`/`push`. La BD completa no se versiona como un solo archivo; para reconstruirla:
+
+```bash
+Auxiliares/.venv/bin/python Auxiliares/herramientas/reconstruir_revolico.py
+```
+
+El comando verifica el SHA-256 de cada parte y del resultado. El timer se gestiona con:
+
+```bash
+systemctl --user status revolico-update.timer
+systemctl --user stop revolico-update.timer
+systemctl --user start revolico-update.timer
+```
+
+**EN.** A systemd user timer runs the incremental sync every 10 minutes, uploading only changed 16 MiB chunks. Rebuild the full database with `reconstruir_revolico.py`, which verifies every hash. Manage it with `systemctl --user {status,stop,start} revolico-update.timer`.
+
+---
+
+## 11. Repositorios auxiliares usados (solo referencia) / Auxiliary repositories used (reference only)
 
 **ES.** Estos repositorios se usaron como herramientas o referencia, pero **no se suben a GitHub**: están excluidos en `.gitignore` y solo se enumeran aquí.
 

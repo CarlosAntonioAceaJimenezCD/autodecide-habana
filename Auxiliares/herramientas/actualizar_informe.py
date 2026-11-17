@@ -31,7 +31,7 @@ EXCLUDED_DIRS = {
     ".git", ".venv", "__pycache__", "node_modules", "Copias",
     ".idea", ".vscode", ".pytest_cache", ".mypy_cache",
 }
-EXCLUDED_FILES = {PDF.name, STATE.name, "revolico.sqlite"}
+EXCLUDED_FILES = {PDF.name, STATE.name, "revolico.sqlite", ".revolico_sync.lock"}
 ANEXOS_ALLOWED = {
     "Anexos/Leyes/gaceta_catalog.json",
     "Anexos/Leyes/.herramientas/descargar_gaceta.py",
@@ -45,6 +45,9 @@ def relative(path: Path) -> str:
 def is_excluded(path: Path) -> bool:
     rel = relative(path)
     if rel.split("/", 1)[0] == "Anexos" and rel not in ANEXOS_ALLOWED:
+        return True
+    # Archivos generados por el timer de Revolico: se documentan en una sola fila.
+    if rel == "Data/Revolico/estado.json" or "/partes/" in rel:
         return True
     return False
 

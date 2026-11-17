@@ -276,11 +276,30 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `.gitignore` | archivo / file | — | 1 107 B | 9 / 9 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (13 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas/actualizar_informe.py` | script / script | — | 14 283 B | 3 / 3 | Registra altas nuevas del proyecto en INFORME_TECNICO.md y regenera el PDF. | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas/actualizar_revolico.py` | script / script | — | 6 408 B | 3 / 3 | Actualización incremental de la BD de Revolico y subida por partes a Git. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/reconstruir_revolico.py` | script / script | — | 1 812 B | 3 / 3 | Reconstruye revolico.sqlite a partir de las partes versionadas en Git. | Añadido / Added |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 21 391 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+| 2026-11-17 | `README.md` | documento / document | — | 15 804 B | 9 / 9 | AutoDecide Habana / AutoDecide Habana | Actualizado / Updated |
+
 | 2026-11-17 | `README.md` | documento / document | — | 7,6 KB | 9 | Nombre del proyecto, estado, fases y marco para GitHub / Project name, status, phases and GitHub framework | Creado / Created |
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | — | 9 | Informe técnico redefinido en 9 fases, bilingüe y con marco legal / Technical report redefined into 9 phases, bilingual, with legal framework | Actualizado / Updated |
 | 2026-11-17 | `INFORME_TECNICO.pdf` | PDF / PDF | generado desde MD / generated from MD | — | 9 | Entregable en PDF / PDF deliverable | Generado / Generated |
 | 2026-11-17 | `Auxiliares/herramientas/actualizar_informe.py` | script / script | — | — | 3 | Registro automático de altas y regeneración del PDF / Automatic change log and PDF regeneration | Creado / Created |
 | 2026-11-17 | `.gitignore` | configuración / config | — | — | 3 | Exclusiones para GitHub / GitHub exclusions | Creado / Created |
+
+## 14. Sincronización automática de Revolico / Automatic Revolico sync
+
+La BD `Data/Revolico/revolico.sqlite` **no se versiona como archivo único**. Cada 10 minutos un timer de systemd ejecuta `Auxiliares/herramientas/actualizar_revolico.py`: corre el scraper incremental, divide la BD en partes de 16 MiB dentro de `Data/Revolico/partes/`, sube solo las partes que cambiaron y actualiza esta fila. Para recuperar el archivo completo se usa `Auxiliares/herramientas/reconstruir_revolico.py`, que verifica el hash.
+
+The database is **not versioned as a single file**. Every 10 minutes a systemd timer runs `actualizar_revolico.py`: it runs the incremental scraper, splits the DB into 16 MiB chunks under `Data/Revolico/partes/`, uploads only changed chunks and updates this row. Use `reconstruir_revolico.py` to rebuild the full file and verify its hash.
+
+| Última ejecución / Last run | Tamaño / Size | Partes / Chunks | SHA-256 (inicio) | Reconstrucción / Rebuild |
+|---|---|---|---|---|
+<!-- SYNC_REVOLICO -->
+| pendiente / pending | — | — | — | Ejecutar `reconstruir_revolico.py` / run it |
 
 ---
 
