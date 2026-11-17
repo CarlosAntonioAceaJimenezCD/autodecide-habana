@@ -20,6 +20,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[2]
 DB = ROOT / "Data/Revolico/revolico.sqlite"
 OUT = ROOT / "Data/analisis"
+TRMI = ROOT / "Anexos/Investigacion Cambios/trmi_USD.csv"
 
 BRANDS = [
     "toyota", "chevrolet", "ford", "hyundai", "kia", "nissan", "mazda", "honda",
@@ -61,6 +62,7 @@ def load() -> pd.DataFrame:
     query = """
         SELECT a.id, a.url, a.title, a.description, a.price, a.currency,
                a.province_name, a.municipality_name, a.images_count, a.scraped_at,
+               x.updated_on_by_user,
                x.ad_json, x.apollo_full
         FROM autos a LEFT JOIN anuncios x ON x.id = a.id
     """
@@ -74,6 +76,25 @@ def load() -> pd.DataFrame:
     df["km_est"] = visible.map(extract_km)
     # Precio 1 USD es claramente inválido para un auto: se marca, no se borra.
     df["precio_valido"] = df["price"].between(500, 200000)
+    return df
+
+
+def add_exchange(df: pd.DataFrame) -> pd.DataFrame:
+    """Convierte USD a CUP con la TRMI diaria de elTOQUE (columna Mediana)."""
+    trmi = pd.read_csv(TRMI)
+    trmi["fecha"] = pd.to_datetime(trmi["fecha"]).dt.date
+    trmi = trmi[["fecha", "Mediana"]].rename(columns={"Mediana": "tasa_toque"})
+
+    fecha_user = pd.to_datetime(df["updated_on_by_user"], errors="coerce", utc=True).dt.date
+    fecha_scrap = pd.to_datetime(df["scraped_at"], errors="coerce", utc=True).dt.date
+    df["fecha_anuncio"] = fecha_user.fillna(fecha_scrap)
+
+    df = df.merge(trmi, left_on="fecha_anuncio", right_on="fecha", how="left")
+    df = df.drop(columns=["fecha"], errors="ignore")
+    df["precio_cup"] = (df["price"] * df["tasa_toque"]).round(0)
+    # Supuesto declarado: anuncio PUBLISHED y página verificada en la captura
+    # => se asume comprable en el momento del análisis.
+    df["comprable_asumido"] = True
     return df
 
 
@@ -110,7 +131,7 @@ def md_table(df: pd.DataFrame) -> str:
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    df = load()
+    df = add_exchange(load())
     usd = df[(df["currency"] == "USD") & df["precio_valido"]].copy()
     descartados = df[(df["currency"] == "USD") & ~df["precio_valido"]]
     overall = stats_block(usd["price"])
@@ -121,13 +142,51 @@ def main() -> None:
 
     by_brand = grouped(usd, "marca_est", 3)
     by_muni = grouped(usd, "municipality_name", 3)
-    by_year = grouped(usd, "anio_est", 3)
+
+    # Serie por año del vehículo: USD y CUP con la tasa del día del anuncio.
+    by_year = (
+        usd.dropna(subset=["anio_est"])
+        .groupby("anio_est")
+        .agg(n=("price", "count"), mediana_usd=("price", "median"),
+             mediana_cup=("precio_cup", "median"), tasa_promedio=("tasa_toque", "mean"))
+        .reset_index()
+        .sort_values("anio_est")
+        .round(0)
+    )
+    by_year["anio_est"] = by_year["anio_est"].astype(int)
+
+    # Serie temporal: precio anunciado vs TRMI de elTOQUE.
+    serie = (
+        usd.dropna(subset=["fecha_anuncio"])
+        .groupby("fecha_anuncio")
+        .agg(n=("price", "count"), mediana_usd=("price", "median"),
+             mediana_cup=("precio_cup", "median"), tasa_toque=("tasa_toque", "median"))
+        .reset_index()
+        .sort_values("fecha_anuncio")
+    )
+    for col, nombre in [("tasa_toque", "var_tasa_%"), ("mediana_cup", "var_cup_%"),
+                        ("mediana_usd", "var_usd_%")]:
+        serie[nombre] = (serie[col].pct_change() * 100).round(2)
+    serie = serie.round(0)
+
+    tmp = usd.dropna(subset=["fecha_anuncio"]).copy()
+    tmp["mes"] = pd.to_datetime(tmp["fecha_anuncio"]).dt.to_period("M").astype(str)
+    serie_mensual = (
+        tmp.groupby("mes")
+        .agg(n=("price", "count"), mediana_usd=("price", "median"),
+             mediana_cup=("precio_cup", "median"), tasa_promedio=("tasa_toque", "mean"))
+        .reset_index()
+        .sort_values("mes")
+        .round(0)
+    )
 
     # Guardar CSV
     pd.DataFrame([overall]).to_csv(OUT / "resumen_general.csv", index=False)
     by_brand.to_csv(OUT / "precios_por_marca.csv", index=False)
     by_muni.to_csv(OUT / "precios_por_municipio.csv", index=False)
     by_year.to_csv(OUT / "precios_por_anio.csv", index=False)
+    serie.to_csv(OUT / "serie_precio_vs_tasa.csv", index=False)
+    serie_mensual.to_csv(OUT / "serie_precio_vs_tasa_mensual.csv", index=False)
     outliers[["id", "title", "price", "marca_est", "anio_est", "url"]].to_csv(
         OUT / "outliers.csv", index=False)
 
@@ -172,7 +231,9 @@ def main() -> None:
         "",
         md_table(by_muni),
         "",
-        "## 5. Precios por año estimado (n ≥ 3)",
+        "## 5. Precios por año del vehículo (USD y CUP)",
+        "",
+        "Conversión: `precio_USD × TRMI elTOQUE del día del anuncio`. La tasa mostrada es el promedio de los anuncios del año.",
         "",
         md_table(by_year),
         "",
@@ -182,7 +243,21 @@ def main() -> None:
         "",
         md_table(outliers[["id", "title", "price", "marca_est", "anio_est"]].head(15)),
         "",
-        "## 7. Limitaciones",
+        "## 7. Supuesto de anuncio activo",
+        "",
+        "Todos los registros de `autos` tienen `status=PUBLISHED` y su página fue verificada en el momento de la captura. **Se asume que, si el anuncio sigue activo, es posible comprarlo.** No se comprueba disponibilidad en tiempo real.",
+        "",
+        "## 8. Serie diaria: precio vs tasa de cambio (elTOQUE)",
+        "",
+        "Variaciones porcentuales respecto al día anterior con datos. Permite ver si el precio en CUP acompaña a la TRMI.",
+        "",
+        md_table(serie.head(30)),
+        "",
+        "## 9. Serie mensual: precio vs tasa de cambio (elTOQUE)",
+        "",
+        md_table(serie_mensual),
+        "",
+        "## 10. Limitaciones",
         "",
         "- `marca_est`, `anio_est` y `km_est` son **heurísticos** (regex sobre título/descripción/ad_json).",
         "- `km_est` tiene baja cobertura y puede contener errores; no se usa para precio/km aún.",
