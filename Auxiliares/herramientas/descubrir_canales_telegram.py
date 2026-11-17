@@ -32,13 +32,19 @@ CONSULTAS = [
     ("venta cuba", "channel"), ("venta cuba", "chat"),
     ("mercado cuba", "channel"), ("mercado cuba", "chat"),
     ("cubano", "channel"), ("compra venta cuba", "chat"),
+    ("la habana", "channel"), ("la habana", "chat"),
+    ("anuncios cuba", "channel"), ("anuncios cuba", "chat"),
+    ("cuba mlc", "chat"), ("cuba usd", "chat"),
+    ("revolico habana", "channel"), ("revolico habana", "chat"),
+    ("cuba ventas", "chat"), ("cuba compras", "chat"),
 ]
 
 RELEVANTE = re.compile(
-    r"cuba|habana|revolico|carro|auto|venta|mercado|compra|tasa|eltoque|"
-    r"cuban|cubano|isla|emprend", re.I
+    r"\b(cuba|cubano|cubana|habana|revolico|carros?|autos?|venta|mercado|"
+    r"compra|tasa|eltoque|isla|emprendimiento)\b", re.I
 )
-AUTO = re.compile(r"carro|auto|coche|camioneta|veh[ií]culo|moto|repuesto", re.I)
+AUTO = re.compile(r"\b(carros?|autos?|coches?|camionetas?|veh[ií]culos?|motos?|repuestos?)\b", re.I)
+CUBA = re.compile(r"\b(cuba|cubano|cubana|habana|revolico|isla)\b", re.I)
 
 
 def get(url: str, params: dict | None = None) -> str:
@@ -79,8 +85,9 @@ def validar(usuario: str) -> dict:
     try:
         html = get(f"https://t.me/s/{usuario}")
         s = BeautifulSoup(html, "lxml")
-        titulo = s.select_one(".tgme_page_title")
-        extra = s.select_one(".tgme_page_extra")
+        titulo = s.select_one(".tgme_channel_info_header_title") or s.select_one(".tgme_page_title")
+        contadores = s.select(".tgme_channel_info_counter")
+        extra = contadores[0] if contadores else s.select_one(".tgme_page_extra")
         mensajes = s.select("div.tgme_widget_message")
         textos = [
             m.select_one(".tgme_widget_message_text").get_text(" ", strip=True)
@@ -118,9 +125,15 @@ def main() -> None:
             if i % 25 == 0:
                 print(f"  validados {i}/{len(usuarios)}", flush=True)
 
-    utiles = [f for f in resultados if f["publico"] or f["es_relevante"]]
+    utiles = [
+        f for f in resultados
+        if (f["publico"] or f["es_relevante"])
+        and CUBA.search((f["titulo"] or "") + " " + (f["muestra"] or ""))
+    ]
     utiles.sort(key=lambda f: (f["es_automotriz"], f["mensajes_publicos"]), reverse=True)
-    resultados = utiles[:max(OBJETIVO, len(utiles))]
+    resultados = utiles
+    if len(resultados) < OBJETIVO:
+        print(f"AVISO: solo {len(resultados)} canales con contexto cubano (objetivo {OBJETIVO})", flush=True)
 
     with SALIDA.open("w", encoding="utf-8") as fh:
         for fila in resultados:
