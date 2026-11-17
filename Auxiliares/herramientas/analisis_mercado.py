@@ -22,6 +22,15 @@ DB = ROOT / "Data/Revolico/revolico.sqlite"
 OUT = ROOT / "Data/analisis"
 TRMI = ROOT / "Anexos/Investigacion Cambios/trmi_USD.csv"
 
+# Fuentes de catálogo (concesionarios y páginas similares). Para ellas se asume
+# que, salvo que la página diga lo contrario, todo el catálogo está disponible
+# y se publicó el día en que se está viendo. El año del vehículo no es clave.
+CATALOGOS = {
+    "autocubana", "dongfeng", "bdc_one", "mcv", "finauto", "changan",
+    "chinautos", "envision", "atr_export", "connectingcuba", "subasta_cubana",
+    "agn_motors", "carrosw", "llamacuba", "sasa", "divep",
+}
+
 BRANDS = [
     "toyota", "chevrolet", "ford", "hyundai", "kia", "nissan", "mazda", "honda",
     "renault", "volkswagen", "vw", "audi", "bmw", "mercedes", "lexus", "peugeot",
@@ -76,6 +85,25 @@ def load() -> pd.DataFrame:
     df["km_est"] = visible.map(extract_km)
     # Precio 1 USD es claramente inválido para un auto: se marca, no se borra.
     df["precio_valido"] = df["price"].between(500, 200000)
+    if "fuente" not in df:
+        df["fuente"] = "revolico"
+    return df
+
+
+def add_publication_assumption(df: pd.DataFrame) -> pd.DataFrame:
+    """Aplica el supuesto de disponibilidad/fecha según el tipo de fuente.
+
+    - Catálogos de concesionarios y páginas similares: disponible = True y
+      fecha de publicación efectiva = fecha de captura (el año no es clave).
+    - Clasificados (Revolico): anuncio activo => se asume comprable, y se usa
+      la fecha de actualización del vendedor.
+    """
+    df = df.copy()
+    df["es_catalogo"] = df["fuente"].isin(CATALOGOS)
+    fecha_user = pd.to_datetime(df["updated_on_by_user"], errors="coerce", utc=True).dt.date
+    fecha_scrap = pd.to_datetime(df["scraped_at"], errors="coerce", utc=True).dt.date
+    df["fecha_publicacion"] = fecha_user.where(~df["es_catalogo"], fecha_scrap)
+    df["disponible_asumido"] = True
     return df
 
 
@@ -85,9 +113,8 @@ def add_exchange(df: pd.DataFrame) -> pd.DataFrame:
     trmi["fecha"] = pd.to_datetime(trmi["fecha"]).dt.date
     trmi = trmi[["fecha", "Mediana"]].rename(columns={"Mediana": "tasa_toque"})
 
-    fecha_user = pd.to_datetime(df["updated_on_by_user"], errors="coerce", utc=True).dt.date
-    fecha_scrap = pd.to_datetime(df["scraped_at"], errors="coerce", utc=True).dt.date
-    df["fecha_anuncio"] = fecha_user.fillna(fecha_scrap)
+    df = add_publication_assumption(df)
+    df["fecha_anuncio"] = df["fecha_publicacion"]
 
     df = df.merge(trmi, left_on="fecha_anuncio", right_on="fecha", how="left")
     df = df.drop(columns=["fecha"], errors="ignore")
@@ -246,6 +273,8 @@ def main() -> None:
         "## 7. Supuesto de anuncio activo",
         "",
         "Todos los registros de `autos` tienen `status=PUBLISHED` y su página fue verificada en el momento de la captura. **Se asume que, si el anuncio sigue activo, es posible comprarlo.** No se comprueba disponibilidad en tiempo real.",
+        "",
+        "**Catálogos y páginas similares:** para concesionarios se asume que todo el catálogo está disponible salvo que la página diga lo contrario, y que se publicó el día de la captura (`fecha_publicacion = scraped_at`). El año del vehículo no es una variable clave para esas fuentes.",
         "",
         "## 8. Serie diaria: precio vs tasa de cambio (elTOQUE)",
         "",

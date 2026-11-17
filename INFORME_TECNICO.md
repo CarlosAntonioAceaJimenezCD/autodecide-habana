@@ -276,6 +276,9 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `Auxiliares/herramientas/analisis_mercado.py` | script / script | — | 13 794 B | 3 / 3 | Análisis descriptivo inicial del mercado de autos usados en La Habana. | Actualizado / Updated |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 76 824 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 75 373 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
 
 | 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (19 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
@@ -621,6 +624,15 @@ Se amplió `analisis_mercado.py`:
 **Reporte de scrapeo:** `anuncios` 6.334 · `autos` 323 · `revision` 6.085 · `imagenes` 13.932 · `telefonos` 7.699 · BD 520,6 MB. Colas: `url_queue` 141 (125 done, 3 downloading, 13 pending); `download_queue` 125 (123 processed, 1 processing, 1 pending); `process_queue` 123 (107 committed, 16 pending). Los pendientes quedaron de una corrida interrumpida por reinicio del servidor. Snapshot `ultimo.json` de 17/11 04:44 (6.334 entradas); partes generadas: 0. `revolico-git.timer` activo (última ejecución 10:12). El análisis descriptivo y las 8 gráficas + dashboard ya están en `Data/analisis/`.
 
 **EN.** JSON dictionaries hold price/currency/status/date/geography but no structured year/km/brand; those remain heuristic. Scrape report: 6,334 ads, 323 cars, 6,085 rejections, queues with pending items from an interrupted run, no DB chunks uploaded yet.
+
+## 25. Reanudación, resiliencia y supuesto de catálogos (18/11/2026)
+
+- **Librerías de mapas instaladas:** `geopandas 1.2.0`, `shapely 2.2.0`, `pyproj`, `folium 1.0.0`, `mapclassify`, `geopy` (además de matplotlib/seaborn/plotly ya instaladas).
+- **Reinicio automático:** `revolico-scrape.service` ahora tiene `Restart=on-failure`, `RestartSec=30`, `StartLimitIntervalSec=300` y `StartLimitBurst=20`, de modo que una pérdida de conexión que detenga el proceso provoca su relanzamiento.
+- **Supuesto de catálogos:** en `analisis_mercado.py` se añadió `add_publication_assumption()`. Para concesionarios y páginas similares (`CATALOGOS`) se asume que todo el catálogo está disponible salvo que la página indique lo contrario y que se publicó el día de la captura (`fecha_publicacion = scraped_at`); el año del vehículo no es clave. Para clasificados se mantiene el supuesto de anuncio activo = comprable, con `fecha_publicacion = updated_on_by_user`.
+- **Reanudación:** se reanuda el pipeline desde las colas pendientes (13 URLs, 1 descarga y 16 decisiones pendientes) con `revolico-scrape.timer` activo e indefinido.
+
+**EN.** Map libraries installed, systemd auto-restart added, catalog availability/publication-date assumption encoded, and the pipeline resumed from pending queues.
 
 ---
 
