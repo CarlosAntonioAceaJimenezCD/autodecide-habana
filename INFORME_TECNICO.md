@@ -690,6 +690,15 @@ Prueba con 1 página: 120 enlaces descubiertos, 63 descartados tempranamente y 1
 
 **EN.** Root cause fixed: the timer now runs the queue pipeline, which classifies each link at discovery time before downloading, so only car candidates reach the database. Early test: 120 links, 63 rejected early, 185 candidates, autos 323→326.
 
+## 27. Aviso periódico y umbral de revisión (17/11/2026)
+
+- `revolico-aviso.timer` avisa **cada 10 minutos** mediante `revolico-aviso.py`: escribe `Data/Revolico/progreso.md`, envía `notify-send` al escritorio y registra en el journal.
+- El aviso incluye anuncios, autos, revisiones, sin revisar, estado del servicio, colas, partes y fecha de `estado.json`.
+- **Umbral:** cuando `anuncios WHERE pagina_revisada=0`llega a **4.000** (configurable con `REVISAR_UMBRAL`), el aviso lanza `revolico-revisar.service`, que ejecuta el pipeline con `--solo-colas`: drena descargas y decisiones pendientes **sin descubrir páginas nuevas**. Se omite si el scrapeo o la revisión ya están activos.
+- Estado actual: 3.623 sin revisar, por debajo del umbral; 266 URLs, 11 descargas y 24 decisiones pendientes en colas.
+
+**EN.** A 10-minute timer reports progress via desktop notification and a markdown file. At 4,000 unreviewed ads it triggers a queue-draining service that classifies pending items without new page discovery.
+
 ---
 
 **Firma / Signature:** responsable del proyecto / project owner.  

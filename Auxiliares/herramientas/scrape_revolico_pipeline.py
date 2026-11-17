@@ -347,6 +347,7 @@ def main() -> None:
     ap.add_argument("--processors", type=int, default=4)
     ap.add_argument("--batch-size", type=int, default=25)
     ap.add_argument("--skip-unchanged", action="store_true", help="omitir anuncios cuya firma de listado no cambió (no fiable para precio)")
+    ap.add_argument("--solo-colas", action="store_true", help="no descubre páginas nuevas; solo drena las colas pendientes")
     args = ap.parse_args()
     global BATCH, SKIP_UNCHANGED
     BATCH = args.batch_size
@@ -362,8 +363,12 @@ def main() -> None:
     m.close()
 
     threads = []
-    t = threading.Thread(target=discover, args=(args.max_pages,), daemon=True)
-    t.start(); threads.append(t)
+    if args.solo_colas:
+        print("Modo solo-colas: sin descubrimiento de páginas nuevas", flush=True)
+        DISCOVERY_DONE.set()
+    else:
+        t = threading.Thread(target=discover, args=(args.max_pages,), daemon=True)
+        t.start(); threads.append(t)
     for _ in range(args.downloaders):
         t = threading.Thread(target=download_loop, daemon=True); t.start(); threads.append(t)
     for _ in range(args.processors):

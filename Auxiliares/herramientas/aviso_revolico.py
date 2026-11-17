@@ -9,6 +9,7 @@
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import sqlite3
 import subprocess
@@ -21,6 +22,7 @@ QUEUE_DB = ROOT / "Data/Revolico/pipeline.sqlite"
 ESTADO = ROOT / "Data/Revolico/estado.json"
 PARTES = ROOT / "Data/Revolico/partes"
 SALIDA = ROOT / "Data/Revolico/progreso.md"
+UMBRAL = int(os.environ.get("REVISAR_UMBRAL", "4000"))
 
 
 def count(path: Path, query: str) -> int:
@@ -45,12 +47,38 @@ def service_state() -> str:
         return "desconocido"
 
 
+def estado_servicio(nombre: str) -> str:
+    try:
+        result = subprocess.run(
+            ["systemctl", "--user", "is-active", nombre], text=True, capture_output=True
+        )
+        return result.stdout.strip() or "desconocido"
+    except Exception:
+        return "desconocido"
+
+
+def disparar_revision(sin_revisar: int) -> str:
+    """Si hay >= UMBRAL sin revisar, lanza el drenaje de colas pendientes."""
+    if sin_revisar < UMBRAL:
+        return f"por debajo del umbral ({UMBRAL})"
+    if estado_servicio("revolico-scrape.service") in {"active", "activating"}:
+        return "scrapeo en curso, se omite"
+    if estado_servicio("revolico-revisar.service") in {"active", "activating"}:
+        return "revisión ya en curso"
+    subprocess.run(
+        ["systemctl", "--user", "start", "--no-block", "revolico-revisar.service"],
+        check=False, capture_output=True,
+    )
+    return f"DISPARADO ({sin_revisar} sin revisar >= {UMBRAL})"
+
+
 def main() -> None:
     ahora = datetime.now(timezone.utc).isoformat(timespec="seconds")
     anuncios = count(DB, "SELECT count(*) FROM anuncios")
     autos = count(DB, "SELECT count(*) FROM autos")
     revision = count(DB, "SELECT count(*) FROM revision")
     sin_revisar = count(DB, "SELECT count(*) FROM anuncios WHERE pagina_revisada=0")
+    disparo = disparar_revision(sin_revisar)
     ultimo = subprocess.check_output(
         ["python3", "-c", f"import sqlite3;c=sqlite3.connect('{DB}');print(c.execute('select max(scraped_at) from anuncios').fetchone()[0])"],
         text=True,
@@ -74,7 +102,8 @@ def main() -> None:
         "",
         f"- Servicio scrapeo: **{service_state()}**",
         f"- Anuncios: **{anuncios:,}** | Autos: **{autos}** | Revisiones: **{revision:,}**",
-        f"- Sin revisar: **{sin_revisar:,}**",
+        f"- Sin revisar: **{sin_revisar:,}** | Umbral: {UMBRAL}",
+        f"- Disparador de revisión: **{disparo}**",
         f"- Última captura: {ultimo}",
         f"- Colas pendientes: " + (", ".join(f"{k}={v}" for k, v in colas.items()) or "sin colas"),
         f"- Partes en repo local: {partes} | estado.json: {estado_ts}",
@@ -84,7 +113,7 @@ def main() -> None:
     print(texto, flush=True)
 
     if shutil.which("notify-send"):
-        resumen = f"Revolico: {anuncios} anuncios | {autos} autos | {sin_revisar} sin revisar | colas {sum(colas.values())}"
+        resumen = f"Revolico: {anuncios} anuncios | {autos} autos | {sin_revisar} sin revisar | colas {sum(colas.values())} | {disparo}"
         subprocess.run(["notify-send", "-u", "normal", "-t", "10000", "AutoDecide Habana", resumen],
                        check=False, capture_output=True)
 
