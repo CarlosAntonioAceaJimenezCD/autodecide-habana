@@ -1,8 +1,8 @@
 # AutoDecide Habana / AutoDecide Habana
 
-> **ES** — Inteligencia del mercado automotor habanero, un producto interactivo que recomienda la opción de compra más rentable según las preocupaciones y dificultades del usuario, y un pipeline de scraping reutilizable que se adapta al momento en que se revise.
+> **ES** — Análisis del mercado automotor habanero (estructura, precios, oferta, segmentos, tendencias y asequibilidad) con un pipeline de scraping reutilizable que se adapta al momento en que se revise. La especialización en un producto interactivo de recomendación se abordará después.
 >
-> **EN** — Intelligence on the Havana automotive market, an interactive product that recommends the most profitable purchase option based on the user's concerns and constraints, and a reusable scraping pipeline that adapts to the moment of review.
+> **EN** — Analysis of the Havana automotive market (structure, prices, supply, segments, trends and affordability) with a reusable scraping pipeline that adapts to the moment of review. Specialization into an interactive recommendation product will come later.
 
 **Nombre del proyecto / Project name:** AutoDecide Habana  
 **Nombre anterior / Former name:** ICD Automotive Market Project  
@@ -15,16 +15,16 @@
 
 ## 1. Objetivo / Objective
 
-**ES.** Construir un producto interactivo capaz de responder: *«dado mi presupuesto y mis preocupaciones (fiabilidad, consumo, mantenimiento, reventa, disponibilidad de piezas, etc.), cuál es la opción de compra más rentable en La Habana hoy?»*. Para ello se combinan tres líneas de trabajo:
+**ES.** Realizar un **análisis de mercado del automóvil usado en La Habana**: caracterizar la estructura del mercado, la distribución de precios, la oferta por segmento, las tendencias temporales, la asequibilidad y las condiciones de rentabilidad. No buscamos aún recomendar una compra a un usuario concreto; eso será una especialización posterior. Las líneas de trabajo actuales son:
 
 1. **Análisis del mercado automotor cubano**, con foco exclusivo en **La Habana**, tanto en el canal formal (concesionarios e importadores autorizados) como en el informal (marketplaces y anuncios de compraventa).
-2. **Producto interactivo de decisión**, que traduzca las preferencias del usuario en una recomendación de compra rentable.
+2. **Construcción de la base de datos y del modelo analítico** (limpieza, comparables, depreciación, costos ocultos, rentabilidad y asequibilidad).
 3. **Pipeline de scraping reutilizable y adaptable**, capaz de actualizarse cuando cambian los sitios, los bloqueos o el contexto regulatorio.
 
-**EN.** Build an interactive product able to answer: *"given my budget and my concerns (reliability, fuel use, maintenance, resale, spare parts availability, etc.), which purchase option is the most profitable in Havana today?"*. Three workstreams support it:
+**EN.** Carry out a **market analysis of used cars in Havana**: characterize market structure, price distribution, supply by segment, time trends, affordability and profitability conditions. User-specific purchase recommendations are a later specialization. Current workstreams:
 
 1. **Analysis of the Cuban automotive market**, focused only on **Havana**, covering both the formal channel (dealers and authorized importers) and the informal one (marketplaces and classified ads).
-2. **Interactive decision product**, translating user preferences into a profitable purchase recommendation.
+2. **Database and analytical model** (cleaning, comparables, depreciation, hidden costs, profitability and affordability).
 3. **Reusable, adaptive scraping pipeline**, able to update itself when sites, blocks or the regulatory context change.
 
 ---
@@ -51,7 +51,7 @@ La documentación (este `README.md` y el informe técnico) se ha creado como sop
 | 5 | Diseño del esquema de datos y del pipeline / Data schema and pipeline design | Completada / Complete |
 | 6 | **Scraping y captura de catálogos y anuncios / Scraping and capture** | **En curso / In progress** |
 | 7 | Unificación, limpieza y control de calidad / Unification, cleaning and QA | Pendiente / Pending |
-| 8 | Análisis, modelo de rentabilidad y producto interactivo / Analysis, profitability model and interactive product | Pendiente / Pending |
+| 8 | Análisis de mercado, comparables y rentabilidad / Market analysis, comparables and profitability | Pendiente / Pending |
 | 9 | Documentación final, informe PDF y entrega / Final documentation, PDF report and delivery | Pendiente / Pending |
 
 ---
@@ -158,7 +158,7 @@ Para corpus grandes, usar Git LFS o almacenamiento externo y dejar en el reposit
 - El análisis se limita a **La Habana** / Analysis is limited to **Havana**.
 - `carrosw` sigue protegido por verificación de bot / `carrosw` remains behind bot verification.
 - Los catálogos actuales contienen 256 filas en 11 tiendas; BDC One y Changan publican parte de su catálogo en PDF / Current catalogues contain 256 rows across 11 stores.
-- La fase 8 (modelo de rentabilidad y producto interactivo) aún no está implementada / Phase 8 (profitability model and interactive product) is not implemented yet.
+- La fase 8 (análisis de mercado, comparables y rentabilidad) aún no está implementada; el producto interactivo queda para una especialización futura / Phase 8 (market analysis, comparables and profitability) is not implemented yet; the interactive product is deferred to a later specialization.
 
 ---
 

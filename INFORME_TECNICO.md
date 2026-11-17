@@ -13,7 +13,7 @@
 
 ## 1. Objetivo
 
-El proyecto se llama **AutoDecide Habana**. Su objetivo es definir un producto interactivo capaz de recomendar la opción de compra más rentable en el mercado automotor de **La Habana**, a partir de los valores, preocupaciones y dificultades que el usuario introduzca (presupuesto, fiabilidad, consumo, mantenimiento, reventa, disponibilidad de piezas, etc.). Ese producto se apoya en dos pilares: un análisis del mercado automotor cubano y un pipeline de scraping reutilizable que se actualiza para adaptarse al momento en que se revise.
+El proyecto se llama **AutoDecide Habana**. Su objetivo actual es realizar un **análisis del mercado automotor de La Habana**: caracterizar estructura, precios, oferta, segmentos, tendencias, asequibilidad y condiciones de rentabilidad. La definición de un producto interactivo que recomiende la compra más rentable según las preocupaciones del usuario queda diferida a una especialización posterior. El análisis se apoya en dos pilares: la base de datos del mercado cubano y un pipeline de scraping reutilizable que se actualiza para adaptarse al momento en que se revise.
 
 Se conserva el nombre anterior, *ICD Automotive Market Project*, para mantener la trazabilidad de la documentación ya producida.
 
@@ -30,7 +30,7 @@ Las fases se redefinieron para que la fase activa sea la sexta. Estado a 17/11/2
 | 5 | Diseño del esquema de datos y del pipeline | Completada |
 | 6 | **Scraping y captura de catálogos y anuncios** | **En curso** |
 | 7 | Unificación, limpieza y control de calidad | Pendiente |
-| 8 | Análisis, modelo de rentabilidad y producto interactivo | Pendiente |
+| 8 | Análisis de mercado, comparables y rentabilidad | Pendiente |
 | 9 | Documentación final, informe PDF y entrega | Pendiente |
 
 La creación de este informe y del `README.md` es soporte transversal y no cambia la fase activa.
@@ -134,7 +134,7 @@ Solo se incluyen las normas y fuentes relevantes para el contexto del proyecto:
 2. El marco regulatorio vigente es el Decreto 163/2026 y el paquete de resoluciones citado.
 3. El scraping sostenible depende del ritmo, la sesión y la reanudación, no principalmente del fingerprint TLS.
 4. La regla de las 10 páginas evitó consumir resultados repetidos.
-5. El producto interactivo y el modelo de rentabilidad (fase 8) aún no están implementados.
+5. El análisis de mercado y el modelo de rentabilidad (fase 8) aún no están implementados; el producto interactivo se difiere a una especialización futura.
 
 ---
 
@@ -276,6 +276,9 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 63 764 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+| 2026-11-17 | `README.md` | documento / document | — | 16 116 B | 9 / 9 | AutoDecide Habana / AutoDecide Habana | Actualizado / Updated |
+
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 62 338 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
 
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 59 613 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
@@ -470,7 +473,7 @@ Fuentes académicas y repositorios revisados para definir los requerimientos del
 | `Auxiliares/Repositorios Referencias/Iran-Car-Market-Intelligence/src/icmi/analytics/*` | Comparables, estadística y dashboard | Metodología de comparables y rentabilidad |
 | `Auxiliares/Repositorios Referencias/{uk-automotive-transition,vahan-india,nz-vehicle-market-tracker,zimbabwe-used-vehicle-market-analysis}` | Series por período, EDA, viabilidad | Tendencias y segmentación |
 
-**Requerimientos derivados:** (1) esquema común con precio+moneda normalizada, año/km/combustible/transmisión/marca/modelo/provincia/tipo de vendedor y procedencia; (2) clasificación de calidad y estimación de costos ocultos; (3) comparables por marca-modelo-año-provincia; (4) modelo de rentabilidad = precio de reventa esperado − precio de compra − costos − impuestos; (5) ponderación de preferencias del usuario; (6) serie temporal con snapshots; (7) dashboard/producto interactivo; (8) validación, dedup y sin datos personales.
+**Requerimientos derivados:** (1) esquema común con precio+moneda normalizada, año/km/combustible/transmisión/marca/modelo/provincia/tipo de vendedor y procedencia; (2) clasificación de calidad y estimación de costos ocultos; (3) comparables por marca-modelo-año-provincia; (4) modelo de rentabilidad = precio de reventa esperado − precio de compra − costos − impuestos; (5) serie temporal con snapshots; (6) dashboard de mercado; (7) validación, dedup y sin datos personales. La ponderación de preferencias del usuario y el producto interactivo quedan para la especialización futura.
 
 **EN.** Academic sources and integrated repositories were reviewed to define the Fase 7-8 requirements: common schema with normalized currency, quality classification and hidden costs, comparables, profitability model, user-preference weighting, time series, interactive product, and validation/provenance.
 
@@ -506,15 +509,15 @@ Fuentes académicas y repositorios revisados para definir los requerimientos del
 5. **Recolección y curación**: captura, deduplicación, validación y trazabilidad (ETL + BI).
 6. **Descriptivo y segmentación**: distribución de precios, participación por marca/segmento, series temporales.
 7. **Analítico**: comparables, depreciación, costos ocultos, margen de reventa, modelos explicables.
-8. **Entrega y monitoreo**: dashboard, recomendaciones, limitaciones y actualización periódica.
+8. **Entrega y monitoreo**: dashboard de mercado, limitaciones y actualización periódica.
 
 ### Adaptación a Cuba / La Habana
 
 - **Delimitación**: La Habana; autos de 4+ ruedas; canales formal e informal; precios anunciados en CUP/USD/MLC/EUR **sin mezclar**.
 - **Fuentes**: Revolico (BD propia, 6.334 anuncios / 317 autos), concesionarios (Autocubana, Dongfeng, BDC One…), Gaceta/Decreto 163/2026, BCC (oficial) y elTOQUE (informal), salarios de la Resolución 14, y señales de Telegram/WhatsApp/Facebook sin datos personales.
 - **Variables**: precio+moneda, año/antigüedad, km, combustible, transmisión, marca/modelo, provincia/municipio, tipo de vendedor, imágenes, estado y palabras de defecto en el texto (para estimar costos ocultos).
-- **Métodos adaptados**: descriptivo por marca-modelo-año; clases de calidad (≤5 años alta, >5 años con defectos, según PUCE); bandera de asimetría por ocultamiento; comparables por modelo ±2 años y municipio; rentabilidad = reventa esperada − compra − reacondicionamiento − impuestos (Decreto 163/2026); asequibilidad = precio / salario; series con snapshots; recomendador interactivo con explicación.
-- **Entregables**: tabla `autos` + `revision`, dashboard, informe y producto interactivo.
+- **Métodos adaptados**: descriptivo por marca-modelo-año; clases de calidad (≤5 años alta, >5 años con defectos, según PUCE); bandera de asimetría por ocultamiento; comparables por modelo ±2 años y municipio; rentabilidad = reventa esperada − compra − reacondicionamiento − impuestos (Decreto 163/2026); asequibilidad = precio / salario; series con snapshots.
+- **Entregables**: tabla `autos` + `revision`, dashboard de mercado, informe técnico. El recomendador interactivo se difiere a la especialización futura.
 - **Límites**: precios pedidos no transaccionados, sesgo de supervivencia de anuncios, sin datos personales, vigencia normativa a verificar.
 
 **EN.** An eight-step generic framework was adapted to Havana: scope, regulatory/theoretical frame, data design, curation, descriptive analysis, comparables and profitability, affordability, and an explainable interactive recommender, with explicit provenance and limitations.
@@ -523,14 +526,14 @@ Fuentes académicas y repositorios revisados para definir los requerimientos del
 
 **ES.** El marco operativo completo consta de nueve bloques:
 
-1. **Decisión objetivo**: recomendar la compra de auto más rentable en La Habana según las preocupaciones del usuario.
+1. **Objetivo del análisis**: caracterizar el mercado de autos usados en La Habana (estructura, precios, oferta, segmentos, tendencias, asequibilidad y rentabilidad), sin recomendar aún una compra concreta.
 2. **Alcance**: La Habana, autos 4+ ruedas, canales formal e informal, precios anunciados separados por moneda.
 3. **Marco teórico**: asimetría de información, selección adversa, riesgo moral, diferenciación de precios y calidad por antigüedad.
 4. **Marco normativo**: Decreto 163/2026, resoluciones 104/17/52/171-175/312/102 de 2026, Gaceta 65/2026; impedimentos legales para recolección y uso de datos.
 5. **Arquitectura de datos**: fuentes (Revolico, concesionarios, tasas BCC/elTOQUE, salarios Resolución 14, redes), esquema común con IDs, precio+moneda, geografía, timestamps y procedencia; pipeline de 3 colas con commit cada 25 procesados; limpieza a `autos`/`revision`.
 6. **Descriptivo**: distribuciones (mediana, IQR, outliers), segmentación por marca-modelo-año, precio/km, geografía municipal, series con snapshots.
 7. **Analítico**: comparables por modelo ±2 años y municipio, depreciación, clasificación de calidad y costos ocultos, regresión hedónica, margen de rentabilidad, asequibilidad precio/salario, ponderación de preferencias, explicabilidad tipo SHAP.
-8. **Producto**: entrada de preferencias del usuario, salida de recomendación explicada, dashboard y trazabilidad de cada cifra.
+8. **Entregables del análisis**: tablas limpias, dashboard de mercado, informe bilingüe y trazabilidad de cada cifra. El producto interactivo de recomendación se difiere a una especialización posterior.
 9. **Validación y entrega**: dedup, manejo de missing, sensibilidad a moneda y supuestos, pruebas con datos conocidos, informe bilingüe, limitaciones y monitoreo continuo.
 
 **Lo que ya existe:** BD de 6.334 anuncios / 317 autos, esquema con 30 campos + auditoría, imágenes/teléfonos, snapshots de precios, normativa documentada, tasas y salarios referenciados, repositorios de modelos y dashboards.
@@ -538,6 +541,17 @@ Fuentes académicas y repositorios revisados para definir los requerimientos del
 **Lo que falta por conseguir:** extracción estructurada de año/km/marca/modelo/combustible/transmisión desde `ad_json`/`apollo_full`; montos de costos ocultos; precios de transacción reales; estadísticas oficiales cubanas de parque y matriculaciones; encuestas a compradores habaneros; series históricas de tasas y salarios digitalizadas; geocodificación de ubicaciones; validación en vivo de anuncios.
 
 **EN.** The detailed framework covers nine blocks: decision, scope, theory, regulation, data architecture, descriptive analytics, causal/comparable analytics, interactive product, and validation/delivery. Existing assets and missing data needs are listed explicitly.
+
+## 21. Cambio de objetivo / Objective change (18/11/2026)
+
+A petición del usuario, el objetivo inmediato deja de ser la recomendación interactiva de compra y pasa a ser **un análisis de mercado**. En consecuencia:
+
+- La fase 8 pasa a llamarse **Análisis de mercado, comparables y rentabilidad**.
+- Se eliminan del alcance actual la ponderación de preferencias del usuario y el recomendador interactivo.
+- Quedan como **especialización futura**: el producto que traduzca preocupaciones del usuario en una recomendación explicada.
+- El marco detallado de la sección 20 se mantiene, pero sus bloques 1 y 8 se interpretan ahora como *objetivo del análisis* y *entregables del análisis*, respectivamente.
+
+**EN.** At the user's request, the immediate objective becomes market analysis instead of interactive purchase recommendation. Phase 8 is renamed; user-preference weighting and the recommender are deferred to a later specialization.
 
 ---
 
