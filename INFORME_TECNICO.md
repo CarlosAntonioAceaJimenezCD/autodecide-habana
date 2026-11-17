@@ -276,6 +276,21 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (21 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas/aviso_revolico.py` | script / script | — | 4 560 B | 3 / 3 | Aviso de progreso del scraper de Revolico cada 10 minutos. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/scrape_revolico_pipeline.py` | script / script | — | 16 481 B | 3 / 3 | Pipeline de 3 etapas con colas persistentes para Revolico. | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas/scraper_telegram_publico.py` | script / script | — | 6 556 B | 3 / 3 | Scraper de canales públicos de Telegram sin credenciales MTProto. | Añadido / Added |
+| 2026-11-17 | `Data` | carpeta / folder | — | carpeta / folder (12 entradas) | 7 / 7 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico` | carpeta / folder | — | carpeta / folder (14 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/pipeline.sqlite` | base de datos / database | — | 18 001 920 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/Revolico/progreso.md` | documento / document | — | 433 B | 2 / 2 | Progreso Revolico — 2026-11-17T17:09:56+00:00 | Actualizado / Updated |
+| 2026-11-17 | `Data/integraciones` | carpeta / folder | — | carpeta / folder (1 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/telegram` | carpeta / folder | — | carpeta / folder (3 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/telegram/anuncios.csv` | datos / data | — | 58 097 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/telegram/anuncios.jsonl` | archivo / file | — | 66 888 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/integraciones/telegram/estado.json` | datos / data | — | 186 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 89 696 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `Auxiliares/herramientas/scrape_revolico_pipeline.py` | script / script | — | 16 200 B | 3 / 3 | Pipeline de 3 etapas con colas persistentes para Revolico. | Actualizado / Updated |
 | 2026-11-17 | `Data/Revolico` | carpeta / folder | — | carpeta / folder (10 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
 | 2026-11-17 | `Data/Revolico/partes` | carpeta / folder | — | carpeta / folder (48 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
