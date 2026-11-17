@@ -276,6 +276,32 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (19 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas/analisis_mercado.py` | script / script | — | 12 282 B | 3 / 3 | Análisis descriptivo inicial del mercado de autos usados en La Habana. | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas/graficos_mercado.py` | script / script | — | 9 312 B | 3 / 3 | Funciones para generar todas las gráficas del análisis de mercado. | Añadido / Added |
+| 2026-11-17 | `Data/analisis` | carpeta / folder | — | carpeta / folder (11 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Data/analisis/cobertura.csv` | datos / data | — | 174 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/analisis/dashboard.html` | HTML / HTML | — | 16 086 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/analisis/graficos` | carpeta / folder | — | carpeta / folder (9 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Data/analisis/graficos/01_histograma_precios.png` | archivo / file | — | 59 758 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/graficos/02_boxplot_marcas.png` | archivo / file | — | 64 227 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/graficos/03_barras_municipios.png` | archivo / file | — | 68 628 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/graficos/04_precios_por_anio.png` | archivo / file | — | 90 044 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/graficos/05_serie_precio_vs_tasa.png` | archivo / file | — | 99 874 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/graficos/06_variaciones_tasa_precio.png` | archivo / file | — | 94 796 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/graficos/07_outliers.png` | archivo / file | — | 53 770 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/graficos/08_cobertura.png` | archivo / file | — | 36 886 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/graficos/dashboard_interactivo.html` | HTML / HTML | — | 24 245 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/informe_descriptivo.md` | documento / document | — | 9 592 B | 2 / 2 | Análisis descriptivo inicial — mercado de autos usados en La Habana | Actualizado / Updated |
+| 2026-11-17 | `Data/analisis/outliers.csv` | datos / data | — | 768 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/analisis/precios_por_anio.csv` | datos / data | — | 879 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/analisis/precios_por_marca.csv` | datos / data | — | 803 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/analisis/precios_por_municipio.csv` | datos / data | — | 741 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/analisis/resumen_general.csv` | datos / data | — | 102 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
+| 2026-11-17 | `Data/analisis/serie_precio_vs_tasa.csv` | datos / data | — | 544 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Data/analisis/serie_precio_vs_tasa_mensual.csv` | datos / data | — | 152 B | 2 / 2 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 68 735 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (18 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
 | 2026-11-17 | `Auxiliares/herramientas/analisis_mercado.py` | script / script | — | 8 816 B | 3 / 3 | Análisis descriptivo inicial del mercado de autos usados en La Habana. | Añadido / Added |
 | 2026-11-17 | `Data` | carpeta / folder | — | carpeta / folder (11 entradas) | 7 / 7 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
@@ -574,6 +600,17 @@ Se creó `Auxiliares/herramientas/analisis_mercado.py`, que genera en `Data/anal
 Resultados sobre 323 autos: 248 precios USD válidos (≥500 USD); 74 precios <500 USD marcados como inválidos y 1 en CUP excluidos. Precio mediano **22.000 USD**, media 24.416,59 USD, IQR 11.375–35.000 USD, rango 600–95.000 USD. Marca más frecuente: Hyundai (n=75); municipio con más oferta: Playa (n=53). Cobertura de campos derivados: marca 68,4 %, año 63,5 %, km 6,2 % (heurísticos, extraídos solo de título/descripción). Detectados 5 outliers por IQR.
 
 **EN.** Initial descriptive analysis: 323 cars, 248 valid USD prices, median 22,000 USD, IQR 11,375–35,000, Hyundai and Playa leading, 5 IQR outliers. Derived year/km fields remain partial and heuristic.
+
+## 23. Conversión elTOQUE, serie temporal y gráficas (18/11/2026)
+
+Se amplió `analisis_mercado.py`:
+
+- **Por año del vehículo**: `precios_por_anio.csv` con n, mediana USD, mediana CUP y tasa promedio; la conversión usa `precio_USD × TRMI elTOQUE` del día del anuncio (columna `Mediana` de `Anexos/Investigacion Cambios/trmi_USD.csv`).
+- **Supuesto de anuncio activo**: todos los registros tienen `status=PUBLISHED` y página verificada en la captura, por lo que se asume que son comprables; no se comprueba disponibilidad en tiempo real.
+- **Serie precio vs tasa**: `serie_precio_vs_tasa.csv` y `serie_precio_vs_tasa_mensual.csv`, con variación % diaria de la TRMI, del precio CUP y del precio USD. Ejemplo: la TRMI pasó de 680 CUP/USD (09/07/2026) a 920 (16-17/11/2026); la mediana mensual CUP subió de 12,58 M (julio) a 20,7 M (noviembre).
+- **Gráficas**: `Auxiliares/herramientas/graficos_mercado.py` usa matplotlib, seaborn y plotly (instalados) y genera 8 PNG + `dashboard_interactivo.html` en `Data/analisis/graficos/`.
+
+**EN.** Prices converted to CUP with elTOQUE daily TRMI, divided by vehicle year, with a daily/monthly price-vs-rate series and a full plotting module (matplotlib/seaborn/plotly). Active ads are assumed purchasable.
 
 ---
 
