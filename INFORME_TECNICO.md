@@ -276,6 +276,9 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `Data/Revolico` | carpeta / folder | — | carpeta / folder (5 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 44 625 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `Auxiliares/herramientas/sincronizar_github.py` | script / script | — | 2 193 B | 3 / 3 | Sincroniza con GitHub SOLO los archivos del proyecto ya definidos. | Actualizado / Updated |
 | 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 43 591 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
 
@@ -406,6 +409,8 @@ The database is **not versioned as a single file**. Every 10 minutes a systemd t
 **ES.** Para obtener más datos del mercado habanero, la ruta más eficiente es Telegram MTProto (`telethon`, ya integrado): sin navegador, con cursor incremental `min_id`/`offset_id`, búsqueda server-side y manejo de `FloodWaitError`. Le sigue Facebook GQL (`facebook_gql_scraper`): llamadas GraphQL con sesión autenticada y normalización con `price-parser`/`iso4217parse`, más rápido que Selenium. Para grupos de WhatsApp no existe API pública personal; la opción operativa es un servidor WAHA auto-hospedado y su REST (`/api/sessions`, `/api/{session}/chats`, `/api/{session}/chats/{chatId}/messages`) con deduplicación por id, que es lo que hace `whatsapp/waha_client.py`. Playwright/Selenium quedan como último recurso para páginas JS. La salida de las tres fuentes debe convergir en un esquema común (`fuente`, `id`, `chat/página`, `timestamp`, `texto`, `precio`, `moneda`, `url`) con dedup por `hash(fuente,id)` y sin datos personales.
 
 **EN.** For more Havana market data, the most efficient route is Telegram MTProto (`telethon`, already integrated): no browser, incremental cursor, server-side search and `FloodWaitError` handling. Next is Facebook GQL: authenticated GraphQL calls with `price-parser`/`iso4217parse`, faster than Selenium. WhatsApp has no public personal API; the practical option is self-hosted WAHA REST with id deduplication, implemented in `waha_client.py`. Playwright/Selenium remain a last resort. All three should converge into a common schema with source-based deduplication and no personal data.
+
+**Nota / Note (17/11/2026):** se detuvo manualmente `revolico-scrape.timer` y su servicio a petición del usuario. El scraper había ampliado la BD de 3.682 a **6.332 anuncios** (520,6 MB) antes de detenerse; no se generaron partes (`estado.json` ausente) porque se detuvo antes de la fase de división. `revolico-git.timer` sigue activo para no perder cambios ya versionados. / The scrape timer and its service were stopped manually at the user's request. The scraper had grown the DB from 3,682 to **6,332 ads** (520.6 MB) before stopping; no chunks were produced because it was stopped before the split phase. `revolico-git.timer` remains active so versioned changes are not lost.
 
 ---
 
