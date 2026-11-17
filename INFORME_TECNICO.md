@@ -276,6 +276,8 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 53 268 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (17 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
 | 2026-11-17 | `Auxiliares/herramientas/scrape_revolico_pipeline.py` | script / script | — | 14 401 B | 3 / 3 | Pipeline de 3 etapas con colas persistentes para Revolico. | Añadido / Added |
 | 2026-11-17 | `Data/Revolico` | carpeta / folder | — | carpeta / folder (7 entradas) | 2 / 2 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
@@ -442,6 +444,29 @@ Se adaptó el patrón `output_writer.py` + `diff_runs.py` de `spinny-scraper` co
 Prueba con 1 página: **119 enlaces** descubiertos y procesados, 7 lotes de 25, BD principal de 6.332 a **6.334 anuncios** y de 304 a **317 autos**. Todo queda auditado; no se descarta información.
 
 **EN.** The new pipeline runs three concurrent stages with persistent queues, committing every 25 processed ads. The spinny diff pattern was adapted as a snapshot, but skipping downloads is disabled by default because the listing timestamp is a ranking signal, not an edit signal. Test run: 119 links, 6,334 ads and 317 cars in the main DB.
+
+## 17. Guía de análisis de mercado / Market-analysis guide (18/11/2026)
+
+Fuentes académicas y repositorios revisados para definir los requerimientos del análisis (Fases 7-8):
+
+| Fuente | Aporte metodológico | Requerimiento para AutoDecide |
+|---|---|---|
+| `Hombros/01_PDFs/Análisis del mercado de vehículos usados y su comercialización en el__73e1773e.pdf` (PUCE) | Asimetría de información (Akerlof); clasificación de calidad por antigüedad (≤5 años alta, >5 años con defectos); encuesta a 130 comerciantes; medición de costos ocultos y margen de reventa | Capturar año/antigüedad, estado, costos de reacondicionamiento y margen; comparar precio por calidad |
+| `Hombros/RESUMEN_NUEVAS_BUSQUEDAS.md` (variaciones de precio, 2 trabajos útiles) | Variación de precios en seminuevos | Serie temporal de precio y depreciación por año |
+| `Hombros/01_PDFs/PDF Informe de competencia del mercado automotriz ...` / `Mercado automotriz chileno: un análisis empírico` | Estructura y concentración del mercado | Cuota por marca/segmento, comparables |
+| `Hombros/02_HTML/Inteligencia De Negocios Aplicada Al Sector Automovilístico__5e5a32a5.html` | ETL + dashboard | Pipeline, métricas y visualización |
+| Informes ANFAC / EY / INEGI / BBVA / COIIM en `Hombros/01_PDFs/` | Indicadores macro: matriculaciones, parque, electrificación, combustible | Contexto: tipo de combustible, años, normativa |
+| `Copias/AutosxCuba/code/{unir_todo_final,modelo_predictivo,generar_graficos}.py` | Unificación multi-fuente, predicción de precios, gráficos | Unificar fuentes, modelo de precio, visualizaciones |
+| `Copias/guani-saimc/src/saimc/*` | Precio por producto/provincia con trazabilidad | Procedencia y geografía (provincia/municipio) |
+| `Copias/taso-api/src/*` | Tasas de cambio múltiples | Normalizar CUP/USD/MLC/EUR |
+| `Auxiliares/Repositorios Referencias/IDSE-DATA-SCIENCE-PROJECT-/{car_features,predict,server}.py` | Feature engineering, XGBoost, SHAP, Flask | Explicabilidad de la recomendación |
+| `Auxiliares/Repositorios Referencias/used-cars-price-prediction/app.py` | Producto interactivo con Gradio | Interfaz de "preocupaciones del usuario" |
+| `Auxiliares/Repositorios Referencias/Iran-Car-Market-Intelligence/src/icmi/analytics/*` | Comparables, estadística y dashboard | Metodología de comparables y rentabilidad |
+| `Auxiliares/Repositorios Referencias/{uk-automotive-transition,vahan-india,nz-vehicle-market-tracker,zimbabwe-used-vehicle-market-analysis}` | Series por período, EDA, viabilidad | Tendencias y segmentación |
+
+**Requerimientos derivados:** (1) esquema común con precio+moneda normalizada, año/km/combustible/transmisión/marca/modelo/provincia/tipo de vendedor y procedencia; (2) clasificación de calidad y estimación de costos ocultos; (3) comparables por marca-modelo-año-provincia; (4) modelo de rentabilidad = precio de reventa esperado − precio de compra − costos − impuestos; (5) ponderación de preferencias del usuario; (6) serie temporal con snapshots; (7) dashboard/producto interactivo; (8) validación, dedup y sin datos personales.
+
+**EN.** Academic sources and integrated repositories were reviewed to define the Fase 7-8 requirements: common schema with normalized currency, quality classification and hidden costs, comparables, profitability model, user-preference weighting, time series, interactive product, and validation/provenance.
 
 ---
 
