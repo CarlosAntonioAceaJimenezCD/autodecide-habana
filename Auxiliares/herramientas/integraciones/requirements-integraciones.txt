@@ -1,0 +1,18 @@
+# Dependencias de los scripts integrados (instalar solo las que se vayan a usar)
+telethon
+python-dotenv
+pyyaml
+selenium
+webdriver-manager
+fastapi
+uvicorn
+Pillow
+streamlit
+mini-racer
+price-parser
+pydantic
+iso4217parse
+dateparser
+fake-useragent
+demjson3
+flask

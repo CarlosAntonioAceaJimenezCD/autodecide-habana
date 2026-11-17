@@ -276,6 +276,93 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (14 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones` | carpeta / folder | — | carpeta / folder (7 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/README.md` | documento / document | — | 2 827 B | 3 / 3 | Integraciones / Integrations | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook` | carpeta / folder | — | carpeta / folder (8 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_gql_scraper` | carpeta / folder | — | carpeta / folder (10 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_gql_scraper/__init__.py` | script / script | — | 1 316 B | 3 / 3 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_gql_scraper/exceptions.py` | script / script | — | 3 042 B | 3 / 3 | Base for all errors raised by this library. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_gql_scraper/facebookConsolidater.py` | script / script | — | 4 012 B | 3 / 3 | Recursively merge dictionaries, extend lists. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_gql_scraper/facebookGraphql.py` | script / script | — | 45 585 B | 3 / 3 | Facebook request context. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_gql_scraper/facebookNoiseRemoval.py` | script / script | — | 5 090 B | 3 / 3 | Recursively remove UI/React/Relay garbage from data | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_gql_scraper/facebookOperationDiscovery.py` | script / script | — | 22 550 B | 3 / 3 | var __registry = {}; | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_gql_scraper/parserModels.py` | script / script | — | 14 357 B | 3 / 3 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_gql_scraper/structures.py` | script / script | — | 122 555 B | 3 / 3 | Facebook photo. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_gql_scraper/unifiedFacebookParser.py` | script / script | — | 72 729 B | 3 / 3 | Wrap a ParserMedia in a ParserMediaPost. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_page_scraper` | carpeta / folder | — | carpeta / folder (7 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_page_scraper/__init__.py` | script / script | — | 314 B | 3 / 3 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_page_scraper/driver_initialization.py` | script / script | — | 3 798 B | 3 / 3 | adds capabilities to the driver | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_page_scraper/driver_utilities.py` | script / script | — | 7 902 B | 3 / 3 | expects driver's instance, closes the driver | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_page_scraper/element_finder.py` | script / script | — | 22 200 B | 3 / 3 | Holds the collections of methods that finds element of the facebook's posts using selenium's webdriver's methods | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_page_scraper/scraper.py` | script / script | — | 17 678 B | 3 / 3 | changes the class member __driver value to driver on call | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_page_scraper/scraping_utilities.py` | script / script | — | 5 450 B | 3 / 3 | expects string and returns numbers from them as integer type, | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_scraper` | carpeta / folder | — | carpeta / folder (10 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_scraper/__init__.py` | script / script | — | 20 243 B | 3 / 3 | Get a Facebook user's profile information | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_scraper/__main__.py` | script / script | — | 6 624 B | 3 / 3 | facebook-scraper entry point when used as a script | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_scraper/constants.py` | script / script | — | 285 B | 3 / 3 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_scraper/exceptions.py` | script / script | — | 636 B | 3 / 3 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_scraper/extractors.py` | script / script | — | 62 499 B | 3 / 3 | Class for Extracting fields from a FacebookPost | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_scraper/facebook_scraper.py` | script / script | — | 51 259 B | 3 / 3 | Class for creating FacebookScraper Iterators | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_scraper/fb_types.py` | script / script | — | 340 B | 3 / 3 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_scraper/page_iterators.py` | script / script | — | 10 774 B | 3 / 3 | Class for Parsing a single page on a Page | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/facebook_scraper/utils.py` | script / script | — | 14 155 B | 3 / 3 | Strip invalid XML characters that `lxml` cannot parse. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/marketplace_gui.py` | script / script | — | 1 982 B | 3 / 3 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/marketplace_scraper.py` | script / script | — | 9 640 B | 3 / 3 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper` | carpeta / folder | — | carpeta / folder (17 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/__init__.py` | script / script | — | 637 B | 3 / 3 | Facebook scraper package. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/auth.py` | script / script | — | 1 263 B | 3 / 3 | Authentication helpers: cookie parsing and cURL parsing. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/comments.py` | script / script | — | 14 175 B | 3 / 3 | Comment and reply scraping with full metadata (author, IDs, reactions). | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/config.py` | script / script | — | 2 694 B | 3 / 3 | Central runtime configuration shared by all scraper modules. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/extractors.py` | script / script | — | 8 202 B | 3 / 3 | Field extractors for Facebook Story nodes (counts, names, media checks). | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/group_posts.py` | script / script | — | 7 869 B | 3 / 3 | Group post scraping (posts + media, batched via callback). | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/http.py` | script / script | — | 4 202 B | 3 / 3 | HTTP helpers: retry logic with proxy rotation and Facebook response parsing. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/logging_utils.py` | script / script | — | 726 B | 3 / 3 | Thread-aware logging for scrapers. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/media.py` | script / script | — | 7 634 B | 3 / 3 | Media extraction and image downloading (with optional album traversal). | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/page_posts.py` | script / script | — | 11 528 B | 3 / 3 | Page/profile post scraping (posts + media, batched via callback). | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/proxy_utils.py` | script / script | — | 4 048 B | 3 / 3 | Lazy import to avoid a circular dependency (config imports this module). | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/resolvers.py` | script / script | — | 3 685 B | 3 / 3 | Resolve Facebook URLs into the IDs the scrapers need. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/run.py` | script / script | — | 1 668 B | 3 / 3 | Facebook Scraper — Flask web GUI. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/single_post.py` | script / script | — | 1 847 B | 3 / 3 | Single post scraping: comments + optional album image download. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/storage.py` | script / script | — | 9 826 B | 3 / 3 | Storage layer: everything under the project's data/ directory. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/post_comment_scraper/tasks.py` | script / script | — | 5 973 B | 3 / 3 | High-level scrape operations used by the web app (and usable from CLI). | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/facebook/selenium_car_scraper.py` | script / script | — | 28 921 B | 3 / 3 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/fuentes_cubanas` | carpeta / folder | — | carpeta / folder (8 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/fuentes_cubanas/scrape_autocubana.py` | script / script | — | 22 277 B | 3 / 3 | Script de Web Scraping para extraer el catálogo de vehículos en venta | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/fuentes_cubanas/scraper_cubamerica.py` | script / script | — | 12 187 B | 3 / 3 | Scraper de CubAmerica (envioscubamerica.com). | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/fuentes_cubanas/scraper_itencel.py` | script / script | — | 15 220 B | 3 / 3 | Scraper de iTENCEL (itencel.com). | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/fuentes_cubanas/scraper_revolico.py` | script / script | — | 26 644 B | 3 / 3 | scraper_revolico.py | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/fuentes_cubanas/scraper_telegram.py` | script / script | — | 3 344 B | 3 / 3 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/fuentes_cubanas/scraper_vedca.py` | script / script | — | 12 563 B | 3 / 3 | Scraper de la tienda VEDCA dentro de Islagrande. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/fuentes_cubanas/scraping_dongfeng.py` | script / script | — | 16 155 B | 3 / 3 | Scraping del catalogo de vehiculos de https://dongfengqba.com/ | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/requirements-integraciones.txt` | texto / text | — | 258 B | 3 / 3 | Dependencias de los scripts integrados (instalar solo las que se vayan a usar) | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/spinny` | carpeta / folder | — | carpeta / folder (10 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/spinny/captcha_solver.py` | script / script | — | 33 515 B | 3 / 3 | captcha_solver.py | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/spinny/diff_runs.py` | script / script | — | 19 098 B | 3 / 3 | diff_runs.py | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/spinny/env_config.py` | script / script | — | 8 828 B | 3 / 3 | env_config.py | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/spinny/fingerprint_client.py` | script / script | — | 18 748 B | 3 / 3 | fingerprint_client.py | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/spinny/output_writer.py` | script / script | — | 38 158 B | 3 / 3 | output_writer.py | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/spinny/page_flow.py` | script / script | — | 38 393 B | 3 / 3 | page_flow.py | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/spinny/playwright_scraper.py` | script / script | — | 89 998 B | 3 / 3 | spinny-scraper — Playwright edition (primary engine) | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/spinny/product_parser.py` | script / script | — | 90 678 B | 3 / 3 | product_parser.py | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/spinny/proxy_pool.py` | script / script | — | 13 938 B | 3 / 3 | proxy_pool.py | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/telegram` | carpeta / folder | — | carpeta / folder (1 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/telegram/telegraphite` | carpeta / folder | — | carpeta / folder (10 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/telegram/telegraphite/__init__.py` | script / script | — | 105 B | 3 / 3 | TeleGraphite - A tool to fetch and save posts from public Telegram channels. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/telegram/telegraphite/cli.py` | script / script | — | 11 392 B | 3 / 3 | Command-line interface for TeleGraphite. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/telegram/telegraphite/client.py` | script / script | — | 3 090 B | 3 / 3 | Client module for TeleGraphite. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/telegram/telegraphite/config.py` | script / script | — | 4 552 B | 3 / 3 | Configuration module for TeleGraphite. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/telegram/telegraphite/contact_extractor.py` | script / script | — | 735 B | 3 / 3 | Contact Extractor module for TeleGraphite. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/telegram/telegraphite/errors.py` | script / script | — | 2 170 B | 3 / 3 | Error handling module for TeleGraphite. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/telegram/telegraphite/fetcher.py` | script / script | — | 9 093 B | 3 / 3 | Fetcher module for TeleGraphite. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/telegram/telegraphite/logging_config.py` | script / script | — | 4 598 B | 3 / 3 | Logging configuration module for TeleGraphite. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/telegram/telegraphite/store.py` | script / script | — | 11 976 B | 3 / 3 | Store module for TeleGraphite. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/whatsapp` | carpeta / folder | — | carpeta / folder (4 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/whatsapp/waha_client.py` | script / script | — | 4 212 B | 3 / 3 | Cliente Python para WAHA (WhatsApp HTTP API) orientado a AutoDecide Habana. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/whatsapp/whatsapp_mcp_reader.py` | script / script | — | 24 712 B | 3 / 3 | Determine if chat is a group based on JID pattern. | Añadido / Added |
+| 2026-11-17 | `Auxiliares/herramientas/integraciones/whatsapp/whatsapp_web_example.js` | archivo / file | — | 30 417 B | 3 / 3 | Añadido al proyecto; pendiente de descripción / Added; description pending | Añadido / Added |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 22 664 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `.gitignore` | archivo / file | — | 1 107 B | 9 / 9 | Añadido al proyecto; pendiente de descripción / Added; description pending | Actualizado / Updated |
 | 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (13 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
 | 2026-11-17 | `Auxiliares/herramientas/actualizar_informe.py` | script / script | — | 14 283 B | 3 / 3 | Registra altas nuevas del proyecto en INFORME_TECNICO.md y regenera el PDF. | Actualizado / Updated |
