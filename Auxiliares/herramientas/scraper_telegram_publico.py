@@ -29,6 +29,22 @@ from curl_cffi import requests as creq
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "Data/integraciones/telegram"
 CANALES_POR_DEFECTO = ["goldenbullbusinessfamilycars", "Motos_Autos_Discover"]
+
+# Canales cubanos encontrados en la búsqueda. La mayoría son de noticias o
+# compra-venta general y no publican anuncios de autos; se dejan como catálogo.
+CANALES_DESCUBIERTOS = [
+    "Revolico_Cuba_Oficial",          # avisos/eventos, sin anuncios de autos
+    "Ventas_Revolico_Holguin_Cuba",   # grupo, sin vista pública
+    "revolico_baracoa",               # sin mensajes públicos
+    "timbirichi_compra_y_venta_cuba", # sin vista pública
+    "PiezasdeCarrosCU",               # repuestos, no vehículos
+    "directoriocubano",               # noticias
+    "eltoquecom",                     # noticias/tasas
+    "coventcuba",                     # 7 suscriptores, sin anuncios
+    "APublished",                     # mercado informal, sin anuncios
+    "GEEKSCUBANS_PLUS",               # tecnología/compra-venta general
+    "lachopivaraderooo",              # compra-venta general
+]
 BASE = "https://t.me/s/{canal}"
 
 PATRON_AUTO = re.compile(
