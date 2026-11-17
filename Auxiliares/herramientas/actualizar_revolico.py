@@ -118,6 +118,10 @@ def split_database() -> dict:
 
 
 def update_report(state: dict) -> None:
+    # Bloqueo compartido con sincronizar_github.py para no escribir el informe
+    # mientras Git está haciendo commit/push del mismo archivo.
+    lock = (OUT / ".revolico_sync.lock").open("w")
+    fcntl.flock(lock, fcntl.LOCK_EX)
     text = MD.read_text(encoding="utf-8")
     if MARKER not in text:
         print("Aviso: marcador SYNC_REVOLICO no encontrado; no se actualizó el informe", flush=True)
@@ -142,6 +146,7 @@ def update_report(state: dict) -> None:
             break
     MD.write_text("\n".join(lines) + "\n", encoding="utf-8")
     run([str(VENV_PY), str(UPDATE_REPORT), "--regenerar"], cwd=ROOT)
+    lock.close()
 
 
 def git_sync() -> int:
@@ -158,15 +163,7 @@ def git_sync() -> int:
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    lock_path = OUT / ".revolico_sync.lock"
-    lock = lock_path.open("w")
-    try:
-        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-    except BlockingIOError:
-        print("Ya hay una sincronización en curso; se omite esta ejecución.", flush=True)
-        return
-
-    print("== Revolico sync ==", flush=True)
+    print("== Revolico scrape/split ==", flush=True)
 
     rc = run([str(VENV_PY), str(SCRAPER), "--no-pages", "--workers", "10"], cwd=AUX)
     print(f"Scraper exit={rc}", flush=True)
@@ -178,8 +175,7 @@ def main() -> None:
         flush=True,
     )
     update_report(state)
-    rc = git_sync()
-    print(f"Git exit={rc}", flush=True)
+    print("Datos preparados; el push lo hace revolico-git.timer", flush=True)
 
 
 if __name__ == "__main__":
