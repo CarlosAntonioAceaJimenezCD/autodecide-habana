@@ -276,6 +276,9 @@ Automatic record of everything added to the project folder. The script appends r
 | Fecha / Date | Ruta / Path | Tipo / Type | Origen / Source | Tamaño / Size | Fase / Phase | Descripción / Description | Estado / Status |
 |---|---|---|---|---|---|---|---|
 <!-- REGISTRO_ALTAS -->
+| 2026-11-17 | `Auxiliares/herramientas/sincronizar_github.py` | script / script | — | 2 193 B | 3 / 3 | Sincroniza con GitHub SOLO los archivos del proyecto ya definidos. | Actualizado / Updated |
+| 2026-11-17 | `INFORME_TECNICO.md` | documento / document | — | 43 591 B | 9 / 9 | Informe técnico / Technical report | Actualizado / Updated |
+
 | 2026-11-17 | `Auxiliares/herramientas` | carpeta / folder | — | carpeta / folder (16 entradas) | 3 / 3 | Carpeta añadida al proyecto / Folder added to the project | Actualizado / Updated |
 | 2026-11-17 | `Auxiliares/herramientas/actualizar_revolico.py` | script / script | — | 6 406 B | 3 / 3 | Actualización incremental de la BD de Revolico y subida por partes a Git. | Actualizado / Updated |
 | 2026-11-17 | `Auxiliares/herramientas/limpiar_revolico.py` | script / script | — | 7 610 B | 3 / 3 | Limpieza de la BD de Revolico: solo vehículos de 4+ ruedas con datos útiles. | Añadido / Added |

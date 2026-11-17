@@ -45,7 +45,9 @@ def main() -> None:
         print("Otra tarea tiene el lock; se omite este ciclo de Git.", flush=True)
         return
 
-    add = git("add", "--", *TARGETS)
+    #git add falla si alguna ruta aún no existe (p. ej. `partes` antes del primer split).
+    existentes = [t for t in TARGETS if (ROOT / t).exists()]
+    add = git("add", "--", *existentes)
     if add.returncode != 0:
         print(add.stderr[-1000:], flush=True)
         return
